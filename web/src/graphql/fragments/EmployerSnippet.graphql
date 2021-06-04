@@ -1,0 +1,10 @@
+fragment EmployerSnippet on Employer {
+  id
+  firstname
+  lastname
+  description
+  position
+  avatar
+  createdAt
+  updatedAt
+}

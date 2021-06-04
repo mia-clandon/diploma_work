@@ -1,0 +1,12 @@
+mutation CreateEmployer($input: EmployerInput!) {
+  createEmployer(input: $input) {
+    id
+    firstname
+    lastname
+    description
+    position
+    avatar
+    createdAt
+    updatedAt
+  }
+}

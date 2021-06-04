@@ -1,0 +1,9 @@
+fragment ServiceSnippet on Service {
+  id
+  title
+  category
+  description
+  price
+  createdAt
+  updatedAt
+}

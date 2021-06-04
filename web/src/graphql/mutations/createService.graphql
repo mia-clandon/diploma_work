@@ -1,0 +1,9 @@
+mutation CreateService($input: ServiceInput!) {
+  createService(input: $input) {
+    id
+    title
+    category
+    description
+    price
+  }
+}

@@ -1,0 +1,11 @@
+mutation CreateBookingUser($input: BookingUserInput!) {
+  createBookingUser(input: $input) {
+    id
+    employer
+    service
+    date
+    time
+    fio
+    contact
+  }
+}

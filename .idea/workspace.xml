@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3d125546-be13-4a2e-8aca-dcfb6a8b6bfb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/web/src/components/NavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/NavBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/Search/Search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/Search/Search.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/SideBar/SideBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/SideBar/SideBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/generated/graphql.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/generated/graphql.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/graphql/fragments/EmployerSnippet.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/graphql/fragments/EmployerSnippet.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/graphql/fragments/ServiceSnippet.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/graphql/fragments/ServiceSnippet.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/graphql/mutations/createEmployer.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/graphql/mutations/createEmployer.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/graphql/mutations/createService.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/graphql/mutations/createService.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/graphql/queries/employer.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/graphql/queries/employer.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/graphql/queries/servicesList.graphql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/pages/employer/[id].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/employer/[id].tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/pages/employer/sections/TabsMenu/TabsMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/employer/sections/TabsMenu/TabsMenu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/pages/employer/sections/TabsMenu/blocks/InfoBasicEmployer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/employer/sections/TabsMenu/blocks/InfoBasicEmployer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/pages/employer/sections/TabsMenu/blocks/Portfolio.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/employer/sections/TabsMenu/blocks/Portfolio.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/pages/employer/sections/TabsMenu/blocks/Reviews.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/employer/sections/TabsMenu/blocks/Reviews.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/pages/employers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/employers.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/pages/internal/admin/auth/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/internal/admin/auth/login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/pages/internal/admin/blog/post/create/create-post.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/internal/admin/blog/post/create/create-post.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/pages/internal/admin/service/create-service.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/internal/admin/service/create-service.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/pages/internal/admin/services.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/internal/admin/services.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/pages/service/[id].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/service/[id].tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/pages/service/components/ServiceCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/service/components/ServiceCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/pages/services.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/services.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/pages/user/auth/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/user/auth/login.tsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="GraphQL File" />
+        <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/web" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="1rUNORl9AXdqSrn34ZFdc3uKMVF" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/src/graphql/queries" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="ts.external.directory.path" value="D:\lireddit-prod\web\node_modules\typescript\lib" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\lireddit-prod\web\src\graphql\queries" />
+      <recent name="D:\lireddit-prod\web\src\graphql\mutations" />
+      <recent name="D:\lireddit-prod\web\src\graphql\fragments" />
+      <recent name="D:\lireddit-prod\server\src\resolvers" />
+      <recent name="D:\lireddit-prod\server\src\entities" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\lireddit-prod\web\src\graphql\mutations" />
+      <recent name="D:\lireddit-prod\web\src\graphql\queries" />
+      <recent name="D:\lireddit-prod\web\src\pages\internal\admin" />
+      <recent name="D:\lireddit-prod\web\src\pages\internal\auth" />
+      <recent name="D:\lireddit-prod\server\src\entities\internal\account" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="test.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/test.js" working-dir="$PROJECT_DIR$/web/src/components">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.test.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3d125546-be13-4a2e-8aca-dcfb6a8b6bfb" name="Default Changelist" comment="" />
+      <created>1619026682765</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1619026682765</updated>
+      <workItem from="1619026684814" duration="383000" />
+      <workItem from="1619027402395" duration="100000" />
+      <workItem from="1619045206740" duration="2947000" />
+      <workItem from="1619127949938" duration="3572000" />
+      <workItem from="1619344426678" duration="5443000" />
+      <workItem from="1619354713258" duration="572000" />
+      <workItem from="1619355401303" duration="660000" />
+      <workItem from="1619366853684" duration="5895000" />
+      <workItem from="1619386549999" duration="622000" />
+      <workItem from="1619388725212" duration="7434000" />
+      <workItem from="1619397905364" duration="595000" />
+      <workItem from="1619419368291" duration="39000" />
+      <workItem from="1619625133246" duration="60000" />
+      <workItem from="1619900825519" duration="158000" />
+      <workItem from="1620219307595" duration="3173000" />
+      <workItem from="1620246154089" duration="18000" />
+      <workItem from="1621094970902" duration="3240000" />
+      <workItem from="1621255037274" duration="29000" />
+      <workItem from="1621345166042" duration="17400000" />
+      <workItem from="1621455751470" duration="22000" />
+      <workItem from="1621460163244" duration="2351000" />
+      <workItem from="1621717509256" duration="710000" />
+      <workItem from="1621805946753" duration="2524000" />
+      <workItem from="1621808825763" duration="5508000" />
+      <workItem from="1621891020674" duration="6245000" />
+      <workItem from="1622030942118" duration="50000" />
+      <workItem from="1622048714858" duration="3483000" />
+      <workItem from="1622064177744" duration="6574000" />
+      <workItem from="1622111609223" duration="3508000" />
+      <workItem from="1622119773699" duration="15424000" />
+      <workItem from="1622202422980" duration="7992000" />
+      <workItem from="1622213194709" duration="30244000" />
+      <workItem from="1622574944187" duration="691000" />
+      <workItem from="1622659774662" duration="15163000" />
+      <workItem from="1622702815185" duration="2498000" />
+      <workItem from="1622797186833" duration="610000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
