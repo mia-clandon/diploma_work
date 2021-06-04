@@ -14,8 +14,8 @@ class ServiceInput {
     description: string
     @Field()
     price: string
-    // @Field()
-    // image: string
+    @Field()
+    image: string
 }
 
 @ObjectType()
@@ -106,10 +106,7 @@ export class ServiceResolver {
     @UseMiddleware(isAuth)
     async createService(
         @Arg("input") input: ServiceInput,
-        // @Arg("avatar") avatar: string,
-        // @Ctx() {req}: MyContext
     ): Promise<Service> {
-        // const avatar = await this.uploadAvatar()
         return Service.create({
             ...input,
         }).save();

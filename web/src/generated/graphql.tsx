@@ -122,6 +122,7 @@ export type Service = {
   category: Scalars['String'];
   description: Scalars['String'];
   price: Scalars['String'];
+  image: Scalars['String'];
   createdAt: Scalars['String'];
   updatedAt: Scalars['String'];
 };
@@ -302,6 +303,7 @@ export type ServiceInput = {
   category: Scalars['String'];
   description: Scalars['String'];
   price: Scalars['String'];
+  image: Scalars['String'];
 };
 
 export type BookingDateTimeInput = {
@@ -373,7 +375,7 @@ export type RegularUserResponseFragment = (
 
 export type ServiceSnippetFragment = (
   { __typename?: 'Service' }
-  & Pick<Service, 'id' | 'title' | 'category' | 'description' | 'price' | 'createdAt' | 'updatedAt'>
+  & Pick<Service, 'id' | 'title' | 'category' | 'description' | 'price' | 'image' | 'createdAt' | 'updatedAt'>
 );
 
 export type CreateBookingDateTimeMutationVariables = Exact<{
@@ -464,7 +466,7 @@ export type CreateServiceMutation = (
   { __typename?: 'Mutation' }
   & { createService: (
     { __typename?: 'Service' }
-    & Pick<Service, 'id' | 'title' | 'category' | 'description' | 'price'>
+    & Pick<Service, 'id' | 'title' | 'category' | 'description' | 'price' | 'image'>
   ) }
 );
 
@@ -769,6 +771,7 @@ export const ServiceSnippetFragmentDoc = gql`
   category
   description
   price
+  image
   createdAt
   updatedAt
 }
@@ -869,6 +872,7 @@ export const CreateServiceDocument = gql`
     category
     description
     price
+    image
   }
 }
     `;

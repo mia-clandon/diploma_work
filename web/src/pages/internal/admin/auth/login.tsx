@@ -12,6 +12,7 @@ import Link from "@material-ui/core/Link";
 import Button from "@material-ui/core/Button";
 import {FormControl, Grid} from "@material-ui/core";
 import {TextField} from "formik-material-ui";
+import {InputField} from "../../../../components/InputField";
 
 const Login: React.FC<{}> = ({}) => {
     const router = useRouter();
@@ -46,18 +47,29 @@ const Login: React.FC<{}> = ({}) => {
                                 item
                                 xs={4}
                             >
-                                <FormControl style={{width: 400}}>
-                                    <Field name="usernameOrEmail" placeholder="Ник или пароль" component={TextField}/>
-                                </FormControl>
+                                {/*<FormControl style={{width: 400}}>*/}
+                                {/*    <Field name="usernameOrEmail" placeholder="Ник или пароль" component={TextField}/>*/}
+                                {/*</FormControl>*/}
+                                <InputField
+                                    name="usernameOrEmail"
+                                    placeholder="Username or Email"
+                                    label="Username or Email"
+                                />
                             </Grid>
                             <Grid
                                 item
                                 xs={4}
                             >
-                                <FormControl style={{width: 400}}>
-                                    <Field name="password" type="password" placeholder="Ваш пароль"
-                                           component={TextField}/>
-                                </FormControl>
+                                <InputField
+                                    name="password"
+                                    placeholder="Пароль"
+                                    label="Пароль"
+                                    type="password"
+                                />
+                                {/*<FormControl style={{width: 400}}>*/}
+                                {/*    <Field name="password" type="password" placeholder="Ваш пароль"*/}
+                                {/*           component={TextField}/>*/}
+                                {/*</FormControl>*/}
                             </Grid>
                         </Grid>
                         <Grid

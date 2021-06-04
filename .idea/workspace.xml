@@ -5,11 +5,8 @@
       <change beforePath="$PROJECT_DIR$/web/src/components/NavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/NavBar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/components/Search/Search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/Search/Search.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/components/SideBar/SideBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/SideBar/SideBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/generated/graphql.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/generated/graphql.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/graphql/fragments/EmployerSnippet.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/graphql/fragments/EmployerSnippet.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/graphql/fragments/ServiceSnippet.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/graphql/fragments/ServiceSnippet.graphql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/graphql/mutations/createEmployer.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/graphql/mutations/createEmployer.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/graphql/mutations/createService.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/graphql/mutations/createService.graphql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/graphql/queries/employer.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/graphql/queries/employer.graphql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/graphql/queries/servicesList.graphql" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/pages/employer/[id].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/employer/[id].tsx" afterDir="false" />
@@ -18,9 +15,7 @@
       <change beforePath="$PROJECT_DIR$/web/src/pages/employer/sections/TabsMenu/blocks/Portfolio.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/employer/sections/TabsMenu/blocks/Portfolio.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/pages/employer/sections/TabsMenu/blocks/Reviews.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/employer/sections/TabsMenu/blocks/Reviews.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/pages/employers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/employers.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/pages/internal/admin/auth/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/internal/admin/auth/login.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/pages/internal/admin/blog/post/create/create-post.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/internal/admin/blog/post/create/create-post.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/pages/internal/admin/service/create-service.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/internal/admin/service/create-service.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/pages/internal/admin/services.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/internal/admin/services.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/pages/service/[id].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/service/[id].tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/pages/service/components/ServiceCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/service/components/ServiceCard.tsx" afterDir="false" />
@@ -62,7 +57,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/src/graphql/queries" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/src/components" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -76,11 +71,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\lireddit-prod\web\src\components" />
       <recent name="D:\lireddit-prod\web\src\graphql\queries" />
       <recent name="D:\lireddit-prod\web\src\graphql\mutations" />
       <recent name="D:\lireddit-prod\web\src\graphql\fragments" />
       <recent name="D:\lireddit-prod\server\src\resolvers" />
-      <recent name="D:\lireddit-prod\server\src\entities" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\lireddit-prod\web\src\graphql\mutations" />
@@ -143,7 +138,7 @@
       <workItem from="1622574944187" duration="691000" />
       <workItem from="1622659774662" duration="15163000" />
       <workItem from="1622702815185" duration="2498000" />
-      <workItem from="1622797186833" duration="610000" />
+      <workItem from="1622797186833" duration="10638000" />
     </task>
     <servers />
   </component>

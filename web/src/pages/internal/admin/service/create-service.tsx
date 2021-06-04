@@ -6,7 +6,7 @@ import {useIsAuth} from "../../../../utils/useIsAuth";
 import {useCreateServiceMutation} from "../../../../generated/graphql";
 import {Layout} from "../../../../components/Layout";
 import {createUrqlClient} from "../../../../utils/createUrqlClient";
-import {FormControl, Grid, Input, TextareaAutosize} from "@material-ui/core";
+import {FormControl, Grid, InputLabel, MenuItem} from "@material-ui/core";
 import {TextField} from "formik-material-ui";
 import Button from "@material-ui/core/Button";
 import TableServices from "./sections/TableServices";
@@ -14,8 +14,10 @@ import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import NextLink from "next/link";
 import Link from "@material-ui/core/Link";
 import Typography from "@material-ui/core/Typography";
-import IconButton from "@material-ui/core/IconButton";
-import {PhotoCamera} from "@material-ui/icons";
+import {Select} from 'formik-material-ui';
+import {InputField} from "../../../../components/InputField";
+import {SelectField} from "../../../../components/SelectField";
+
 
 function handleClick(event) {
     event.preventDefault();
@@ -46,7 +48,12 @@ const CreateService: React.FC<{}> = ({}) => {
                                 Главная
                             </Link>
                         </NextLink>
-                        <Typography color="textPrimary">Услуги</Typography>
+                        <NextLink href="/">
+                            <Link color="inherit" href="/" onClick={handleClick}>
+                                Услуги
+                            </Link>
+                        </NextLink>
+                        <Typography color="textPrimary">Добавить услугу</Typography>
                     </Breadcrumbs>
                 </Grid>
                 <Grid
@@ -55,12 +62,12 @@ const CreateService: React.FC<{}> = ({}) => {
                     xs={12}
                 >
                     <Formik
-                        initialValues={{title: "", category: "", description: "", price: ""}}
+                        initialValues={{title: "", category: "", description: "", price: "", image: ""}}
                         onSubmit={async (values) => {
                             const {error} = await createService({input: values});
                             console.log(error)
                             if (!error) {
-                                router.push("/");
+                                router.push("/internal/admin/service/create-service");
                             }
                             console.log(values)
                         }}
@@ -72,67 +79,74 @@ const CreateService: React.FC<{}> = ({}) => {
                                     direction="row"
                                     justifyContent="center"
                                     xs={12}
+                                    spacing={2}
                                 >
+
                                     <Grid
                                         item
-                                        direction="column"
                                         xs={4}
+                                        spacing={2}
                                     >
-                                        <Grid
-                                            item
-                                            xs={4}
-                                        >
-                                            <FormControl style={{width: 400}}>
-                                                <Field name="title" placeholder="Название" component={TextField}/>
-                                            </FormControl>
+                                        <Grid container direction="column" spacing={2}>
+                                            <InputField
+                                                name="title"
+                                                label="Название услуги"
+                                                defaultValue="Название услуги"
+                                            />
+                                            <InputField
+                                                name="description"
+                                                label="Описание услуги"
+                                                defaultValue="Описание услуги"
+                                                multiline
+                                            />
+                                            <Grid
+                                                item
+                                                xs={4}
+                                            >
+                                                <FormControl required style={{width: 400}}>
+                                                    <InputLabel htmlFor="category">Категория услуги</InputLabel>
+                                                    <Field
+                                                        component={Select}
+                                                        name="category"
+                                                        inputProps={{
+                                                            id: 'category',
+                                                        }}
+                                                        style={{width: '100%'}}
+                                                    >
+                                                        <MenuItem value={"Категория 1"}>Категория 1</MenuItem>
+                                                        <MenuItem value={"Категория 2"}>Категория 2</MenuItem>
+                                                        <MenuItem value={"Категория 3"}>Категория 3</MenuItem>
+                                                    </Field>
+                                                </FormControl>
+                                            </Grid>
+                                            <InputField
+                                                name="price"
+                                                label="Цена услуги"
+                                                defaultValue="Цена услуги"
+                                            />
+                                            <InputField
+                                                name="image"
+                                                label="Изображение услуги"
+                                                defaultValue="Изображение услуги"
+                                            />
+                                            {/*<Grid*/}
+                                            {/*    item*/}
+                                            {/*    xs={4}*/}
+                                            {/*>*/}
+                                            {/*    <FormControl style={{width: 400}}>*/}
+                                            {/*        <Field component={SimpleFileUpload} name="image"*/}
+                                            {/*               label="Загрузить изображение"/>;*/}
+                                            {/*    </FormControl>*/}
+                                            {/*</Grid>*/}
+                                            <Button
+                                                type="submit"
+                                                onClick={() => {
+                                                    isSubmitting
+                                                }}
+                                            >
+                                                Добавить услугу
+                                            </Button>
                                         </Grid>
-                                        <Grid
-                                            item
-                                            xs={4}
-                                        >
-                                            <FormControl style={{width: 400}}>
-                                                <Field name="description" placeholder="Описание"
-                                                       style={{minHeight: 200, padding: '15px'}}
-                                                       component={TextareaAutosize}/>
-                                            </FormControl>
-                                        </Grid>
-                                        <Grid
-                                            item
-                                            xs={4}
-                                        >
-                                            <FormControl style={{width: 400}}>
-                                                <Field name="category" placeholder="Категории" component={TextField}/>
-                                            </FormControl>
-                                        </Grid>
-                                        <Grid
-                                            item
-                                            xs={4}
-                                        >
-                                            <FormControl style={{width: 400}}>
-                                                <Field name="price" placeholder="Цена" component={TextField}/>
-                                            </FormControl>
-                                        </Grid>
-                                        <Grid
-                                            item
-                                            xs={4}
-                                        >
-                                            <FormControl style={{width: 400}}>
-                                                <label htmlFor="contained-button-file">
-                                                    <Input name="image" accept="image/*" id="contained-button-file" multiple type="file" />
-                                                    <Button variant="contained" component="span">
-                                                        Upload
-                                                    </Button>
-                                                </label>
-                                            </FormControl>
-                                        </Grid>
-                                        <Button
-                                            type="submit"
-                                            onClick={() => {
-                                                isSubmitting
-                                            }}
-                                        >
-                                            Добавить услугу
-                                        </Button>
                                     </Grid>
                                     <Grid
                                         item

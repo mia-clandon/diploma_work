@@ -21,7 +21,7 @@ export class Service extends BaseEntity {
     title!: string;
 
     @Field()
-    @Column({nullable: true})
+    @Column({nullable: false})
     category!: string;
 
     @Field()
@@ -32,9 +32,9 @@ export class Service extends BaseEntity {
     @Column({nullable: false})
     price!:string;
 
-    // @Field()
-    // @Column({nullable: true})
-    // image!:string;
+    @Field()
+    @Column({nullable: false})
+    image!:string;
 
     @ManyToMany(() => Employer, employer => employer.services)
     @JoinTable()
