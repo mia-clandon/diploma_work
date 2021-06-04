@@ -57,7 +57,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/src/components" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/src/graphql/mutations" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -71,9 +71,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\lireddit-prod\web\src\graphql\mutations" />
       <recent name="D:\lireddit-prod\web\src\components" />
       <recent name="D:\lireddit-prod\web\src\graphql\queries" />
-      <recent name="D:\lireddit-prod\web\src\graphql\mutations" />
       <recent name="D:\lireddit-prod\web\src\graphql\fragments" />
       <recent name="D:\lireddit-prod\server\src\resolvers" />
     </key>
@@ -138,7 +138,7 @@
       <workItem from="1622574944187" duration="691000" />
       <workItem from="1622659774662" duration="15163000" />
       <workItem from="1622702815185" duration="2498000" />
-      <workItem from="1622797186833" duration="10638000" />
+      <workItem from="1622797186833" duration="18699000" />
     </task>
     <servers />
   </component>

@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {withUrqlClient} from "next-urql";
 import NextLink from "next/link";
-import {EditDeletePostButtons} from "../components/EditDeletePostButtons";
+// import {EditDeletePostButtons} from "../components/EditDeletePostButtons";
 import {Layout} from "../components/Layout";
 import {UpdootSection} from "../components/UpdootSection";
 import {usePostsQuery} from "../generated/graphql";
@@ -11,11 +11,12 @@ import Box from "@material-ui/core/Box";
 import Link from "@material-ui/core/Link";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
+import {EditDeletePostButtons} from "../components/EditDeletePostButtons";
 
 
 const Blog = () => {
     const [variables, setVariables] = useState({
-        limit: 15,
+        limit: 10,
         cursor: null as null | string,
     });
 
@@ -32,6 +33,7 @@ const Blog = () => {
         );
     }
 
+    console.log(data?.posts.posts)
     return (
         <Layout>
             {!data && fetching ? (
@@ -68,23 +70,6 @@ const Blog = () => {
             )}
             {data && data.posts.hasMore ? (
                 <Box display='flex'>
-                    {/*<Submit>*/}
-                    {/*    {()  => (*/}
-                    {/*        <ButtonLoading*/}
-                    {/*            loading={fetching}*/}
-                    {/*            fullWidth*/}
-                    {/*            variant="contained"*/}
-                    {/*            color="primary"*/}
-                    {/*            size="large"*/}
-                    {/*            type="submit"*/}
-                    {/*            startIcon={<Reset />}*/}
-                    {/*        >*/}
-                    {/*            <Typography variant="subtitle1" fontWeight="bold">*/}
-                    {/*                Load more*/}
-                    {/*            </Typography>*/}
-                    {/*        </ButtonLoading>*/}
-                    {/*    )}*/}
-                    {/*</Submit>*/}
                     <Button
                         onClick={() => {
                             setVariables({
@@ -92,9 +77,8 @@ const Blog = () => {
                                 cursor: data.posts.posts[data.posts.posts.length - 1].createdAt,
                             });
                         }}
-                        // isLoading={fetching}
                     >
-                        load more
+                        Загрузить больше
                     </Button>
                 </Box>
             ) : null}

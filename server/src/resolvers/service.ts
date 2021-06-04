@@ -131,16 +131,14 @@ export class ServiceResolver {
         return service;
     }
 
-
     @Mutation(() => Boolean)
     @UseMiddleware(isAuth)
     async deleteService(
-        @Arg("id")
-            id: number,
-    ):
-        Promise<boolean> {
-        await Service.delete(id);
+        @Arg("id", () => Int) id: number,
+    ): Promise<boolean> {
+        await Service.delete({id});
         return true;
     }
+
 }
 
