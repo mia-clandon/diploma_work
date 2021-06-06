@@ -5,6 +5,7 @@ import {isServer} from "../utils/isServer";
 import {useRouter} from "next/router";
 import {Box, Button, Link, Typography} from "@material-ui/core";
 import NavTabs from "./Navbar/blocks/NavTabs";
+import SearchBlock from "./Header/components/SearchBlock/SearchBlock";
 
 // import { LoadingButton } from '@material-ui/lab/';
 
@@ -112,6 +113,7 @@ export const NavBar: React.FC<NavBarProps> = ({}) => {
 
     return (
         <>
+            <SearchBlock/>
             {/*{body}*/}
         </>
         // <Box display='flex' zIndex={1} position="sticky" top={0} p={6}>

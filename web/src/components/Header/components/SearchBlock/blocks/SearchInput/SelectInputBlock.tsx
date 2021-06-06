@@ -3,6 +3,7 @@ import {createStyles, makeStyles, Theme} from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import {InputAdornment} from "@material-ui/core";
 import {SvgIconProps} from "@material-ui/core/SvgIcon";
+import Search from "../../icons/Search";
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -10,19 +11,22 @@ const useStyles = makeStyles((theme: Theme) =>
         root: {
             '& .MuiTextField-root': {
                 margin: theme.spacing(1),
+                fontFamily: 'Montserrat',
+                padding: 0,
+                // width: '25ch',
             },
         },
+
     }),
 );
 
 // @ts-ignore
 export type SelectBlockProps = SelectBlockProps & {
     icon?: React.ElementType<SvgIconProps>;
-    listOptions?: string[];
 };
 
-function SelectBlock(props: SelectBlockProps) {
-    const {icon: Icon, listOptions, ...other} = props;
+function SelectInputBlock(props: SelectBlockProps) {
+    const {icon: Icon, ...other} = props;
 
     const classes = useStyles();
     const [currency, setCurrency] = React.useState('EUR');
@@ -34,42 +38,32 @@ function SelectBlock(props: SelectBlockProps) {
     return (
         <form className={classes.root} noValidate autoComplete="off">
             <TextField
-                select
-                value={currency}
+                placeholder="Поиск по пикслайт"
                 onChange={handleChange}
-                SelectProps={{
-                    native: true,
-                }}
                 inputProps={{
                     style: {
-                        fontSize: '14px',
-                        lineHeight: '17.07px',
-                        textAlign: 'center',
-                        paddingTop: '9px',
-                        paddingBottom: '9px',
+                        fontSize: '18px',
+                        lineHeight: '21.94px',
+                        border: 'white',
+                        paddingTop: '6px',
+                        paddingBottom: '6px',
                         paddingLeft: '4px',
-                        borderRadius: '6px',
-                        border: '1px #F0EEEE'
+                        width: '415px'
                     }
                 }}
                 InputProps={{
                     startAdornment: (
                         <InputAdornment position="start">
-                            <Icon/>
+                            <Search/>
                         </InputAdornment>
                     ),
                 }}
                 variant="outlined"
                 margin="dense"
             >
-                {listOptions.map((option) => (
-                    <option key={option.value} value={option.value}>
-                        {option.value}
-                    </option>
-                ))}
             </TextField>
         </form>
     );
 }
 
-export default SelectBlock;
+export default SelectInputBlock;

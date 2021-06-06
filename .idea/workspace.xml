@@ -39,7 +39,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/src/components/Header/components/SearchBlock" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/src/components/Header/components/SearchBlock/icons" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -53,11 +53,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\lireddit-prod\web\src\components\Header\components\SearchBlock\icons" />
+      <recent name="D:\lireddit-prod\web\src\components\Header\components\SearchBlock\blocks\SearchInput" />
       <recent name="D:\lireddit-prod\web\src\components\Header\components\SearchBlock" />
       <recent name="D:\lireddit-prod\web\src\components\Header\components\SearchBlock\blocks" />
       <recent name="D:\lireddit-prod\web\src\pages\employer\components\SearchBlock\icons" />
-      <recent name="D:\lireddit-prod\web\src\graphql\mutations" />
-      <recent name="D:\lireddit-prod\web\src\components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\lireddit-prod\web\src\components\Header\components\SearchBlock" />
@@ -122,7 +122,8 @@
       <workItem from="1622702815185" duration="2498000" />
       <workItem from="1622797186833" duration="20334000" />
       <workItem from="1622962027683" duration="57000" />
-      <workItem from="1622979790290" duration="10604000" />
+      <workItem from="1622979790290" duration="15929000" />
+      <workItem from="1623001407016" duration="2710000" />
     </task>
     <servers />
   </component>
