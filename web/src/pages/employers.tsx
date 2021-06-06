@@ -7,7 +7,7 @@ import {makeStyles} from "@material-ui/core/styles";
 import {Layout} from "../components/Layout";
 import SideBar from "../components/SideBar/SideBar";
 import EmployerCard from "./employer/components/EmployerCard";
-import SearchInput from "../components/Search/Search";
+import SelectBlock from "../components/Header/components/SearchBlock/blocks/SelectBlock";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -55,6 +55,7 @@ const Employers = () => {
                     alignItems="flex-start"
                     xs={12}
                 >
+                    <SelectBlock/>
                     <Grid
                         container
                         direction="row"

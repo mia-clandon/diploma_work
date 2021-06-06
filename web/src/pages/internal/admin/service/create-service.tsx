@@ -7,16 +7,14 @@ import {useCreateServiceMutation} from "../../../../generated/graphql";
 import {Layout} from "../../../../components/Layout";
 import {createUrqlClient} from "../../../../utils/createUrqlClient";
 import {FormControl, Grid, InputLabel, MenuItem} from "@material-ui/core";
-import {TextField} from "formik-material-ui";
+import {SimpleFileUpload} from "formik-material-ui";
 import Button from "@material-ui/core/Button";
-import TableServices from "./sections/TableServices";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import NextLink from "next/link";
 import Link from "@material-ui/core/Link";
 import Typography from "@material-ui/core/Typography";
 import {Select} from 'formik-material-ui';
 import {InputField} from "../../../../components/InputField";
-import {SelectField} from "../../../../components/SelectField";
 
 
 function handleClick(event) {
@@ -124,20 +122,15 @@ const CreateService: React.FC<{}> = ({}) => {
                                                 label="Цена услуги"
                                                 defaultValue="Цена услуги"
                                             />
-                                            <InputField
-                                                name="image"
-                                                label="Изображение услуги"
-                                                defaultValue="Изображение услуги"
-                                            />
-                                            {/*<Grid*/}
-                                            {/*    item*/}
-                                            {/*    xs={4}*/}
-                                            {/*>*/}
-                                            {/*    <FormControl style={{width: 400}}>*/}
-                                            {/*        <Field component={SimpleFileUpload} name="image"*/}
-                                            {/*               label="Загрузить изображение"/>;*/}
-                                            {/*    </FormControl>*/}
-                                            {/*</Grid>*/}
+                                            <Grid
+                                                item
+                                                xs={4}
+                                            >
+                                                <FormControl style={{width: 400}}>
+                                                    <Field component={SimpleFileUpload} name="image"
+                                                           label="Загрузить изображение"/>;
+                                                </FormControl>
+                                            </Grid>
                                             <Button
                                                 type="submit"
                                                 onClick={() => {
@@ -148,12 +141,12 @@ const CreateService: React.FC<{}> = ({}) => {
                                             </Button>
                                         </Grid>
                                     </Grid>
-                                    <Grid
-                                        item
-                                        direction="column"
-                                        xs={6}>
-                                        <TableServices/>
-                                    </Grid>
+                                    {/*<Grid*/}
+                                    {/*    item*/}
+                                    {/*    direction="column"*/}
+                                    {/*    xs={6}>*/}
+                                    {/*    <TableServices/>*/}
+                                    {/*</Grid>*/}
                                 </Grid>
                             </Form>
                         )}
