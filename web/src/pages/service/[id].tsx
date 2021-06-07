@@ -2,15 +2,13 @@ import React from "react";
 import {withUrqlClient} from "next-urql";
 import {createUrqlClient} from "../../utils/createUrqlClient";
 import {Layout} from "../../components/Layout";
-import NextLink from "next/link";
-import {useGetServiceFromUrl} from "../../utils/useGetServiceFromUrl";
 import {Box, Grid} from "@material-ui/core";
-import TabsMenu from "./sections/TabsMenu/TabsMenu";
-import Breadcrumbs from "@material-ui/core/Breadcrumbs";
-import Link from "@material-ui/core/Link";
 import Typography from "@material-ui/core/Typography";
 import BreadCrumbsServiceId from "./sections/Header/BreadCrumbs/BreadCrumbs";
 import BriefInfo from "./sections/Header/BrieffInfo/BriefInfo";
+import MediaContent from "./components/MediaContent/MediaContent";
+import Parametrs from "./components/Parametrs/Parametrs";
+import Amenties from "./components/Amenities/Amenties";
 
 function handleClick(event) {
     event.preventDefault();
@@ -44,41 +42,72 @@ const Service = ({}) => {
     return (
         <Layout>
             <Box sx={{flexGrow: 1}}>
-                <Grid container spacing={2} justifyContent="center">
+                <Grid container spacing={2} justifyContent="center" alignItems="center">
                     <Grid item xs={11}>
-                        <Grid item xs={11}>
-                            <BreadCrumbsServiceId/>
-                            <Typography
-                                style={{
-                                    fontFamily: 'Montserrat Regular',
-                                    fontWeight: 600,
-                                    fontSize: '36px',
-                                    lineHeight: '44px',
-                                }}
-                            >Красивая квартира в Нью-Йорке</Typography>
-                        </Grid>
+                        <BreadCrumbsServiceId/>
+                        <Typography
+                            style={{
+                                fontFamily: 'Montserrat Regular',
+                                fontWeight: 600,
+                                fontSize: '36px',
+                                lineHeight: '44px',
+                            }}
+                        >
+                            Красивая квартира в Нью-Йорке
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={11}>
                         <BriefInfo/>
                     </Grid>
-                </Grid></Box>
-            {/*<Grid*/}
-            {/*    direction="column"*/}
-            {/*    xs={12}*/}
-            {/*>*/}
-            {/*    <Breadcrumbs aria-label="breadcrumb"  style={{marginLeft: '22.5%'}}>*/}
-            {/*        <NextLink href="/">*/}
-            {/*            <Link color="inherit" href="/" onClick={handleClick}>*/}
-            {/*                Главная*/}
-            {/*            </Link>*/}
-            {/*        </NextLink>*/}
-            {/*        <NextLink href="/employers">*/}
-            {/*            <Link color="inherit" href="/" onClick={handleClick}>*/}
-            {/*                Сотрудники*/}
-            {/*            </Link>*/}
-            {/*        </NextLink>*/}
-            {/*        <Typography color="textPrimary">{data.service.title}</Typography>*/}
-            {/*    </Breadcrumbs>*/}
-            {/*    <TabsMenu options={data.service}/>*/}
-            {/*</Grid>*/}
+                    <Grid item xs={11}>
+                        <MediaContent/>
+                    </Grid>
+                    <Grid item xs={10}>
+                        <Parametrs/>
+                    </Grid>
+                    <Grid item xs={10}>
+                        <Amenties/>
+                    </Grid>
+                </Grid>
+            </Box>
+            {/*<Grid*/
+            }
+            {/*    direction="column"*/
+            }
+            {/*    xs={12}*/
+            }
+            {/*>*/
+            }
+            {/*    <Breadcrumbs aria-label="breadcrumb"  style={{marginLeft: '22.5%'}}>*/
+            }
+            {/*        <NextLink href="/">*/
+            }
+            {/*            <Link color="inherit" href="/" onClick={handleClick}>*/
+            }
+            {/*                Главная*/
+            }
+            {/*            </Link>*/
+            }
+            {/*        </NextLink>*/
+            }
+            {/*        <NextLink href="/employers">*/
+            }
+            {/*            <Link color="inherit" href="/" onClick={handleClick}>*/
+            }
+            {/*                Сотрудники*/
+            }
+            {/*            </Link>*/
+            }
+            {/*        </NextLink>*/
+            }
+            {/*        <Typography color="textPrimary">{data.service.title}</Typography>*/
+            }
+            {/*    </Breadcrumbs>*/
+            }
+            {/*    <TabsMenu options={data.service}/>*/
+            }
+            {/*</Grid>*/
+            }
         </Layout>
     );
 };

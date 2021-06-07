@@ -102,7 +102,7 @@ function BriefInfo() {
                             <Like/> &nbsp;  &nbsp; <Typography>Сохранить</Typography>
                         </IconButton>
                     </Grid>
-                    <Grid item xs={8}>
+                    <Grid item xs={6}>
                         <Button onClick={() => console.log('test')}
                                 style={{
                                     fontFamily: 'Montserrat',

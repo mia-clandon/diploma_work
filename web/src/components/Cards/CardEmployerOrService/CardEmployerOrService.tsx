@@ -108,7 +108,7 @@ function CardEmployerOrService() {
                               }}>
                             <Grid item xs={12}>
                                 {/*<NextLink href="/employer/[id]" as={`/employer/${options.id}`}>*/}
-                                <NextLink href="/employer/1" >
+                                <NextLink href="/employer/1">
                                     <Link>
                                         <Typography
                                             style={{

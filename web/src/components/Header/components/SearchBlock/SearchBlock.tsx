@@ -5,8 +5,6 @@ import SelectBlock from "./blocks/SelectBlock";
 import DollarSign from "./icons/DollarSign";
 import Layers from "./icons/Layers";
 import MapPin from "./icons/MapPin";
-import {Form, Formik} from "formik";
-import {Layout} from "../../../Layout";
 import Button from "@material-ui/core/Button";
 import SelectInputBlock from "./blocks/SearchInput/SelectInputBlock";
 
