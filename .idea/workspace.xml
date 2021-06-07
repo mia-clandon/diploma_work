@@ -39,7 +39,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/src/pages/service/components/Amenities/blocks" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/src/components/Cards/icons" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -53,11 +53,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\lireddit-prod\web\src\components\Cards\icons" />
       <recent name="D:\lireddit-prod\web\src\pages\service\components\Amenities\blocks" />
       <recent name="D:\lireddit-prod\web\src\pages\service\components\Parametrs\blocks" />
       <recent name="D:\lireddit-prod\web\src\pages\service\components" />
       <recent name="D:\lireddit-prod\web\src\pages\employer\sections\ChooseEditors\icons" />
-      <recent name="D:\lireddit-prod\web\src\components\Header\components\SearchBlock\icons" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\lireddit-prod\web\src\pages\service\components" />

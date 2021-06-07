@@ -29,7 +29,6 @@ const itemAmenties = [
 ]
 
 function Amenties() {
-
     return (
         <Grid container spacing={2} style={{
             border: '1px solid #F0EEEE',

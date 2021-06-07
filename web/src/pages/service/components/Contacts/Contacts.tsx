@@ -2,18 +2,16 @@ import React from 'react';
 import {Theme, createStyles, makeStyles, useTheme} from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import NextLink from "next/link";
 import {Link} from "@material-ui/core";
-import Like from "../../sections/ChooseEditors/icons/Like";
-import DollarSign from "../../../../components/Header/components/SearchBlock/icons/DollarSign";
-import Parking from "../../sections/ChooseEditors/icons/Parking";
-import Wifi from "../../sections/ChooseEditors/icons/Wifi";
-import Snow from "../../sections/ChooseEditors/icons/Snow";
 import Star from "../../sections/ChooseEditors/icons/Star";
+import Phone from "../../../../components/Cards/icons/Phone";
+import Email from "../../../../components/Cards/icons/Email";
+import ThumbsUp from "../../../../components/Cards/icons/ThumbsUp";
+import ThumbsDown from "../../../../components/Cards/icons/ThumbsDown";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -30,16 +28,15 @@ const useStyles = makeStyles((theme: Theme) =>
             flex: '1 0 auto',
         },
         cover: {
-            width: '184px',
             marginTop: '16px',
             marginLeft: '16px',
         },
         controls: {
             display: 'flex',
             alignItems: 'center',
+            marginRight: '100px',
             paddingLeft: theme.spacing(1),
             paddingBottom: theme.spacing(1),
-            width: '340px',
         },
         playIcon: {
             height: 38,
@@ -58,50 +55,23 @@ function Contacts() {
                 display: 'flex',
                 flexDirection: 'row',
                 justifyContent: 'center',
-                // padding: '10px',
                 height: '200px'
             }}>
                 <div className={classes.cover}>
-                    <Grid container>
-                        <Grid item xs={12}>
-                            <img src={"./img/apartment.jpg"} alt="" style={{width: '165px', height: '165px'}}/>
+                    <Grid container justifyContent="center" alignItems="center" spacing={2}>
+                        <Grid item xs={8}>
+                            <img src={"./../img/apartment.jpg"} alt="" style={{width: '71px', height: '71px'}}/>
+                        </Grid>
+                        <Grid item xs={8} justifyContent="center">
+                            <ThumbsUp/>
+                        </Grid>
+                        <Grid item xs={8} justifyContent="center">
+                            <ThumbsDown/>
                         </Grid>
                     </Grid>
                 </div>
                 <div className={classes.details}>
                     <CardContent className={classes.content}>
-                        <Grid container spacing={2}
-                        >
-                            <Grid item xs={6}>
-                                <Typography
-                                    style={{
-                                        font: 'Montserrat Regular',
-                                        fontSize: '14px',
-                                        fontWeight: 600,
-                                        lineHeight: '17px',
-                                        letterSpacing: '0em',
-                                        color: '#FF6231',
-                                    }}
-                                > <Star/> 4.92</Typography>
-                            </Grid>
-                            <Grid item xs={6}>
-                                <Typography
-                                    style={{
-                                        fontFamily: 'Montserrat',
-                                        fontSize: '14px',
-                                        fontWeight: 400,
-                                        lineHeight: '17px',
-                                        letterSpacing: '0em',
-                                        color: '#6D6767',
-                                        marginLeft: '8px',
-                                        textAlign: 'end',
-                                        textDecoration: 'underline'
-                                    }}
-                                >
-                                    Недвижимость
-                                </Typography>
-                            </Grid>
-                        </Grid>
                         <Grid container spacing={2}
                               style={{
                                   paddingTop: '6px',
@@ -119,10 +89,40 @@ function Contacts() {
                                                 textAlign: 'start'
                                             }}
                                         >
-                                            Красивая квартира в Нью-Йорк
+                                            Masont G.
                                         </Typography>
                                     </Link>
                                 </NextLink>
+                            </Grid>
+                        </Grid>
+                        <Grid container spacing={2}
+                        >
+                            <Grid item xs={1}>
+                                <Star/>
+                            </Grid>
+                            <Grid item xs={1}>
+                                <Star/>
+                            </Grid>
+                            <Grid item xs={1}>
+                                <Star/>
+                            </Grid>
+                            <Grid item xs={1}>
+                                <Star/>
+                            </Grid>
+                            <Grid item xs={1}>
+                                <Star/>
+                            </Grid>
+                            <Grid item xs={7}>
+                                <Typography
+                                    style={{
+                                        font: 'Montserrat Regular',
+                                        fontSize: '16px',
+                                        fontWeight: 600,
+                                        lineHeight: '17px',
+                                        letterSpacing: '0em',
+                                        color: '#FF6231',
+                                    }}
+                                > 5.0</Typography>
                             </Grid>
                         </Grid>
                         <Grid container spacing={2}
@@ -130,99 +130,57 @@ function Contacts() {
                                   paddingTop: '6px',
                               }}
                         >
-                            <Grid item xs={6}>
+                            <Grid item xs={2}>
+                                <Phone/>
+                            </Grid>
+                            <Grid item xs={10}>
                                 <Typography
                                     style={{
+                                        font: 'Montserrat Regular',
                                         fontSize: '14px',
-                                        color: '#6D6767',
-                                        fontWeight: 400,
-                                        lineHeight: '17.07px',
-                                        textAlign: 'start'
+                                        fontWeight: 600,
+                                        lineHeight: '17px',
+                                        letterSpacing: '0em',
+                                        color: '#120505',
                                     }}
-                                >
-                                    Нью-Йорк, США
-                                </Typography>
+                                > + 1 830-421-2568</Typography>
                             </Grid>
                         </Grid>
-                        <Grid container alignItems="center" justifyContent="center" style={{
-                            border: '1px solid #F0EEEE',
-                            borderRadius: '6px',
-                            marginTop: '6px',
-                        }}>
-                            <Grid item xs={6} alignItems="center">
-                                <Grid container alignItems="center"
-                                      style={{
-                                          paddingLeft: '10px',
-                                          paddingTop: '10px',
-                                          paddingBottom: '5px'
-                                      }}
-                                      spacing={2}
-                                >
-                                    <Grid item xs={3}
-                                    >
-                                        <Snow/>
-                                    </Grid>
-                                    <Grid item xs={3}>
-                                        <Wifi/>
-                                    </Grid>
-                                    <Grid item xs={3}>
-                                        <Wifi/>
-                                    </Grid>
-                                    <Grid item xs={3}>
-                                        <Parking/>
-                                    </Grid>
-                                </Grid>
+                        <Grid container spacing={2}
+                              style={{
+                                  paddingTop: '6px',
+                              }}
+                        >
+                            <Grid item xs={2}>
+                                <Email/>
                             </Grid>
-                            <Grid item xs={6}>
+                            <Grid item xs={10}>
                                 <Typography
                                     style={{
-                                        fontFamily: 'Montserrat',
-                                        fontSize: '18px',
+                                        font: 'Montserrat Regular',
+                                        fontSize: '16px',
                                         fontWeight: 600,
-                                        lineHeight: '24.38px',
+                                        lineHeight: '17px',
                                         letterSpacing: '0em',
-                                        textAlign: 'center',
-                                        color: '#FF6231',
-                                        paddingLeft: '15px'
+                                        color: '#120505',
                                     }}
-                                > от <DollarSign/>20.000</Typography>
+                                > masontg34@gmail.com</Typography>
                             </Grid>
                         </Grid>
                         <Grid container spacing={1} style={{
                             marginTop: '0px',
                         }}>
-                            <Grid item xs={10}>
-                                <Button onClick={() => console.log('test')}
-                                        style={{
-                                            fontFamily: 'Montserrat',
-                                            fontSize: '14px',
-                                            fontWeight: 600,
-                                            lineHeight: '17px',
-                                            textAlign: 'center',
-                                            color: '#FF6231',
-                                            textTransform: 'capitalize',
-                                            background: '#FFF1F1',
-                                            width: '100%'
-                                        }}
-                                >Забронировать</Button>
-                            </Grid>
-                            <Grid item xs={2}>
-                                <IconButton onClick={() => console.log('test')}
-                                            style={{
-                                                fontFamily: 'Montserrat',
-                                                fontSize: '14px',
-                                                fontWeight: 600,
-                                                lineHeight: '17px',
-                                                textAlign: 'center',
-                                                color: '#FF6231',
-                                                textTransform: 'capitalize',
-                                                background: '#FFF1F1',
-                                                borderRadius: '6px',
-                                                height: '72%',
-                                            }}
+                            <Grid item xs={12}>
+                                <Button
+                                    variant="outlined"
+                                    style={{
+                                        color: '#6D6767'
+                                    }}
                                 >
-                                    <Like/>
-                                </IconButton>
+                                    <Typography>
+                                        Показать все контакты
+                                    </Typography>
+                                </Button>
                             </Grid>
                         </Grid>
                     </CardContent>
