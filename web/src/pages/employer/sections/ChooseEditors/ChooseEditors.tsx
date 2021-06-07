@@ -21,7 +21,7 @@ function ChooseEditors() {
                 <Grid item xs={10}>
                     <Grid container spacing={2}>
                         <Grid item xs={12} justifyContent="flex-start">
-                            <Item style={{display: 'flex', flexDirection: 'row'}}>
+                            <div style={{display: 'flex', flexDirection: 'row'}}>
                                 <Tag/>
                                 <Typography
                                     style={{
@@ -34,7 +34,7 @@ function ChooseEditors() {
                                 >
                                     Выбор редакции
                                 </Typography>
-                            </Item>
+                            </div>
                         </Grid>
                     </Grid>
                 </Grid>
