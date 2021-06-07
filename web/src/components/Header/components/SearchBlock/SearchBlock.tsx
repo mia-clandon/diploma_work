@@ -101,17 +101,18 @@ function SearchBlock() {
         <Grid container className={classes.root} spacing={2}>
             <Grid item xs={12}>
                 <Grid container justifyContent="center" spacing={spacing} alignContent="center" alignItems="center">
-                    <Grid item>
+                    <Grid item >
                         <SelectInputBlock icon={Layers}/>
                     </Grid>
-                    <Grid item>
+                    <Grid item style={{width: '175px'}}>
                         <SelectBlock icon={Layers} listOptions={servicesList}/>
                     </Grid>
-                    <Grid item>
+                    <Grid item style={{width: '208px'}}>
                         <SelectBlock icon={DollarSign} listOptions={optionsList}/>
                     </Grid>
                     <Grid
                         item
+                        style={{width: '170px'}}
                     >
                         <SelectBlock icon={MapPin} listOptions={mapList}/>
                     </Grid>

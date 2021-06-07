@@ -1,14 +1,9 @@
 import {withUrqlClient} from "next-urql";
-import React, {useState} from "react";
-import {useEmployersQuery} from "../generated/graphql";
+import React from "react";
 import {createUrqlClient} from "../utils/createUrqlClient";
-import {Box, Grid} from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
 import {Layout} from "../components/Layout";
-import SideBar from "../components/SideBar/SideBar";
-import EmployerCard from "./employer/components/EmployerCard";
-import SelectBlock from "../components/Header/components/SearchBlock/blocks/SelectBlock";
-import DollarSign from "../components/Header/components/SearchBlock/icons/DollarSign";
+import ChooseEditors from "./employer/sections/ChooseEditors/ChooseEditors";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -46,6 +41,7 @@ const Employers = () => {
 
     return (
         <Layout>
+            <ChooseEditors/>
             {/*{!data && fetching ? (*/}
             {/*    <div>loading...</div>*/}
             {/*) : (*/}
