@@ -5,7 +5,7 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Typography from "@material-ui/core/Typography";
 import Tag from "./icons/Tag";
-import CardChooseEditors from './CardChooseEditors/CardChooseEditors';
+import CardEmployerOrService from "../../../../components/Cards/CardEmployerOrService/CardEmployerOrService";
 
 const Item = styled(Paper)(({theme}) => ({
     ...theme.typography.body2,
@@ -18,7 +18,7 @@ function ChooseEditors() {
     return (
         <Box sx={{flexGrow: 1}}>
             <Grid container spacing={2} justifyContent="center">
-                <Grid item xs={10}>
+                <Grid item xs={11}>
                     <Grid container spacing={2}>
                         <Grid item xs={12} justifyContent="flex-start">
                             <div style={{display: 'flex', flexDirection: 'row'}}>
@@ -38,10 +38,25 @@ function ChooseEditors() {
                         </Grid>
                     </Grid>
                 </Grid>
-                <Grid item xs={10}>
+                <Grid item xs={11}>
                     <Grid container spacing={2}>
-                        <Grid item xs={12}>
-                            <CardChooseEditors/>
+                        <Grid item xs={4}>
+                            <CardEmployerOrService/>
+                        </Grid>
+                        <Grid item xs={4}>
+                            <CardEmployerOrService/>
+                        </Grid>
+                        <Grid item xs={4}>
+                            <CardEmployerOrService/>
+                        </Grid>
+                        <Grid item xs={4}>
+                            <CardEmployerOrService/>
+                        </Grid>
+                        <Grid item xs={4}>
+                            <CardEmployerOrService/>
+                        </Grid>
+                        <Grid item xs={4}>
+                            <CardEmployerOrService/>
                         </Grid>
                     </Grid>
                 </Grid>
