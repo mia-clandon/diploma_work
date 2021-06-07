@@ -3,6 +3,7 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Wifi from "../../../../components/Cards/icons/Wifi";
 import ItemAmenties from "./blocks/ItemAmenties";
+import Button from "@material-ui/core/Button";
 
 const itemAmenties = [
     {
@@ -54,6 +55,18 @@ function Amenties() {
                 {itemAmenties.map((item) => (
                     <ItemAmenties icon={item.icon} title={item.title} description={item.description}/>
                 ))}
+            </Grid>
+            <Grid item xs={12}>
+                <Button
+                    variant="outlined"
+                    style={{
+                        color: '#6D6767'
+                    }}
+                >
+                    <Typography>
+                        Показать все удобства
+                    </Typography>
+                </Button>
             </Grid>
         </Grid>
     )

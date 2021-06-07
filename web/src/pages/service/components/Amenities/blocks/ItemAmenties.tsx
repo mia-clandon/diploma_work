@@ -13,38 +13,46 @@ function ItemAmenties(props: ItemAmentiesBlockProps) {
     const {icon: Icon, title, description, ...other} = props;
 
     return (
-        <Grid container>
-            <Grid item xs={2}>
+        <Grid container alignItems="center"
+        style={{paddingTop: '10px'}}
+        >
+            <Grid item xs={1}>
                 <Icon/>
             </Grid>
-            <Grid item xs={4}>
-                <Typography
-                    style={{
-                        fontFamily: 'Montserrat',
-                        fontStyle: 'normal',
-                        fontWeight: 600,
-                        fontSize: '16px',
-                        lineHeight: '29px',
-                        display: 'flex',
-                        alignItems: 'center',
-                        color: '#120505',
-                    }}
-                >
-                    {title}
-                </Typography>
-                <Typography
-                    style={{
-                        fontFamily: 'Montserrat',
-                        fontWeight: 400,
-                        fontSize: '16px',
-                        lineHeight: '20px',
-                        display: 'flex',
-                        alignItems: 'center',
-                        color: '#6D6767',
-                    }}
-                >
-                    {description}
-                </Typography>
+            <Grid item xs={10}>
+                <Grid container alignItems="center">
+                    <Grid item xs={12}>
+                        <Typography
+                            style={{
+                                fontFamily: 'Montserrat',
+                                fontStyle: 'normal',
+                                fontWeight: 600,
+                                fontSize: '16px',
+                                lineHeight: '29px',
+                                display: 'flex',
+                                alignItems: 'center',
+                                color: '#120505',
+                            }}
+                        >
+                            {title}
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={12}>
+                        <Typography
+                            style={{
+                                fontFamily: 'Montserrat',
+                                fontWeight: 400,
+                                fontSize: '16px',
+                                lineHeight: '20px',
+                                display: 'flex',
+                                alignItems: 'center',
+                                color: '#6D6767',
+                            }}
+                        >
+                            {description}
+                        </Typography>
+                    </Grid>
+                </Grid>
             </Grid>
         </Grid>
     )

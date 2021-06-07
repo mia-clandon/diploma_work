@@ -9,6 +9,7 @@ import BriefInfo from "./sections/Header/BrieffInfo/BriefInfo";
 import MediaContent from "./components/MediaContent/MediaContent";
 import Parametrs from "./components/Parametrs/Parametrs";
 import Amenties from "./components/Amenities/Amenties";
+import Contacts from "./components/Contacts/Contacts";
 
 function handleClick(event) {
     event.preventDefault();
@@ -65,8 +66,11 @@ const Service = ({}) => {
                     <Grid item xs={10}>
                         <Parametrs/>
                     </Grid>
-                    <Grid item xs={10}>
+                    <Grid item xs={4}>
                         <Amenties/>
+                    </Grid>
+                    <Grid item xs={4}>
+                        <Contacts/>
                     </Grid>
                 </Grid>
             </Box>
