@@ -40,22 +40,19 @@ function ChooseEditors() {
                 </Grid>
                 <Grid item xs={11}>
                     <Grid container spacing={2}>
-                        <Grid item xs={4}>
+                        <Grid item>
                             <CardEmployerOrService/>
                         </Grid>
-                        <Grid item xs={4}>
+                        <Grid item>
                             <CardEmployerOrService/>
                         </Grid>
-                        <Grid item xs={4}>
+                        <Grid item>
                             <CardEmployerOrService/>
                         </Grid>
-                        <Grid item xs={4}>
+                        <Grid item>
                             <CardEmployerOrService/>
                         </Grid>
-                        <Grid item xs={4}>
-                            <CardEmployerOrService/>
-                        </Grid>
-                        <Grid item xs={4}>
+                        <Grid item>
                             <CardEmployerOrService/>
                         </Grid>
                     </Grid>

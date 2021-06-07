@@ -216,22 +216,27 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
             display: 'flex',
+
         },
         details: {
             display: 'flex',
             flexDirection: 'column',
+            marginLeft: '0px',
         },
         content: {
             flex: '1 0 auto',
         },
         cover: {
-            width: 151,
+            width: '184px',
+            marginTop: '16px',
+            marginLeft: '16px',
         },
         controls: {
             display: 'flex',
             alignItems: 'center',
             paddingLeft: theme.spacing(1),
             paddingBottom: theme.spacing(1),
+            width: '340px',
         },
         playIcon: {
             height: 38,
@@ -248,18 +253,22 @@ function CardEmployerOrService() {
         <Card className={classes.root}>
             <div style={{
                 display: 'flex',
-                flexDirection: 'row'
+                flexDirection: 'row',
+                justifyContent: 'center',
+                // padding: '10px',
+                height: '200px'
             }}>
                 <div className={classes.cover}>
                     <Grid container>
-                        <Grid item xs={6}>
+                        <Grid item xs={12}>
                             <img src={"./img/apartment.jpg"} alt="" style={{width: '165px', height: '165px'}}/>
                         </Grid>
                     </Grid>
                 </div>
                 <div className={classes.details}>
                     <CardContent className={classes.content}>
-                        <Grid container spacing={2}>
+                        <Grid container spacing={2}
+                        >
                             <Grid item xs={6}>
                                 <Typography
                                     style={{
@@ -290,7 +299,10 @@ function CardEmployerOrService() {
                                 </Typography>
                             </Grid>
                         </Grid>
-                        <Grid container spacing={2}>
+                        <Grid container spacing={2}
+                              style={{
+                                  paddingTop: '6px',
+                              }}>
                             <Grid item xs={12}>
                                 <Typography
                                     style={{
@@ -305,7 +317,11 @@ function CardEmployerOrService() {
                                 </Typography>
                             </Grid>
                         </Grid>
-                        <Grid container spacing={2}>
+                        <Grid container spacing={2}
+                              style={{
+                                  paddingTop: '6px',
+                              }}
+                        >
                             <Grid item xs={6}>
                                 <Typography
                                     style={{
@@ -320,17 +336,20 @@ function CardEmployerOrService() {
                                 </Typography>
                             </Grid>
                         </Grid>
-                        <Grid container alignItems="center" style={{
+                        <Grid container alignItems="center" justifyContent="center" style={{
                             border: '1px solid #F0EEEE',
                             borderRadius: '6px',
+                            marginTop: '6px',
                         }}>
                             <Grid item xs={6} alignItems="center">
                                 <Grid container alignItems="center"
                                       style={{
                                           paddingLeft: '10px',
-                                          paddingTop: '5px',
+                                          paddingTop: '10px',
                                           paddingBottom: '5px'
-                                      }}>
+                                      }}
+                                      spacing={2}
+                                >
                                     <Grid item xs={3}
                                     >
                                         <Snow/>
@@ -346,24 +365,24 @@ function CardEmployerOrService() {
                                     </Grid>
                                 </Grid>
                             </Grid>
-                            <Grid item xs={1}>
-                                <Line/>
-                            </Grid>
-                            <Grid item xs={5}>
+                            <Grid item xs={6}>
                                 <Typography
                                     style={{
                                         fontFamily: 'Montserrat',
-                                        fontSize: '20px',
+                                        fontSize: '18px',
                                         fontWeight: 600,
                                         lineHeight: '24.38px',
                                         letterSpacing: '0em',
-                                        textAlign: 'start',
+                                        textAlign: 'center',
                                         color: '#FF6231',
+                                        paddingLeft: '15px'
                                     }}
                                 > от <DollarSign/>20.000</Typography>
                             </Grid>
                         </Grid>
-                        <Grid container spacing={2}>
+                        <Grid container spacing={1} style={{
+                            marginTop: '0px',
+                        }}>
                             <Grid item xs={10}>
                                 <Button onClick={() => console.log('test')}
                                         style={{
