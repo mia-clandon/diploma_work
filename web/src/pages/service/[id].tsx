@@ -69,7 +69,7 @@ const Service = ({}) => {
                     <Grid item xs={4}>
                         <Amenties/>
                     </Grid>
-                    <Grid item xs={4}>
+                    <Grid item xs={3}>
                         <Contacts/>
                     </Grid>
                 </Grid>

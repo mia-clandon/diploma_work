@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
             display: 'flex',
-
+            flexDirection: 'column',
         },
         details: {
             display: 'flex',
@@ -50,22 +50,33 @@ function Contacts() {
     const theme = useTheme();
 
     return (
-        <Card className={classes.root}>
+        <Card className={classes.root} style={{paddingTop: '20px', paddingLeft: '20px'}}>
+            <Typography
+                style={{
+                    font: 'Montserrat Regular',
+                    fontSize: '24px',
+                    fontWeight: 600,
+                    lineHeight: '29.26px',
+                    color: '#120505',
+                }}
+            >
+                Контакты
+            </Typography>
             <div style={{
                 display: 'flex',
                 flexDirection: 'row',
                 justifyContent: 'center',
-                height: '200px'
+                alignItems: 'center'
             }}>
                 <div className={classes.cover}>
-                    <Grid container justifyContent="center" alignItems="center" spacing={2}>
-                        <Grid item xs={8}>
+                    <Grid container justifyContent="center" spacing={2}>
+                        <Grid item xs={8} justifyContent="center" alignItems="center">
                             <img src={"./../img/apartment.jpg"} alt="" style={{width: '71px', height: '71px'}}/>
                         </Grid>
-                        <Grid item xs={8} justifyContent="center">
+                        <Grid item xs={8} justifyContent="center" alignItems="center" style={{marginLeft: '40%'}}>
                             <ThumbsUp/>
                         </Grid>
-                        <Grid item xs={8} justifyContent="center">
+                        <Grid item xs={8} justifyContent="center" alignItems="center" style={{marginLeft: '40%'}}>
                             <ThumbsDown/>
                         </Grid>
                     </Grid>
@@ -166,10 +177,6 @@ function Contacts() {
                                     }}
                                 > masontg34@gmail.com</Typography>
                             </Grid>
-                        </Grid>
-                        <Grid container spacing={1} style={{
-                            marginTop: '0px',
-                        }}>
                             <Grid item xs={12}>
                                 <Button
                                     variant="outlined"
@@ -177,7 +184,15 @@ function Contacts() {
                                         color: '#6D6767'
                                     }}
                                 >
-                                    <Typography>
+                                    <Typography
+                                        style={{
+                                            font: 'Montserrat Regular',
+                                            fontSize: '14px',
+                                            fontWeight: 500,
+                                            lineHeight: '17.07px',
+                                            color: '#6D6767',
+                                        }}
+                                    >
                                         Показать все контакты
                                     </Typography>
                                 </Button>
