@@ -50,7 +50,7 @@ const CreateEmployer: React.FC<{}> = ({}) => {
                         <InputField
                             name="email"
                             placeholder="email"
-                            label="Email"/>
+                            label="EmailBlock"/>
                         <InputField
                             name="avatar"
                             placeholder="Avatar"

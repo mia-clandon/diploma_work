@@ -52,8 +52,8 @@ const Login: React.FC<{}> = ({}) => {
                                 {/*</FormControl>*/}
                                 <InputField
                                     name="usernameOrEmail"
-                                    placeholder="Username or Email"
-                                    label="Username or Email"
+                                    placeholder="Username or EmailBlock"
+                                    label="Username or EmailBlock"
                                 />
                             </Grid>
                             <Grid

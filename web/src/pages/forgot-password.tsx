@@ -30,7 +30,7 @@ const ForgotPassword: React.FC<{}> = ({}) => {
               <InputField
                 name="email"
                 placeholder="email"
-                label="Email"
+                label="EmailBlock"
                 type="email"
               />
               {/*<Button*/}

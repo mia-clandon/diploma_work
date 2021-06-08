@@ -46,7 +46,7 @@ const Register: React.FC<registerProps> = ({}) => {
                                 xs={4}
                             >
                                 <FormControl style={{width: 400}}>
-                                    <Field name="email" placeholder="Email" component={TextField}/>
+                                    <Field name="email" placeholder="EmailBlock" component={TextField}/>
                                 </FormControl>
                             </Grid>
                             <Grid
