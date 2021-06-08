@@ -10,6 +10,7 @@ import MediaContent from "./components/MediaContent/MediaContent";
 import Parametrs from "./components/Parametrs/Parametrs";
 import Amenties from "./components/Amenities/Amenties";
 import Contacts from "./components/Contacts/Contacts";
+import HeaderPage from "./components/ HeaderPage/HeaderPage";
 
 function handleClick(event) {
     event.preventDefault();
@@ -42,20 +43,11 @@ const Service = ({}) => {
 
     return (
         <Layout>
-            <Box sx={{flexGrow: 1}}>
+            <Box sx={{flexGrow: 1}} style={{backgroundColor: '#E5E5E5'}}>
                 <Grid container spacing={2} justifyContent="center" alignItems="center">
                     <Grid item xs={11}>
                         <BreadCrumbsServiceId/>
-                        <Typography
-                            style={{
-                                fontFamily: 'Montserrat Regular',
-                                fontWeight: 600,
-                                fontSize: '36px',
-                                lineHeight: '44px',
-                            }}
-                        >
-                            Красивая квартира в Нью-Йорке
-                        </Typography>
+                        <HeaderPage/>
                     </Grid>
                     <Grid item xs={11}>
                         <BriefInfo/>
@@ -63,14 +55,24 @@ const Service = ({}) => {
                     <Grid item xs={11}>
                         <MediaContent/>
                     </Grid>
-                    <Grid item xs={10}>
-                        <Parametrs/>
-                    </Grid>
-                    <Grid item xs={4}>
-                        <Amenties/>
-                    </Grid>
-                    <Grid item xs={3}>
-                        <Contacts/>
+                    <Grid item xs={11} style={{background: 'white'}}>
+                        <Grid container spacing={2} justifyContent="center" alignItems="center">
+                            <Grid item xs={11}>
+                                <Parametrs/>
+                            </Grid>
+                            <Grid item xs={11}>
+                                <Grid container spacing={2} justifyContent="flex-end" alignItems="center">
+                                    <Grid item xs={11}>
+                                        <Grid item xs={5}>
+                                            <Amenties/>
+                                        </Grid>
+                                        <Grid item xs={5}>
+                                            <Contacts/>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                        </Grid>
                     </Grid>
                 </Grid>
             </Box>
@@ -116,4 +118,8 @@ const Service = ({}) => {
     );
 };
 
-export default withUrqlClient(createUrqlClient, {ssr: true})(Service);
+export default withUrqlClient(createUrqlClient,
+    {
+        ssr: true
+    }
+)(Service);

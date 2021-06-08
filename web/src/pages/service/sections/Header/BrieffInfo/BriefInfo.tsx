@@ -11,8 +11,7 @@ import Like from "../../../../../components/Cards/icons/Like";
 
 function BriefInfo() {
     return (
-        <Grid container spacing={2}
-        >
+        <Grid container spacing={2} justifyContent="flex-end">
             <Grid item xs={6}>
                 <div style={{display: 'flex', flexDirection: 'row'}}>
                     <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>

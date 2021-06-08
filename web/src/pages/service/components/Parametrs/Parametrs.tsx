@@ -34,6 +34,8 @@ function Parametrs() {
     return (
         <Grid container spacing={2} style={{
             border: '1px solid #F0EEEE',
+            padding: '0 10px 24px 10px',
+            margin: '24px',
         }}
         >
             <Grid item xs={12}>
