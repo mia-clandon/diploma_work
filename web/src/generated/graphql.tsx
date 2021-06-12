@@ -102,9 +102,15 @@ export type Employer = {
   id: Scalars['Float'];
   firstname: Scalars['String'];
   lastname: Scalars['String'];
+  cardDescription: Scalars['String'];
   description: Scalars['String'];
   position: Scalars['String'];
+  phone: Scalars['String'];
+  password: Scalars['String'];
   avatar: Scalars['String'];
+  email: Scalars['String'];
+  city: Scalars['String'];
+  averageTime: Scalars['String'];
   createdAt: Scalars['String'];
   updatedAt: Scalars['String'];
 };
@@ -159,7 +165,7 @@ export type Mutation = {
   createPost: Post;
   updatePost?: Maybe<Post>;
   deletePost: Scalars['Boolean'];
-  createEmployer: Employer;
+  createEmployer: EmployerResponse;
   updateEmployer?: Maybe<Employer>;
   deleteEmployer: Scalars['Boolean'];
   searchService: ServiceResponse;
@@ -201,7 +207,7 @@ export type MutationDeletePostArgs = {
 
 
 export type MutationCreateEmployerArgs = {
-  input: EmployerInput;
+  options: EmployerInput;
 };
 
 
@@ -278,24 +284,36 @@ export type PostInput = {
   text: Scalars['String'];
 };
 
-export type EmployerInput = {
-  firstname: Scalars['String'];
-  lastname: Scalars['String'];
-  description: Scalars['String'];
-  position: Scalars['String'];
-  avatar: Scalars['String'];
-};
-
-export type ServiceResponse = {
-  __typename?: 'ServiceResponse';
+export type EmployerResponse = {
+  __typename?: 'EmployerResponse';
   errors?: Maybe<Array<FieldError>>;
-  serviceSearch?: Maybe<Service>;
+  employer?: Maybe<Employer>;
 };
 
 export type FieldError = {
   __typename?: 'FieldError';
   field: Scalars['String'];
   message: Scalars['String'];
+};
+
+export type EmployerInput = {
+  firstname: Scalars['String'];
+  lastname: Scalars['String'];
+  cardDescription: Scalars['String'];
+  description: Scalars['String'];
+  position: Scalars['String'];
+  email: Scalars['String'];
+  phone: Scalars['String'];
+  password: Scalars['String'];
+  avatar: Scalars['String'];
+  averageTime: Scalars['String'];
+  city: Scalars['String'];
+};
+
+export type ServiceResponse = {
+  __typename?: 'ServiceResponse';
+  errors?: Maybe<Array<FieldError>>;
+  serviceSearch?: Maybe<Service>;
 };
 
 export type ServiceInput = {
@@ -340,7 +358,7 @@ export type ReviewServiceInput = {
 
 export type EmployerSnippetFragment = (
   { __typename?: 'Employer' }
-  & Pick<Employer, 'id' | 'firstname' | 'lastname' | 'description' | 'position' | 'avatar' | 'createdAt' | 'updatedAt'>
+  & Pick<Employer, 'id' | 'firstname' | 'lastname' | 'cardDescription' | 'description' | 'position' | 'email' | 'phone' | 'password' | 'avatar' | 'city' | 'averageTime' | 'createdAt' | 'updatedAt'>
 );
 
 export type PostSnippetFragment = (
@@ -355,6 +373,22 @@ export type PostSnippetFragment = (
 export type RegularUserFragment = (
   { __typename?: 'User' }
   & Pick<User, 'id' | 'username'>
+);
+
+export type RegularEmployerFragment = (
+  { __typename?: 'Employer' }
+  & Pick<Employer, 'id' | 'firstname' | 'lastname' | 'cardDescription' | 'description' | 'position' | 'email' | 'phone' | 'password' | 'avatar' | 'city' | 'averageTime' | 'createdAt' | 'updatedAt'>
+);
+
+export type RegularEmployerResponseFragment = (
+  { __typename?: 'EmployerResponse' }
+  & { errors?: Maybe<Array<(
+    { __typename?: 'FieldError' }
+    & RegularErrorFragment
+  )>>, employer?: Maybe<(
+    { __typename?: 'Employer' }
+    & RegularEmployerFragment
+  )> }
 );
 
 export type RegularErrorFragment = (
@@ -419,15 +453,15 @@ export type CreateBookingUserMutation = (
 );
 
 export type CreateEmployerMutationVariables = Exact<{
-  input: EmployerInput;
+  options: EmployerInput;
 }>;
 
 
 export type CreateEmployerMutation = (
   { __typename?: 'Mutation' }
   & { createEmployer: (
-    { __typename?: 'Employer' }
-    & Pick<Employer, 'id' | 'firstname' | 'lastname' | 'description' | 'position' | 'avatar' | 'createdAt' | 'updatedAt'>
+    { __typename?: 'EmployerResponse' }
+    & RegularEmployerResponseFragment
   ) }
 );
 
@@ -729,9 +763,15 @@ export const EmployerSnippetFragmentDoc = gql`
   id
   firstname
   lastname
+  cardDescription
   description
   position
+  email
+  phone
+  password
   avatar
+  city
+  averageTime
   createdAt
   updatedAt
 }
@@ -757,6 +797,35 @@ export const RegularErrorFragmentDoc = gql`
   message
 }
     `;
+export const RegularEmployerFragmentDoc = gql`
+    fragment RegularEmployer on Employer {
+  id
+  firstname
+  lastname
+  cardDescription
+  description
+  position
+  email
+  phone
+  password
+  avatar
+  city
+  averageTime
+  createdAt
+  updatedAt
+}
+    `;
+export const RegularEmployerResponseFragmentDoc = gql`
+    fragment RegularEmployerResponse on EmployerResponse {
+  errors {
+    ...RegularError
+  }
+  employer {
+    ...RegularEmployer
+  }
+}
+    ${RegularErrorFragmentDoc}
+${RegularEmployerFragmentDoc}`;
 export const RegularUserFragmentDoc = gql`
     fragment RegularUser on User {
   id
@@ -827,19 +896,12 @@ export function useCreateBookingUserMutation() {
   return Urql.useMutation<CreateBookingUserMutation, CreateBookingUserMutationVariables>(CreateBookingUserDocument);
 };
 export const CreateEmployerDocument = gql`
-    mutation CreateEmployer($input: EmployerInput!) {
-  createEmployer(input: $input) {
-    id
-    firstname
-    lastname
-    description
-    position
-    avatar
-    createdAt
-    updatedAt
+    mutation CreateEmployer($options: EmployerInput!) {
+  createEmployer(options: $options) {
+    ...RegularEmployerResponse
   }
 }
-    `;
+    ${RegularEmployerResponseFragmentDoc}`;
 
 export function useCreateEmployerMutation() {
   return Urql.useMutation<CreateEmployerMutation, CreateEmployerMutationVariables>(CreateEmployerDocument);

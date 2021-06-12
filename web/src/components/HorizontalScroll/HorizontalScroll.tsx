@@ -3,9 +3,7 @@ import {createStyles, makeStyles, Theme} from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
-import ListSubheader from '@material-ui/core/ListSubheader';
-import IconButton from '@material-ui/core/IconButton';
-import InfoIcon from '@material-ui/icons/Info';
+import CardEmployerOrService from "../Cards/CardEmployerOrService/CardEmployerOrService";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -17,11 +15,17 @@ const useStyles = makeStyles((theme: Theme) =>
             backgroundColor: theme.palette.background.paper,
         },
         gridList: {
-            width: 500,
-            height: 450,
+            flexWrap: 'nowrap',
+            // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
+            transform: 'translateZ(0)',
         },
-        icon: {
-            color: 'rgba(255, 255, 255, 0.54)',
+        title: {
+            color: theme.palette.primary.light,
+        },
+        titleBar: {
+            backgroundColor: 'transparent',
+            // background:
+            //     'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
         },
     }),
 );
@@ -68,28 +72,36 @@ const tileData = [
         title: 'Image',
         author: 'author',
     },
+    {
+        img: "./img/apartment.jpg",
+        title: 'Image',
+        author: 'author',
+    },
+    {
+        img: "./img/apartment.jpg",
+        title: 'Image',
+        author: 'author',
+    },
+    {
+        img: "./img/apartment.jpg",
+        title: 'Image',
+        author: 'author',
+    },
 
 ];
 export default function HorizontalScroll() {
     const classes = useStyles();
-
     return (
         <div className={classes.root}>
-            <GridList cellHeight={180} className={classes.gridList}>
-                <GridListTile key="Subheader" cols={2} style={{height: 'auto'}}>
-                    <ListSubheader component="div">December</ListSubheader>
-                </GridListTile>
+            <GridList className={classes.gridList} cols={2.2} cellHeight={197}>
                 {tileData.map((tile) => (
-                    <GridListTile key={tile.img}>
-                        <img src={tile.img} alt={tile.title}/>
+                    <GridListTile key={tile.img} className={classes.itemSize}>
+                        <CardEmployerOrService/>
                         <GridListTileBar
-                            title={tile.title}
-                            subtitle={<span>by: {tile.author}</span>}
-                            actionIcon={
-                                <IconButton aria-label={`info about ${tile.title}`} className={classes.icon}>
-                                    <InfoIcon/>
-                                </IconButton>
-                            }
+                            classes={{
+                                root: classes.titleBar,
+                                title: classes.title,
+                            }}
                         />
                     </GridListTile>
                 ))}

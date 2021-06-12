@@ -41,15 +41,6 @@ function ChooseEditors() {
                 </Grid>
                 <Grid item xs={11}>
                     <HorizontalScroll/>
-                    {/*<Grid container>*/}
-                    {/*    <Grid item xs={12}*/}
-                    {/*    style={{*/}
-                    {/*        margin: '15px 15px 15px 0'*/}
-                    {/*    }}*/}
-                    {/*    >*/}
-                    {/*        <CardEmployerOrService/>*/}
-                    {/*    </Grid>*/}
-                    {/*</Grid>*/}
                 </Grid>
             </Grid>
         </Box>

@@ -1,4 +1,4 @@
-fragment EmployerSnippet on Employer {
+fragment RegularEmployer on Employer {
   id
   firstname
   lastname

@@ -1,23 +1,12 @@
-import {Resolver, Query, Arg, Mutation, InputType, Field, UseMiddleware, ObjectType, Int, Ctx} from "type-graphql";
+import {Arg, Field, Int, Mutation, ObjectType, Query, Resolver, UseMiddleware} from "type-graphql";
 import {Employer} from "../entities/Employer";
 import {isAuth} from "../middleware/isAuth";
 import {getConnection} from "typeorm";
+import {EmployerInput} from "./EmployerInput";
+import {validateRegisterEmployer} from "../utils/validateRegisterEmployer";
+import argon2 from "argon2";
+import {FieldError} from "./fieldError";
 
-@InputType()
-class EmployerInput {
-    @Field()
-    firstname: string
-    @Field()
-    lastname: string
-    @Field()
-    description: string
-    @Field()
-    position: string
-    // @Field()
-    // email: string
-    @Field()
-    avatar: string
-}
 
 @ObjectType()
 class PaginatedEmployers {
@@ -27,13 +16,15 @@ class PaginatedEmployers {
     hasMore: boolean;
 }
 
-// @ObjectType()
-// class EmployerInfo {
-//     @Field(() => [Employer])
-//     employer: Employer[];
-//     @Field()
-//     avatar: string;
-// }
+@ObjectType()
+class EmployerResponse {
+    @Field(() => [FieldError], { nullable: true })
+    errors?: FieldError[];
+
+    @Field(() => Employer, { nullable: true })
+    employer?: Employer;
+}
+
 
 @Resolver(Employer)
 export class EmployerResolver {
@@ -78,68 +69,57 @@ export class EmployerResolver {
         return Employer.findOne(id)
     }
 
-    @Mutation(() => Employer)
-    @UseMiddleware(isAuth)
-    async createEmployer(
-        @Arg("input") input: EmployerInput,
-        // @Arg("avatar") avatar: string,
-        // @Ctx() {req}: MyContext
-    ): Promise<Employer> {
-        // const avatar = await this.uploadAvatar()
-        return Employer.create({
-            ...input,
-        }).save();
-    }
     // @Mutation(() => Employer)
+    // @UseMiddleware(isAuth)
     // async createEmployer(
-    //     @Arg("options") options: EmployerInput,
-    //     @Ctx() { req }: MyContext
+    //     @Arg("input") input: EmployerInput,
+    //     // @Arg("avatar") avatar: string,
+    //     // @Ctx() {req}: MyContext
     // ): Promise<Employer> {
-    //     const errors = validateRegisterEmployer(options);
-    //     if (errors) {
-    //         return { errors };
-    //     }
-    //
-    //     const hashedPassword = await argon2.hash(options.password);
-    //     let admin;
-    //     try {
-    //         const result = await getConnection()
-    //             .createQueryBuilder()
-    //             .insert()
-    //             .into(Employer)
-    //             .values({
-    //                 fio: options.fio,
-    //                 email: options.email,
-    //                 phone: options.phone,
-    //                 password: hashedPassword,
-    //                 city: options.city,
-    //                 averageTime: options.avarageTime,
-    //                 avatar: uploadAvatar,
-    //                 cardDescription: options.cardDescription,
-    //                 description: options.description,
-    //             })
-    //             .returning("*")
-    //             .execute();
-    //         admin = result.raw[0];
-    //     } catch (err) {
-    //         //|| err.detail.includes("already exists")) {
-    //         // duplicate username error
-    //         if (err.code === "23505") {
-    //             return {
-    //                 errors: [
-    //                     {
-    //                         field: "email",
-    //                         message: "Email is already taken",
-    //                     },
-    //                 ],
-    //             };
-    //         }
-    //     }
-    //     req.session.employerId = employer.id;
-    //
-    //     return { employer };
+    //     // const avatar = await this.uploadAvatar()
+    //     return Employer.create({
+    //         ...input,
+    //     }).save();
     // }
 
+    @Mutation(() => EmployerResponse)
+    @UseMiddleware(isAuth)
+    async createEmployer(
+        @Arg("options") options: EmployerInput,
+    ): Promise<EmployerResponse> {
+        const errors = validateRegisterEmployer(options);
+        if (errors) {
+            return {errors};
+        }
+        const hashedPassword = await argon2.hash(options.password);
+        const uploadAvatar = options.avatar;
+        let employer;
+        try {
+            const result = await getConnection()
+                .createQueryBuilder()
+                .insert()
+                .into(Employer)
+                .values({
+                    firstname: options.firstname,
+                    lastname: options.lastname,
+                    cardDescription: options.cardDescription,
+                    description: options.description,
+                    position: options.position,
+                    email: options.email,
+                    phone: options.phone,
+                    password: hashedPassword,
+                    avatar: uploadAvatar,
+                    city: options.city,
+                    averageTime: options.averageTime,
+                })
+                .returning("*")
+                .execute();
+            employer = result.raw[0];
+        } catch (err) {
+            console.log(errors)
+        }
+        return {employer};
+    }
 
     @Mutation(() => Employer, {nullable: true})
     @UseMiddleware(isAuth)

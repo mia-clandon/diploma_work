@@ -58,8 +58,7 @@ function CardEmployerOrService() {
                 display: 'flex',
                 flexDirection: 'row',
                 justifyContent: 'center',
-                // padding: '10px',
-                height: '200px'
+                width: '544px'
             }}>
                 <div className={classes.cover}>
                     <Grid container>

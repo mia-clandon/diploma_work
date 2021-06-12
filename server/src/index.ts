@@ -42,7 +42,7 @@ const main = async () => {
     console.log(conn)
     // await conn.runMigrations();
 
-    // await Service.delete({});
+    // await Employer.delete({});
 
     const app = express();
 
