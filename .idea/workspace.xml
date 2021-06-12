@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3d125546-be13-4a2e-8aca-dcfb6a8b6bfb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/resolvers/employer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resolvers/employer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,11 +61,11 @@
       <recent name="D:\lireddit-prod\web\src\pages\employer\sections\ChooseEditors\icons" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\lireddit-prod\web\src\components" />
       <recent name="D:\lireddit-prod\web\src\pages\service\components\Contacts\blocks\RightBlock\blocks" />
       <recent name="D:\lireddit-prod\web\src\pages\service\components\Contacts\blocks" />
       <recent name="D:\lireddit-prod\web\src\pages\service\components" />
       <recent name="D:\lireddit-prod\web\public" />
-      <recent name="D:\lireddit-prod\web\src\components\Header\components\SearchBlock" />
     </key>
   </component>
   <component name="RunManager">
@@ -126,7 +127,13 @@
       <workItem from="1623001407016" duration="5636000" />
       <workItem from="1623014662311" duration="10996000" />
       <workItem from="1623160109431" duration="3349000" />
-      <workItem from="1623163860313" duration="5436000" />
+      <workItem from="1623163860313" duration="7071000" />
+      <workItem from="1623261991616" duration="612000" />
+      <workItem from="1623337793907" duration="250000" />
+      <workItem from="1623346339162" duration="251000" />
+      <workItem from="1623347002143" duration="19000" />
+      <workItem from="1623362475539" duration="3805000" />
+      <workItem from="1623482678433" duration="5541000" />
     </task>
     <servers />
   </component>

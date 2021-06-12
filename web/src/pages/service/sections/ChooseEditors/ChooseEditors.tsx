@@ -6,6 +6,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from "@material-ui/core/Typography";
 import Tag from "./icons/Tag";
 import CardEmployerOrService from "../../../../components/Cards/CardEmployerOrService/CardEmployerOrService";
+import HorizontalScroll from "../../../../components/HorizontalScroll/HorizontalScroll";
 
 // const Item = styled(Paper)(({theme}) => ({
 //     ...theme.typography.body2,
@@ -39,15 +40,16 @@ function ChooseEditors() {
                     </Grid>
                 </Grid>
                 <Grid item xs={11}>
-                    <Grid container>
-                        <Grid item xs={12}
-                        style={{
-                            margin: '15px 15px 15px 0'
-                        }}
-                        >
-                            <CardEmployerOrService/>
-                        </Grid>
-                    </Grid>
+                    <HorizontalScroll/>
+                    {/*<Grid container>*/}
+                    {/*    <Grid item xs={12}*/}
+                    {/*    style={{*/}
+                    {/*        margin: '15px 15px 15px 0'*/}
+                    {/*    }}*/}
+                    {/*    >*/}
+                    {/*        <CardEmployerOrService/>*/}
+                    {/*    </Grid>*/}
+                    {/*</Grid>*/}
                 </Grid>
             </Grid>
         </Box>

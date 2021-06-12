@@ -11,6 +11,7 @@ import Parametrs from "./components/Parametrs/Parametrs";
 import Amenties from "./components/Amenities/Amenties";
 import Contacts from "./components/Contacts/Contacts";
 import HeaderPage from "./components/ HeaderPage/HeaderPage";
+import Description from "./components/Description/Description";
 
 function handleClick(event) {
     event.preventDefault();
@@ -43,31 +44,44 @@ const Service = ({}) => {
 
     return (
         <Layout>
-            <Box sx={{flexGrow: 1}} style={{backgroundColor: '#E5E5E5'}}>
+            <Box sx={{flexGrow: 1}} style={{backgroundColor: '#E5E5E5'}} justifyContent="center" alignItems="center">
                 <Grid container spacing={2} justifyContent="center" alignItems="center">
                     <Grid item xs={11}>
-                        <BreadCrumbsServiceId/>
-                        <HeaderPage/>
-                    </Grid>
-                    <Grid item xs={11}>
-                        <BriefInfo/>
-                    </Grid>
-                    <Grid item xs={11}>
-                        <MediaContent/>
-                    </Grid>
-                    <Grid item xs={11} style={{background: 'white'}}>
                         <Grid container spacing={2} justifyContent="center" alignItems="center">
-                            <Grid item xs={11}>
-                                <Parametrs/>
+                            <Grid item xs={12}>
+                                <Grid container spacing={2} justifyContent="center" alignItems="center">
+                                    <Grid item xs={12}>
+                                        <BreadCrumbsServiceId/>
+                                    </Grid>
+                                    <Grid item xs={12}>
+                                        <HeaderPage/>
+                                    </Grid>
+                                    <Grid item xs={12}>
+                                        <BriefInfo/>
+                                    </Grid>
+                                    <Grid item xs={12}>
+                                        <MediaContent/>
+                                    </Grid>
+                                </Grid>
                             </Grid>
-                            <Grid item xs={11}>
-                                <Grid container spacing={2} justifyContent="flex-end" alignItems="center">
+                            <Grid item xs={12} style={{background: 'white'}}>
+                                <Grid container spacing={2} justifyContent="center" alignItems="center">
                                     <Grid item xs={11}>
-                                        <Grid item xs={5}>
-                                            <Amenties/>
-                                        </Grid>
-                                        <Grid item xs={5}>
-                                            <Contacts/>
+                                        <Parametrs/>
+                                    </Grid>
+                                    <Grid item xs={11}>
+                                        <Grid container spacing={2} justifyContent="flex-end" alignItems="center">
+                                            <Grid item xs={12}>
+                                                <Grid item xs={5}>
+                                                    <Amenties/>
+                                                </Grid>
+                                                <Grid item xs={5}>
+                                                    <Contacts/>
+                                                </Grid>
+                                            </Grid>
+                                            <Grid item xs={8}>
+                                                <Description/>
+                                            </Grid>
                                         </Grid>
                                     </Grid>
                                 </Grid>

@@ -8,13 +8,14 @@ import DollarSign from "../../../../../components/Header/components/SearchBlock/
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import Like from "../../../../../components/Cards/icons/Like";
+import Box from "@material-ui/core/Box";
 
 function BriefInfo() {
     return (
         <Grid container spacing={2} justifyContent="flex-end">
             <Grid item xs={6}>
-                <div style={{display: 'flex', flexDirection: 'row'}}>
-                    <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
+                <Box display="flex" flexDirection="row">
+                    <Box display="flex" flexDirection="row" alignItems="center">
                         <Star/>
                         <Typography
                             style={{
@@ -38,7 +39,7 @@ function BriefInfo() {
                                 marginLeft: '6px'
                             }}
                         >(34 отзыва)</Typography>
-                    </div>
+                    </Box>
                     <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', marginLeft: '37px'}}>
                         <MapPin/>
                         <Typography
@@ -78,7 +79,7 @@ function BriefInfo() {
                             }}
                         >20.000</Typography>
                     </div>
-                </div>
+                </Box>
             </Grid>
             <Grid item xs={6} justifyContent="flex-end">
                 <Grid container>

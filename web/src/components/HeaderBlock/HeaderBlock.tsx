@@ -1,7 +1,7 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
 
-function HeaderBlock() {
+function HeaderBlock({props}: { props: string }) {
     return (
         <Typography style={{
             font: 'Montserrat Regular',
@@ -11,7 +11,7 @@ function HeaderBlock() {
             color: '#120505',
             marginLeft: '15px',
         }}>
-            Контакты
+            {props}
         </Typography>
 
     );

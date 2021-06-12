@@ -4,6 +4,8 @@ import Typography from "@material-ui/core/Typography";
 import Wifi from "../../../../components/Cards/icons/Wifi";
 import ItemAmenties from "./blocks/ItemAmenties";
 import Button from "@material-ui/core/Button";
+import HeaderBlock from "../../../../components/HeaderBlock/HeaderBlock";
+import Card from "@material-ui/core/Card";
 
 const itemAmenties = [
     {
@@ -32,23 +34,11 @@ function Amenties() {
     return (
         <Grid container spacing={2} style={{
             border: '1px solid #F0EEEE',
+            padding: '24px',
         }}
         >
             <Grid item xs={12}>
-                <Typography
-                    style={{
-                        fontFamily: 'Montserrat',
-                        fontStyle: 'normal',
-                        fontWeight: 600,
-                        fontSize: '24px',
-                        lineHeight: '29px',
-                        display: 'flex',
-                        alignItems: 'center',
-                        color: '#120505',
-                    }}
-                >
-                    Удобства
-                </Typography>
+                <HeaderBlock props={"Удобства"}/>
             </Grid>
             <Grid item xs={12}>
                 {itemAmenties.map((item) => (

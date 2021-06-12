@@ -3,8 +3,7 @@ import React from "react";
 import {createUrqlClient} from "../utils/createUrqlClient";
 import {makeStyles} from "@material-ui/core/styles";
 import {Layout} from "../components/Layout";
-import ChooseEditors from "./employer/sections/ChooseEditors/ChooseEditors";
-import {useServicesQuery} from "../generated/graphql";
+import ChooseEditors from "./service/sections/ChooseEditors/ChooseEditors";
 
 const useStyles = makeStyles((theme) => ({
     root: {

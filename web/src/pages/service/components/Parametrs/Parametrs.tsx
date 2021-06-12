@@ -2,6 +2,8 @@ import React from 'react';
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import ItemParametrs from "./blocks/ItemParametrs";
+import HeaderBlock from "../../../../components/HeaderBlock/HeaderBlock";
+import Card from "@material-ui/core/Card";
 
 const itemParametrs = [
     {
@@ -39,20 +41,7 @@ function Parametrs() {
         }}
         >
             <Grid item xs={12}>
-                <Typography
-                    style={{
-                        fontFamily: 'Montserrat',
-                        fontStyle: 'normal',
-                        fontWeight: 600,
-                        fontSize: '24px',
-                        lineHeight: '29px',
-                        display: 'flex',
-                        alignItems: 'center',
-                        color: '#120505',
-                    }}
-                >
-                    Параметры
-                </Typography>
+                <HeaderBlock props={"Параметры"}/>
             </Grid>
             <Grid item xs={12}>
                 <ItemParametrs options={itemParametrs}/>

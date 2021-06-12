@@ -1,4 +1,4 @@
-import {Resolver, Query, Arg, Mutation, InputType, Field, UseMiddleware, ObjectType, Int} from "type-graphql";
+import {Resolver, Query, Arg, Mutation, InputType, Field, UseMiddleware, ObjectType, Int, Ctx} from "type-graphql";
 import {Employer} from "../entities/Employer";
 import {isAuth} from "../middleware/isAuth";
 import {getConnection} from "typeorm";
@@ -90,6 +90,55 @@ export class EmployerResolver {
             ...input,
         }).save();
     }
+    // @Mutation(() => Employer)
+    // async createEmployer(
+    //     @Arg("options") options: EmployerInput,
+    //     @Ctx() { req }: MyContext
+    // ): Promise<Employer> {
+    //     const errors = validateRegisterEmployer(options);
+    //     if (errors) {
+    //         return { errors };
+    //     }
+    //
+    //     const hashedPassword = await argon2.hash(options.password);
+    //     let admin;
+    //     try {
+    //         const result = await getConnection()
+    //             .createQueryBuilder()
+    //             .insert()
+    //             .into(Employer)
+    //             .values({
+    //                 fio: options.fio,
+    //                 email: options.email,
+    //                 phone: options.phone,
+    //                 password: hashedPassword,
+    //                 city: options.city,
+    //                 averageTime: options.avarageTime,
+    //                 avatar: uploadAvatar,
+    //                 cardDescription: options.cardDescription,
+    //                 description: options.description,
+    //             })
+    //             .returning("*")
+    //             .execute();
+    //         admin = result.raw[0];
+    //     } catch (err) {
+    //         //|| err.detail.includes("already exists")) {
+    //         // duplicate username error
+    //         if (err.code === "23505") {
+    //             return {
+    //                 errors: [
+    //                     {
+    //                         field: "email",
+    //                         message: "Email is already taken",
+    //                     },
+    //                 ],
+    //             };
+    //         }
+    //     }
+    //     req.session.employerId = employer.id;
+    //
+    //     return { employer };
+    // }
 
 
     @Mutation(() => Employer, {nullable: true})
