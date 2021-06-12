@@ -3,8 +3,7 @@ import NextLink from "next/link";
 import {useMeQuery, useLogoutMutation} from "../generated/graphql";
 import {isServer} from "../utils/isServer";
 import {useRouter} from "next/router";
-import {Box, Button, Link, Typography} from "@material-ui/core";
-import NavTabs from "./Navbar/blocks/NavTabs";
+import {Box, Button, Link} from "@material-ui/core";
 import SearchBlock from "./Header/components/SearchBlock/SearchBlock";
 
 // import { LoadingButton } from '@material-ui/lab/';
@@ -27,7 +26,7 @@ export const NavBar: React.FC<NavBarProps> = ({}) => {
     } else if (!data?.me) {
         body = (
             <>
-                <NavTabs/>
+                {/*<NavTabs/>*/}
                 {/*<NextLink href="/">*/}
                 {/*    <Button component={Link}>*/}
                 {/*        Main*/}

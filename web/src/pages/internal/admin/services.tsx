@@ -16,9 +16,6 @@ const useStyles = makeStyles((theme) => ({
         height: 140,
         width: 100,
     },
-    control: {
-        padding: theme.spacing(2),
-    },
 }));
 
 const Services = () => {

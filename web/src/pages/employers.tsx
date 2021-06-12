@@ -1,11 +1,11 @@
 import {withUrqlClient} from "next-urql";
 import React from "react";
 import {createUrqlClient} from "../utils/createUrqlClient";
-import {makeStyles} from "@material-ui/core/styles";
 import {Layout} from "../components/Layout";
+import {Theme} from '@material-ui/core/styles';
 import ChooseEditors from "./employer/sections/ChooseEditors/ChooseEditors";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = (theme: Theme) => ({
     root: {
         flexGrow: 1,
     },
@@ -13,10 +13,7 @@ const useStyles = makeStyles((theme) => ({
         height: 140,
         width: 100,
     },
-    control: {
-        padding: theme.spacing(2),
-    },
-}));
+});
 
 const Employers = () => {
     // const classes = useStyles();

@@ -1,20 +1,16 @@
 import React from 'react';
-import {createStyles, makeStyles, Theme} from '@material-ui/core/styles';
+import {Theme} from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import {InputAdornment} from "@material-ui/core";
 import {SvgIconProps} from "@material-ui/core/SvgIcon";
 
 
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        root: {
-            '& .MuiTextField-root': {
-                margin: theme.spacing(1),
-            },
+const useStyles = (theme: Theme) => ({
+    root: {
+        '& .MuiTextField-root': {
         },
-    }),
-);
-
+    },
+});
 // @ts-ignore
 export type SelectBlockProps = SelectBlockProps & {
     icon?: React.ElementType<SvgIconProps>;

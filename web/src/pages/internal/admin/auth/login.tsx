@@ -1,5 +1,5 @@
 import React from "react";
-import {Formik, Form, Field} from "formik";
+import {Form, Formik} from "formik";
 import {Wrapper} from "../../../../components/Wrapper";
 import {useLoginMutation} from "../../../../generated/graphql";
 import {toErrorMap} from "../../../../utils/toErrorMap";
@@ -7,12 +7,11 @@ import {useRouter} from "next/router";
 import {withUrqlClient} from "next-urql";
 import {createUrqlClient} from "../../../../utils/createUrqlClient";
 import NextLink from "next/link";
-import Box from "@material-ui/core/Box";
 import Link from "@material-ui/core/Link";
 import Button from "@material-ui/core/Button";
-import {FormControl, Grid} from "@material-ui/core";
-import {TextField} from "formik-material-ui";
+import {Grid} from "@material-ui/core";
 import {InputField} from "../../../../components/InputField";
+import Container from "@material-ui/core/Container";
 
 const Login: React.FC<{}> = ({}) => {
     const router = useRouter();
@@ -37,57 +36,60 @@ const Login: React.FC<{}> = ({}) => {
             >
                 {({isSubmitting}) => (
                     <Form>
-                        <Grid
-                            container
-                            direction="column"
-                            justifyContent="center"
-                            xs={12}
-                        >
-                            <Grid
-                                item
-                                xs={4}
-                            >
-                                {/*<FormControl style={{width: 400}}>*/}
-                                {/*    <Field name="usernameOrEmail" placeholder="Ник или пароль" component={TextField}/>*/}
-                                {/*</FormControl>*/}
-                                <InputField
-                                    name="usernameOrEmail"
-                                    placeholder="Username or EmailBlock"
-                                    label="Username or EmailBlock"
-                                />
+                        <Container maxWidth="sm">
+                            <Grid container spacing={2}>
+                                <Grid
+                                    item
+                                    xs={12}
+                                >
+                                    <InputField
+                                        name="usernameOrEmail"
+                                        placeholder="Username or Email"
+                                        label="Username or Email"
+                                    />
+                                </Grid>
+                                <Grid
+                                    item
+                                    xs={12}
+                                >
+                                    <InputField
+                                        name="password"
+                                        placeholder="Пароль"
+                                        label="Пароль"
+                                        type="password"
+                                    />
+                                </Grid>
                             </Grid>
                             <Grid
                                 item
-                                xs={4}
+                                xs={12}
                             >
-                                <InputField
-                                    name="password"
-                                    placeholder="Пароль"
-                                    label="Пароль"
-                                    type="password"
-                                />
-                                {/*<FormControl style={{width: 400}}>*/}
-                                {/*    <Field name="password" type="password" placeholder="Ваш пароль"*/}
-                                {/*           component={TextField}/>*/}
-                                {/*</FormControl>*/}
+                                <Grid container spacing={4}>
+                                    <Grid
+                                        item
+                                        xs={6}
+                                    >
+                                        <NextLink href="/forgot-password">
+                                            <Link>Forgot password?</Link>
+                                        </NextLink>
+                                    </Grid>
+                                    <Grid
+                                        item
+                                        xs={6}
+                                    >
+                                        <Button
+                                            type="submit"
+                                            onClick={() => {
+                                                isSubmitting
+                                            }}
+                                            variant="outlined"
+                                        >
+                                            Войти
+                                        </Button>
+                                    </Grid>
+                                </Grid>
                             </Grid>
-                        </Grid>
-                        <Grid
-                            item
-                            xs={4}
-                        >
-                            <NextLink href="/forgot-password">
-                                <Link ml="auto">forgot password?</Link>
-                            </NextLink>
-                        </Grid>
-                        <Button
-                            type="submit"
-                            onClick={() => {
-                                isSubmitting
-                            }}
-                        >
-                            Войти
-                        </Button>
+                        </Container>
                     </Form>
                 )}
             </Formik>

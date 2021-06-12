@@ -18,9 +18,6 @@ const useStyles = makeStyles((theme) => ({
         height: 240,
         width: 200,
     },
-    control: {
-        padding: theme.spacing(2),
-    },
 }));
 
 export default function EmployerCard({options}: {

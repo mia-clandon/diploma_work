@@ -1,5 +1,5 @@
 import React from 'react';
-import {createStyles, makeStyles, Theme} from '@material-ui/core/styles';
+import {createStyles, Theme} from '@material-ui/core/styles';
 import Grid, {GridSpacing} from '@material-ui/core/Grid';
 import SelectBlock from "./blocks/SelectBlock";
 import DollarSign from "./icons/DollarSign";
@@ -8,7 +8,7 @@ import MapPin from "./icons/MapPin";
 import Button from "@material-ui/core/Button";
 import SelectInputBlock from "./blocks/SearchInput/SelectInputBlock";
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = (theme: Theme) =>
     createStyles({
         root: {
             flexGrow: 1,
@@ -17,11 +17,7 @@ const useStyles = makeStyles((theme: Theme) =>
             height: 140,
             width: 100,
         },
-        control: {
-            padding: theme.spacing(2),
-        },
-    }),
-);
+    });
 
 const optionsList = [
     {
