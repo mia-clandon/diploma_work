@@ -13,7 +13,7 @@ export class AdvantagesService extends BaseEntity {
 
     @Field()
     @Column({nullable: false})
-    icon!: any;
+    icon!: string;
 
     @Field()
     @Column({nullable: false})

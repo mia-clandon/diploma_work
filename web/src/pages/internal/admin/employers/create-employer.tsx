@@ -13,6 +13,9 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import {PhotoCamera} from "@material-ui/icons";
+import NextLink from "next/link";
+import EditIcon from "@material-ui/icons/Edit";
+import {Stack} from "@material-ui/core";
 
 const CreateEmployer: React.FC<{}> = ({}) => {
     const router = useRouter();
@@ -37,15 +40,24 @@ const CreateEmployer: React.FC<{}> = ({}) => {
                 onSubmit={async (values) => {
                     const {error} = await createEmployer({options: values});
                     console.log(error)
-                    // if (!error) {
-                    //     router.push("/");
-                    // }
+                    if (!error) {
+                        router.push("/internal/employers");
+                    }
                     console.log(values)
                 }}
             >
                 {({isSubmitting}) => (
                     <Form>
                         <Container maxWidth="md">
+                            <NextLink href={`/internal/admin/employers`} as={`/internal/admin/employers`}>
+                                <Button
+                                    variant="contained"
+                                    color="primary"
+                                    style={{ width: '300px'}}
+                                >
+                                    Все сотрудники
+                                </Button>
+                            </NextLink>
                             <Typography variant="h5">Регистрация нового сотрудника</Typography>
                             <Grid container spacing={3}>
                                 <Grid item>

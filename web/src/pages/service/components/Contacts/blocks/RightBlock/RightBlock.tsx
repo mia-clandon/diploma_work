@@ -3,9 +3,9 @@ import {Theme, createStyles, makeStyles, useTheme} from '@material-ui/core/style
 import CardContent from '@material-ui/core/CardContent';
 import Box from "@material-ui/core/Box";
 import InfoHeaderBlock from "./blocks/InfoHeaderBlock/InfoHeaderBlock";
-import RateBlock from "./blocks/RateBlock/RateBlock";
 import PhoneBlock from "./blocks/PhoneBlock/PhoneBlock";
 import EmailBlock from "./blocks/EmailBlock/EmailBlock";
+import RatingCore from "../../../RatingCore/RatingCore";
 
 const useStyles = (theme: Theme) =>
     createStyles({
@@ -27,7 +27,7 @@ function RightBlock() {
         <Box className={classes.details}>
             <CardContent className={classes.content}>
                 <InfoHeaderBlock/>
-                <RateBlock/>
+                <RatingCore/>
                 <PhoneBlock/>
                 <EmailBlock/>
             </CardContent>

@@ -10,7 +10,6 @@ function Description() {
         <Grid container spacing={2} style={{
             border: '1px solid #F0EEEE',
             padding: '0 10px 24px 10px',
-            margin: '24px',
         }}
         >
             <Grid item xs={12} style={{marginLeft: '-14px'}}>
@@ -28,7 +27,7 @@ function Description() {
                         color: '#6D6767',
                     }}
                 >
-                    fjdsdgfhglfhsdhglghf
+                    Красивая, светлая, солнечная, безупречно меблированная - просторная квартира с одной спальней в мечтательном месте в восточной деревне Манхэттена. Супердоступное и центральное расположение - 1 квартал от поезда F, 5 минут ходьбы от 6 поездов и 1 квартал от автобуса SBS Express. Шаги от лучших ресторанов и баров Нью-Йорка ...
                 </Typography>
             </Grid>
             <Grid item xs={12}>

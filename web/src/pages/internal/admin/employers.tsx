@@ -1,10 +1,26 @@
 import React, {useState} from "react";
 import {withUrqlClient} from "next-urql";
 import NextLink from "next/link";
-import {useEmployersQuery} from "../../../generated/graphql";
+import {useDeleteEmployerMutation, useEmployersQuery} from "../../../generated/graphql";
 import {Layout} from "../../../components/Layout";
-import {Stack} from "@material-ui/core";
-import Box from "@material-ui/core/Box";
+import {
+    Box,
+    Grid,
+    Paper,
+    Stack,
+    Table,
+    TableBody,
+    TableCell,
+    TableContainer,
+    TableHead,
+    TableRow
+} from "@material-ui/core";
+import {createUrqlClient} from "../../../utils/createUrqlClient";
+import {EditDeleteEmployerButtons} from "./employers/blocks/EditDeleteEmployerButtons";
+import Breadcrumbs from "@material-ui/core/Breadcrumbs";
+import Link from "@material-ui/core/Link";
+import Button from "@material-ui/core/Button";
+import EditIcon from "@material-ui/icons/Edit";
 
 const Employers = () => {
         const [variables, setVariables] = useState({
@@ -15,6 +31,9 @@ const Employers = () => {
         const [{data, error, fetching}] = useEmployersQuery({
             variables,
         });
+
+        const [, deleteEmployer] = useDeleteEmployerMutation();
+
 
         if (!fetching && !data) {
             return (
@@ -31,74 +50,93 @@ const Employers = () => {
                     <div>loading...</div>
                 ) : (
                     <Stack spacing={8}>
+                        <Grid
+                            direction="column"
+                            xs={12}
+                        >
+                            <Breadcrumbs aria-label="breadcrumb"  style={{marginLeft: '22.5%'}}>
+                                <NextLink href="/">
+                                    <Link color="inherit" href="/" >
+                                        Главная
+                                    </Link>
+                                </NextLink>
+                                <NextLink href="/employers">
+                                    <Link color="inherit" href="/">
+                                        Сотрудники
+                                    </Link>
+                                </NextLink>
+                            </Breadcrumbs>
+                        </Grid>
+                        <NextLink href={`/internal/admin/employers/create-employer`} as={`/internal/admin/employers/create-employer`}>
+                            <Button
+                                variant="contained"
+                                color="primary"
+                                style={{ width: '300px'}}
+                                startIcon={<EditIcon/>}
+                            >
+                                Добавить сотрудника
+                            </Button>
+                        </NextLink>
                         <Box display='flex'>
-                            <NextLink href="/">
-                                Main/
-                            </NextLink>
-                            <NextLink href="/employers">
-                                Employers
-                            </NextLink>
+                            <TableContainer component={Paper}>
+                                <Table aria-label="simple table">
+                                    <TableHead>
+                                        <TableRow>
+                                            <TableCell>Имя</TableCell>
+                                            <TableCell align="left">Фамилия</TableCell>
+                                            <TableCell align="left">Должность</TableCell>
+                                            <TableCell align="left">Email</TableCell>
+                                            <TableCell align="left">Номер телефона</TableCell>
+                                            <TableCell align="left">Город</TableCell>
+                                            <TableCell align="left">Ср. время</TableCell>
+                                            <TableCell align="left"></TableCell>
+                                        </TableRow>
+                                    </TableHead>
+                                    <TableBody>
+                                        {data!.employers.employers.map((employer) =>
+                                            !employer ? null : (<TableRow key={employer.id}>
+                                                    <TableCell component="th" scope="row">
+                                                        {employer.firstname}
+                                                    </TableCell>
+                                                    <TableCell align="left">{employer.lastname}</TableCell>
+                                                    <TableCell align="left">{employer.position}</TableCell>
+                                                    <TableCell align="left">{employer.email}</TableCell>
+                                                    <TableCell align="left">{employer.phone}</TableCell>
+                                                    <TableCell align="left">{employer.city}</TableCell>
+                                                    <TableCell align="left">{employer.averageTime}</TableCell>
+                                                    <TableCell align="right">
+                                                        <EditDeleteEmployerButtons id={employer.id}/>
+                                                    </TableCell>
+                                                </TableRow>
+                                            )
+                                        )}
+                                    </TableBody>
+                                </Table>
+                            </TableContainer>
+
                         </Box>
-                        <Box display='flex'>
-                            {data!.employers.employers.map((employer) =>
-                                !employer ? null : (
-                                    <Flex key={employer.id}
-                                          direction="column"
-                                          margin="15px 10px"
-                                          boxShadow="xl"
-                                          p="6"
-                                          rounded="md"
-                                          bg="white"
-                                          width="30%">
-                                        <Stack marginTop={15}>
-                                            <Image
-                                                boxSize="250px"
-                                                src="https://img3.stockfresh.com/files/r/rastudio/m/94/8626964_stock-vector-woman-during-cosmetology-procedure-in-beauty-salon.jpg"
-                                            />
-                                        </Stack>
-                                        <NextLink href="/employer/[id]" as={`/employer/${employer.id}`}>
-                                            <Link>
-                                                <Heading as="h4" size="lg" margin="10px">
-                                                    {employer.firstname} {employer.lastname}
-                                                </Heading>
-                                            </Link>
-                                        </NextLink>
-                                        <Button color="teal" variant="outline">
-                                            {employer.position}
-                                        </Button>
-                                        <Text margin="10px">
-                                            {employer.description}
-                                        </Text>
-                                    </Flex>
-                                )
-                            )}
-                        </Flex>
                     </Stack>
                 )}
-                {data && data.employers.hasMore ? (
-                    <Flex>
-                        <Button
-                            onClick={() => {
-                                setVariables({
-                                    limit: variables.limit,
-                                    cursor: data?.employers.employers[data?.employers.employers.length - 1].createdAt,
-                                });
-                            }}
-                            isLoading={fetching}
-                            m="auto"
-                            my={8}
-                        >
-                            load more
-                        </Button>
-                    </Flex>
-                ) : null}
+                {/*{data && data.employers.hasMore ? (*/}
+                {/*    <Flex>*/}
+                {/*        <Button*/}
+                {/*            onClick={() => {*/}
+                {/*                setVariables({*/}
+                {/*                    limit: variables.limit,*/}
+                {/*                    cursor: data?.employers.employers[data?.employers.employers.length - 1].createdAt,*/}
+                {/*                });*/}
+                {/*            }}*/}
+                {/*            isLoading={fetching}*/}
+                {/*            m="auto"*/}
+                {/*            my={8}*/}
+                {/*        >*/}
+                {/*            load more*/}
+                {/*        </Button>*/}
+                {/*    </Flex>*/}
+                {/*) : null}*/}
             </Layout>
         );
     }
 ;
 
-export default withUrqlClient(createUrqlClient,
-    {
-        ssr: true
-    }
-)(Employers);
+export default withUrqlClient(createUrqlClient, {ssr: true})(Employers);

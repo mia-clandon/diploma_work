@@ -21,7 +21,7 @@ export class PortfolioEmployer extends BaseEntity {
 
     @Field()
     @Column({nullable: false})
-    image!: any;
+    image!: string;
 
     @Field()
     @Column({nullable: false})

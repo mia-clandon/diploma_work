@@ -63,7 +63,7 @@ export default function TabsMenu({options}: { options?: any }) {
                 <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
                     <Tab label="Услуга" {...a11yProps(0)} />
                     <Tab label="Отзывы" {...a11yProps(1)} />
-                </Tabs>
+                </Tabs>M
             </AppBar>
             <TabPanel value={value} index={0}>
                 <InfoBasicService options={options}/>

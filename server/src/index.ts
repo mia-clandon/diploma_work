@@ -67,7 +67,7 @@ const main = async () => {
     console.log(conn)
     // await conn.runMigrations();
 
-    // await Employer.delete({});
+     // await BookingDateTime.delete({});
 
     const app = express();
 

@@ -118,16 +118,16 @@ export const NavBar: React.FC<NavBarProps> = ({}) => {
     }
 
     return (
-        // <>
-        //     <SearchBlock/>
-        //     {/*{body}*/}
-        // </>
-        <Box display='flex' zIndex={1}  top={0} p={6}>
-            <Box display='flex' zIndex={1} top={0} p={6}>
-                <Box display='flex' flex={1} m="auto">
-                    <Box ml={"auto"}>{body}</Box>
-                </Box>
-            </Box>
-        </Box>
+        <>
+        {/*//     <SearchBlock/>*/}
+        {/*//     /!*{body}*!/*/}
+        </>
+        // <Box display='flex' zIndex={1}  top={0} p={6}>
+        //     <Box display='flex' zIndex={1} top={0} p={6}>
+        //         <Box display='flex' flex={1} m="auto">
+        //             <Box ml={"auto"}>{body}</Box>
+        //         </Box>
+        //     </Box>
+        // </Box>
     );
 };

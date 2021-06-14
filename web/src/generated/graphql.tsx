@@ -28,6 +28,9 @@ export type Query = {
   bookingUserList: Array<BookingUser>;
   me?: Maybe<User>;
   reviewServiceList: Array<ReviewService>;
+  reviewService?: Maybe<Array<ReviewService>>;
+  reviewEmployersList: Array<ReviewEmployer>;
+  reviewEmployer?: Maybe<Array<ReviewEmployer>>;
 };
 
 
@@ -61,6 +64,16 @@ export type QueryServicesArgs = {
 
 export type QueryServiceArgs = {
   id: Scalars['Float'];
+};
+
+
+export type QueryReviewServiceArgs = {
+  idService: Scalars['Float'];
+};
+
+
+export type QueryReviewEmployerArgs = {
+  idEmployer: Scalars['Float'];
 };
 
 export type PaginatedPosts = {
@@ -138,6 +151,8 @@ export type Service = {
 export type BookingDateTime = {
   __typename?: 'BookingDateTime';
   id: Scalars['Float'];
+  idClient: Scalars['Float'];
+  idEmployer: Scalars['Float'];
   date: Scalars['String'];
   time: Scalars['String'];
 };
@@ -145,6 +160,8 @@ export type BookingDateTime = {
 export type BookingUser = {
   __typename?: 'BookingUser';
   id: Scalars['Float'];
+  idClient: Scalars['Float'];
+  idEmployer: Scalars['Float'];
   employer: Scalars['String'];
   service: Scalars['String'];
   date: Scalars['String'];
@@ -156,6 +173,32 @@ export type BookingUser = {
 export type ReviewService = {
   __typename?: 'ReviewService';
   id: Scalars['Float'];
+  idService: Scalars['Float'];
+  idClient: Scalars['Float'];
+  score: Scalars['Float'];
+  scoreCommunicate: Scalars['Float'];
+  scoreClear: Scalars['Float'];
+  scoreArrival: Scalars['Float'];
+  scoreAccuracy: Scalars['Float'];
+  scoreLocate: Scalars['Float'];
+  scoreRatio: Scalars['Float'];
+  title: Scalars['String'];
+  description: Scalars['String'];
+  service: Scalars['String'];
+};
+
+export type ReviewEmployer = {
+  __typename?: 'ReviewEmployer';
+  id: Scalars['Float'];
+  idEmployer: Scalars['Float'];
+  idClient: Scalars['Float'];
+  score: Scalars['Float'];
+  scoreCommunicate: Scalars['Float'];
+  scoreClear: Scalars['Float'];
+  scoreArrival: Scalars['Float'];
+  scoreAccuracy: Scalars['Float'];
+  scoreLocate: Scalars['Float'];
+  scoreRatio: Scalars['Float'];
   title: Scalars['String'];
   description: Scalars['String'];
   service: Scalars['String'];
@@ -184,6 +227,7 @@ export type Mutation = {
   login: UserResponse;
   logout: Scalars['Boolean'];
   createReviewService: ReviewService;
+  createReviewEmployer: ReviewEmployer;
 };
 
 
@@ -239,7 +283,7 @@ export type MutationUpdateEmployerArgs = {
 
 
 export type MutationDeleteEmployerArgs = {
-  id: Scalars['Float'];
+  id: Scalars['Int'];
 };
 
 
@@ -287,6 +331,11 @@ export type MutationLoginArgs = {
 
 export type MutationCreateReviewServiceArgs = {
   input: ReviewServiceInput;
+};
+
+
+export type MutationCreateReviewEmployerArgs = {
+  input: ReviewEmployerInput;
 };
 
 export type PostInput = {
@@ -361,6 +410,26 @@ export type UsernamePasswordInput = {
 };
 
 export type ReviewServiceInput = {
+  score: Scalars['Float'];
+  scoreCommunicate: Scalars['Float'];
+  scoreClear: Scalars['Float'];
+  scoreArrival: Scalars['Float'];
+  scoreAccuracy: Scalars['Float'];
+  scoreLocate: Scalars['Float'];
+  scoreRatio: Scalars['Float'];
+  title: Scalars['String'];
+  description: Scalars['String'];
+  service: Scalars['String'];
+};
+
+export type ReviewEmployerInput = {
+  score: Scalars['Float'];
+  scoreCommunicate: Scalars['Float'];
+  scoreClear: Scalars['Float'];
+  scoreArrival: Scalars['Float'];
+  scoreAccuracy: Scalars['Float'];
+  scoreLocate: Scalars['Float'];
+  scoreRatio: Scalars['Float'];
   title: Scalars['String'];
   description: Scalars['String'];
   service: Scalars['String'];
@@ -512,6 +581,16 @@ export type CreateServiceMutation = (
     { __typename?: 'Service' }
     & Pick<Service, 'id' | 'title' | 'category' | 'description' | 'price' | 'image'>
   ) }
+);
+
+export type DeleteEmployerMutationVariables = Exact<{
+  id: Scalars['Int'];
+}>;
+
+
+export type DeleteEmployerMutation = (
+  { __typename?: 'Mutation' }
+  & Pick<Mutation, 'deleteEmployer'>
 );
 
 export type DeletePostMutationVariables = Exact<{
@@ -986,6 +1065,15 @@ export const CreateServiceDocument = gql`
 
 export function useCreateServiceMutation() {
   return Urql.useMutation<CreateServiceMutation, CreateServiceMutationVariables>(CreateServiceDocument);
+};
+export const DeleteEmployerDocument = gql`
+    mutation DeleteEmployer($id: Int!) {
+  deleteEmployer(id: $id)
+}
+    `;
+
+export function useDeleteEmployerMutation() {
+  return Urql.useMutation<DeleteEmployerMutation, DeleteEmployerMutationVariables>(DeleteEmployerDocument);
 };
 export const DeletePostDocument = gql`
     mutation DeletePost($id: Int!) {

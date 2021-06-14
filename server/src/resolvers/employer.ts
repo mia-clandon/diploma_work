@@ -23,7 +23,6 @@ import {COOKIE_NAME, FORGET_PASSWORD_PREFIX} from "../constants";
 import {v4} from "uuid";
 import {sendEmail} from "../utils/sendEmail";
 
-
 @ObjectType()
 class PaginatedEmployers {
     @Field(() => [Employer])
@@ -305,11 +304,9 @@ export class EmployerResolver {
     @Mutation(() => Boolean)
     @UseMiddleware(isAuth)
     async deleteEmployer(
-        @Arg("id")
-            id: number,
-    ):
-        Promise<boolean> {
-        await Employer.delete(id);
+        @Arg("id", () => Int) id: number,
+    ): Promise<boolean> {
+        await Employer.delete({id});
         return true;
     }
 

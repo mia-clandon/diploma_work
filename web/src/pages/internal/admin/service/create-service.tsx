@@ -15,6 +15,7 @@ import Link from "@material-ui/core/Link";
 import Typography from "@material-ui/core/Typography";
 import {Select} from 'formik-material-ui';
 import {InputField} from "../../../../components/InputField";
+import TableServices from "./sections/TableServices";
 
 
 function handleClick(event) {
@@ -145,7 +146,7 @@ const CreateService: React.FC<{}> = ({}) => {
                                     {/*    item*/}
                                     {/*    direction="column"*/}
                                     {/*    xs={6}>*/}
-                                    {/*    <TableServices/>*/}
+                                        <TableServices/>
                                     {/*</Grid>*/}
                                 </Grid>
                             </Form>

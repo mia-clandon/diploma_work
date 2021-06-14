@@ -43,7 +43,6 @@ const Service = ({}) => {
                     <p>{data.service.title} </p>
                 </NextLink>
             </Box>
-            <TabsMenu options={data.service}/>
         </Layout>
     );
 };

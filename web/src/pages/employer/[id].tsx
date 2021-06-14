@@ -4,7 +4,6 @@ import {createUrqlClient} from "../../utils/createUrqlClient";
 import {Layout} from "../../components/Layout";
 import {useGetEmployerFromUrl} from "../../utils/useGetEmployerFromUrl";
 import NextLink from "next/link";
-import TabsMenu from "./sections/TabsMenu/TabsMenu";
 import Box from "@material-ui/core/Box";
 import {Grid} from "@material-ui/core";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
@@ -59,7 +58,6 @@ const Employer = ({}) => {
                     </NextLink>
                     <Typography color="textPrimary">{data.employer.firstname}</Typography>
                 </Breadcrumbs>
-                <TabsMenu options={data.employer}/>
             </Grid>
         </Layout>
     );

@@ -3,6 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="3d125546-be13-4a2e-8aca-dcfb6a8b6bfb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/entities/AdvantagesEmployer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/entities/AdvantagesEmployer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/entities/AdvantagesService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/entities/AdvantagesService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/entities/internal/employer/PortfolioEmployer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/entities/internal/employer/PortfolioEmployer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/resolvers/employer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resolvers/employer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,8 +18,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="GraphQL File" />
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -39,7 +44,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../backend for Peekslight" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/src/graphql/mutations" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -53,18 +58,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\lireddit-prod\web\src\graphql\mutations" />
+      <recent name="D:\lireddit-prod\web\src\pages\service\components\Reviews" />
+      <recent name="D:\lireddit-prod\web\src\pages\service\components\Description" />
       <recent name="D:\lireddit-prod\server\src\resolvers" />
       <recent name="D:\lireddit-prod\server\src\entities\internal\employer" />
-      <recent name="D:\lireddit-prod\server\src\utils" />
-      <recent name="D:\lireddit-prod\server\src\resolvers\Inputs" />
-      <recent name="D:\lireddit-prod\server\src\entities" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\lireddit-prod\web\src\pages\service\components\Location" />
+      <recent name="D:\lireddit-prod\web\src\pages\service\components\Calendar" />
       <recent name="D:\lireddit-prod\server\src\entities" />
       <recent name="D:\lireddit-prod\web\src\pages\service\sections\HorizontalScrollTopic" />
       <recent name="D:\lireddit-prod\server\src\resolvers\Inputs" />
-      <recent name="D:\lireddit-prod\server\src\entities\internal\employer" />
-      <recent name="D:\lireddit-prod\web\src\components" />
     </key>
   </component>
   <component name="RunManager">
@@ -137,7 +142,7 @@
       <workItem from="1623655185629" duration="10984000" />
       <workItem from="1623673526674" duration="14646000" />
       <workItem from="1623689797075" duration="375000" />
-      <workItem from="1623692290641" duration="2800000" />
+      <workItem from="1623692290641" duration="15754000" />
     </task>
     <servers />
   </component>
