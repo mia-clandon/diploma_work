@@ -11,6 +11,8 @@ import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
+import IconButton from "@material-ui/core/IconButton";
+import {PhotoCamera} from "@material-ui/icons";
 
 const CreateEmployer: React.FC<{}> = ({}) => {
     const router = useRouter();
@@ -106,11 +108,18 @@ const CreateEmployer: React.FC<{}> = ({}) => {
                                     />
                                 </Grid>
                                 <Grid item>
-                                    <InputField
-                                        name="avatar"
-                                        placeholder="Аватар"
-                                        label="Аватар"
-                                    />
+                                    {/*<InputField*/}
+                                    {/*    name="avatar"*/}
+                                    {/*    placeholder="Аватар"*/}
+                                    {/*    label="Аватар"*/}
+                                    {/*/>*/}
+                                    {/*    <input accept="image/*" className={classes.input} id="icon-button-file" type="file" />*/}
+                                    {/*    <label htmlFor="icon-button-file">*/}
+                                            <IconButton color="primary" aria-label="upload picture" component="span">
+                                                <PhotoCamera /> &nbsp; Загрузить аватар
+                                            </IconButton>
+                                        {/*</label>*/}
+                                    {/*</div>*/}
                                 </Grid>
                                 <Grid item>
                                     <InputField

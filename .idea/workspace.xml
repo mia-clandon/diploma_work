@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="3d125546-be13-4a2e-8aca-dcfb6a8b6bfb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/entities/ReviewService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/entities/ReviewService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/resolvers/reviewService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resolvers/reviewService.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +42,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/src/graphql/queries" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/server/src/entities" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -53,11 +56,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\lireddit-prod\server\src\entities" />
+      <recent name="D:\lireddit-prod\server\src\resolvers" />
       <recent name="D:\lireddit-prod\web\src\graphql\queries" />
       <recent name="D:\lireddit-prod\web\src\pages\internal\employer\auth" />
       <recent name="D:\lireddit-prod\web\src\graphql\mutations" />
-      <recent name="D:\lireddit-prod\web\src\graphql\fragments" />
-      <recent name="D:\lireddit-prod\server\src\utils" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\lireddit-prod\web\src\pages\service\sections\HorizontalScrollTopic" />
@@ -135,7 +138,7 @@
       <workItem from="1623482678433" duration="24816000" />
       <workItem from="1623654872542" duration="25000" />
       <workItem from="1623655185629" duration="10984000" />
-      <workItem from="1623673526674" duration="8271000" />
+      <workItem from="1623673526674" duration="10988000" />
     </task>
     <servers />
   </component>

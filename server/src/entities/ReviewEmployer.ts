@@ -8,14 +8,14 @@ import {
 
 @ObjectType()
 @Entity()
-export class ReviewService extends BaseEntity {
+export class ReviewEmployer extends BaseEntity {
     @Field()
     @PrimaryGeneratedColumn()
     id!: number;
 
     @Field()
     @Column({nullable: false})
-    idService: number;
+    idEmployer: number;
 
     @Field()
     @Column()

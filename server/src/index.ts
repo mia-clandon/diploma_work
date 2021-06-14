@@ -30,6 +30,8 @@ import {ReviewService} from "./entities/ReviewService";
 import {ReviewServiceResolver} from "./resolvers/reviewService";
 import {ParameterEmployers} from "./entities/internal/employer/ParameterEmployers";
 import {createEmployerLoader} from "./utils/createEmployerLoader";
+import {ReviewEmployer} from "./entities/ReviewEmployer";
+import {ReviewEmployerResolver} from "./resolvers/reviewEmployer";
 
 const main = async () => {
     const conn = await createConnection({
@@ -38,7 +40,7 @@ const main = async () => {
         logging: true,
         synchronize: true,
         migrations: [path.join(__dirname, "./migrations/*")],
-        entities: [Post, User, Updoot, Employer, ParameterEmployers, Service, BookingDateTime, BookingUser, ReviewService],
+        entities: [Post, User, Updoot, Employer, ParameterEmployers, Service, BookingDateTime, BookingUser, ReviewService, ReviewEmployer],
     });
 
     console.log(conn)
@@ -82,7 +84,7 @@ const main = async () => {
 
     const apolloServer = new ApolloServer({
         schema: await buildSchema({
-            resolvers: [HelloResolver, PostResolver, UserResolver, EmployerResolver, ServiceResolver, BookingDateTimeResolver, BookingUserResolver, ReviewServiceResolver],
+            resolvers: [HelloResolver, PostResolver, UserResolver, EmployerResolver, ServiceResolver, BookingDateTimeResolver, BookingUserResolver, ReviewServiceResolver, ReviewEmployerResolver],
             validate: false,
         }),
         context: ({req, res}) => ({
