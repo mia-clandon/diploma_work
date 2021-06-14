@@ -5,7 +5,7 @@ import {
     Entity, JoinTable, ManyToMany,
     PrimaryGeneratedColumn,
 } from "typeorm";
-import {Employer} from "./Employer";
+import {Employer} from "./internal/employer/Employer";
 
 @ObjectType()
 @Entity()

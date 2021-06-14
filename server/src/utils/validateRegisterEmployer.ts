@@ -1,4 +1,4 @@
-import {EmployerInput} from "../resolvers/EmployerInput";
+import {EmployerInput} from "../resolvers/Inputs/EmployerInput";
 
 export const validateRegisterEmployer = (options: EmployerInput) => {
   if (!options.email.includes("@")) {

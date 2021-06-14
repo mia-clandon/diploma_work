@@ -1,11 +1,12 @@
-import {Arg, Field, Int, Mutation, ObjectType, Query, Resolver, UseMiddleware} from "type-graphql";
-import {Employer} from "../entities/Employer";
+import {Arg, Ctx, Field, Int, Mutation, ObjectType, Query, Resolver, UseMiddleware} from "type-graphql";
+import {Employer} from "../entities/internal/employer/Employer";
 import {isAuth} from "../middleware/isAuth";
 import {getConnection} from "typeorm";
-import {EmployerInput} from "./EmployerInput";
+import {EmployerInput} from "./Inputs/EmployerInput";
 import {validateRegisterEmployer} from "../utils/validateRegisterEmployer";
 import argon2 from "argon2";
 import {FieldError} from "./fieldError";
+import {MyContext} from "../types/types";
 
 
 @ObjectType()
@@ -18,10 +19,10 @@ class PaginatedEmployers {
 
 @ObjectType()
 class EmployerResponse {
-    @Field(() => [FieldError], { nullable: true })
+    @Field(() => [FieldError], {nullable: true})
     errors?: FieldError[];
 
-    @Field(() => Employer, { nullable: true })
+    @Field(() => Employer, {nullable: true})
     employer?: Employer;
 }
 
@@ -114,11 +115,56 @@ export class EmployerResolver {
                 })
                 .returning("*")
                 .execute();
+            console.log(result)
             employer = result.raw[0];
         } catch (err) {
             console.log(errors)
         }
+
+        console.log(employer)
         return {employer};
+    }
+
+    @Mutation(() => EmployerResponse)
+    async loginEmployer(
+        @Arg("phoneOrEmail") phoneOrEmail: string,
+        @Arg("password") password: string,
+        @Ctx() {req}: MyContext
+    ): Promise<EmployerResponse> {
+        const employer = await Employer.findOne(
+            phoneOrEmail.includes("@")
+                ? {where: {email: phoneOrEmail}}
+                : {where: {phone: phoneOrEmail}}
+        );
+        if (!employer) {
+            return {
+                errors: [
+                    {
+                        field: "phoneOrEmail",
+                        message: "Сотрудника с такими данными не существует в системе"
+                    },
+                ],
+            }
+        }
+
+        const valid = await argon2.verify(employer.password, password);
+        if (!valid) {
+            return {
+                errors: [
+                    {
+                        field: "password",
+                        message: "Неверный пароль"
+                    },
+                ],
+            }
+        }
+
+        req.session.employerId = employer.id;
+
+        return {
+            employer,
+        }
+
     }
 
     @Mutation(() => Employer, {nullable: true})

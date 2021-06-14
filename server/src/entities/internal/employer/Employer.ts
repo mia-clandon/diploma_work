@@ -8,8 +8,8 @@ import {
     PrimaryGeneratedColumn,
     UpdateDateColumn
 } from "typeorm";
-import {Service} from "./Service";
-import {BookingDateTime} from "./BookingDateTime";
+import {Service} from "../../Service";
+import {BookingDateTime} from "../../BookingDateTime";
 
 @ObjectType()
 @Entity()

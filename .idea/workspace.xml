@@ -3,6 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="3d125546-be13-4a2e-8aca-dcfb6a8b6bfb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/entities/BookingDateTime.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/entities/BookingDateTime.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/entities/Employer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/entities/internal/employer/Employer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/entities/EmployerService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/entities/internal/employer/EmployerService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/entities/Service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/entities/Service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/resolvers/EmployerInput.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resolvers/Inputs/EmployerInput.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/resolvers/UsernamePasswordInput.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resolvers/Inputs/UsernamePasswordInput.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/resolvers/employer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resolvers/employer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/resolvers/internal/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resolvers/internal/user.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/types/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/types/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/utils/validateRegister.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/utils/validateRegister.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/utils/validateRegisterEmployer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/utils/validateRegisterEmployer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,8 +25,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="GraphQL File" />
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -39,7 +51,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/src/graphql/fragments" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/server/src/utils" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -53,18 +65,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\lireddit-prod\web\src\graphql\fragments" />
-      <recent name="D:\lireddit-prod\server\src\resolvers" />
       <recent name="D:\lireddit-prod\server\src\utils" />
-      <recent name="D:\lireddit-prod\web\src\components\Cards\icons" />
-      <recent name="D:\lireddit-prod\web\src\pages\service\components\Amenities\blocks" />
+      <recent name="D:\lireddit-prod\server\src\middleware" />
+      <recent name="D:\lireddit-prod\server\src\resolvers\Inputs" />
+      <recent name="D:\lireddit-prod\server\src\resolvers" />
+      <recent name="D:\lireddit-prod\web\src\graphql\fragments" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\lireddit-prod\server\src\resolvers\Inputs" />
+      <recent name="D:\lireddit-prod\server\src\entities\internal\employer" />
       <recent name="D:\lireddit-prod\web\src\components" />
       <recent name="D:\lireddit-prod\web\src\pages\service\components\Contacts\blocks\RightBlock\blocks" />
       <recent name="D:\lireddit-prod\web\src\pages\service\components\Contacts\blocks" />
-      <recent name="D:\lireddit-prod\web\src\pages\service\components" />
-      <recent name="D:\lireddit-prod\web\public" />
     </key>
   </component>
   <component name="RunManager">
@@ -132,7 +144,9 @@
       <workItem from="1623346339162" duration="251000" />
       <workItem from="1623347002143" duration="19000" />
       <workItem from="1623362475539" duration="3805000" />
-      <workItem from="1623482678433" duration="23215000" />
+      <workItem from="1623482678433" duration="24816000" />
+      <workItem from="1623654872542" duration="25000" />
+      <workItem from="1623655185629" duration="3819000" />
     </task>
     <servers />
   </component>

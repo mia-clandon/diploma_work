@@ -17,7 +17,7 @@ import path from "path";
 import {Updoot} from "./entities/Updoot";
 import {createUserLoader} from "./utils/createUserLoader";
 import {createUpdootLoader} from "./utils/createUpdootLoader";
-import {Employer} from "./entities/Employer";
+import {Employer} from "./entities/internal/employer/Employer";
 import {Service} from "./entities/Service";
 import {EmployerResolver} from "./resolvers/employer";
 import {ServiceResolver} from "./resolvers/service";
@@ -28,6 +28,8 @@ import {BookingUser} from "./entities/BookingUser";
 import {UserResolver} from "./resolvers/internal/user";
 import {ReviewService} from "./entities/ReviewService";
 import {ReviewServiceResolver} from "./resolvers/reviewService";
+import {ParameterEmployers} from "./entities/internal/employer/ParameterEmployers";
+import {createEmployerLoader} from "./utils/createEmployerLoader";
 
 const main = async () => {
     const conn = await createConnection({
@@ -36,7 +38,7 @@ const main = async () => {
         logging: true,
         synchronize: true,
         migrations: [path.join(__dirname, "./migrations/*")],
-        entities: [Post, User, Updoot, Employer, Service, BookingDateTime, BookingUser, ReviewService],
+        entities: [Post, User, Updoot, Employer, ParameterEmployers, Service, BookingDateTime, BookingUser, ReviewService],
     });
 
     console.log(conn)
@@ -88,6 +90,7 @@ const main = async () => {
             res,
             redis,
             userLoader: createUserLoader(),
+            employerLoader: createEmployerLoader(),
             updootLoader: createUpdootLoader(),
         }),
     });

@@ -166,6 +166,7 @@ export type Mutation = {
   updatePost?: Maybe<Post>;
   deletePost: Scalars['Boolean'];
   createEmployer: EmployerResponse;
+  loginEmployer: EmployerResponse;
   updateEmployer?: Maybe<Employer>;
   deleteEmployer: Scalars['Boolean'];
   searchService: ServiceResponse;
@@ -208,6 +209,12 @@ export type MutationDeletePostArgs = {
 
 export type MutationCreateEmployerArgs = {
   options: EmployerInput;
+};
+
+
+export type MutationLoginEmployerArgs = {
+  password: Scalars['String'];
+  phoneOrEmail: Scalars['String'];
 };
 
 

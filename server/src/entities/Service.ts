@@ -7,7 +7,7 @@ import {
     PrimaryGeneratedColumn,
     UpdateDateColumn
 } from "typeorm";
-import {Employer} from "./Employer";
+import {Employer} from "./internal/employer/Employer";
 
 @ObjectType()
 @Entity()

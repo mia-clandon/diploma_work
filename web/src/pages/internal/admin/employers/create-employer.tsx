@@ -11,8 +11,6 @@ import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import Like from "../../../../components/Cards/icons/Like";
-import IconButton from "@material-ui/core/IconButton";
 
 const CreateEmployer: React.FC<{}> = ({}) => {
     const router = useRouter();
@@ -37,9 +35,9 @@ const CreateEmployer: React.FC<{}> = ({}) => {
                 onSubmit={async (values) => {
                     const {error} = await createEmployer({options: values});
                     console.log(error)
-                    if (!error) {
-                        router.push("/");
-                    }
+                    // if (!error) {
+                    //     router.push("/");
+                    // }
                     console.log(values)
                 }}
             >

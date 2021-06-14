@@ -17,7 +17,7 @@ import { COOKIE_NAME, FORGET_PASSWORD_PREFIX } from "../../constants";
 // import { validateRegister } from "../../utils/validateRegister";
 import { sendEmail } from "../../utils/sendEmail";
 import { v4 } from "uuid";
-import {UsernamePasswordInput} from "../UsernamePasswordInput";
+import {UsernamePasswordInput} from "../Inputs/UsernamePasswordInput";
 import {validateRegister} from "../../utils/validateRegister";
 import {getConnection} from "typeorm";
 import {FieldError} from "../fieldError";
