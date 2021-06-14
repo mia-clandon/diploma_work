@@ -4,6 +4,8 @@ import Grid from '@material-ui/core/Grid';
 import Typography from "@material-ui/core/Typography";
 import CardEmployerOrService from "../../../../components/Cards/CardEmployerOrService/CardEmployerOrService";
 import {SvgIconProps} from "@material-ui/core/SvgIcon";
+import NextLink from "next/link";
+import {Link} from "@material-ui/core";
 
 export type HorizontalScrollTopicBlockProps = HorizontalScrollTopicBlockProps & {
     icon?: React.ElementType<SvgIconProps>;
@@ -17,8 +19,8 @@ function HorizontalScrollTopic(props: HorizontalScrollTopicBlockProps) {
             <Grid container spacing={2} justifyContent="center">
                 <Grid item xs={11}>
                     <Grid container spacing={2}>
-                        <Grid item xs={12} justifyContent="flex-start">
-                            <div style={{display: 'flex', flexDirection: 'row'}}>
+                        <Grid item xs={6} justifyContent="flex-start">
+                            <Box display="flex" flexDirection="row">
                                 {props.icon ? <Icon/> : null}
                                 <Typography
                                     style={{
@@ -31,7 +33,25 @@ function HorizontalScrollTopic(props: HorizontalScrollTopicBlockProps) {
                                 >
                                     {props.title}
                                 </Typography>
-                            </div>
+                            </Box>
+                        </Grid>
+                        <Grid item xs={6} justifyContent="flex-end">
+                            <NextLink href="/employer/1">
+                                <Link>
+                                    <Typography
+                                        style={{
+                                            fontSize: '20px',
+                                            color: '#6D6767',
+                                            fontWeight: 400,
+                                            lineHeight: '24.38px',
+                                            textAlign: 'end',
+                                            textDecoration: 'underline',
+                                        }}
+                                    >
+                                        Посмотреть всё
+                                    </Typography>
+                                </Link>
+                            </NextLink>
                         </Grid>
                     </Grid>
                 </Grid>

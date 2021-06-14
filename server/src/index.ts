@@ -32,6 +32,11 @@ import {ParameterEmployers} from "./entities/internal/employer/ParameterEmployer
 import {createEmployerLoader} from "./utils/createEmployerLoader";
 import {ReviewEmployer} from "./entities/ReviewEmployer";
 import {ReviewEmployerResolver} from "./resolvers/reviewEmployer";
+import {AdvantagesService} from "./entities/AdvantagesService";
+import {AdvantagesEmployer} from "./entities/AdvantagesEmployer";
+import {ParameterService} from "./entities/ParameterService";
+import {UploadImage} from "./entities/Upload";
+import {PortfolioEmployer} from "./entities/internal/employer/PortfolioEmployer";
 
 const main = async () => {
     const conn = await createConnection({
@@ -40,7 +45,23 @@ const main = async () => {
         logging: true,
         synchronize: true,
         migrations: [path.join(__dirname, "./migrations/*")],
-        entities: [Post, User, Updoot, Employer, ParameterEmployers, Service, BookingDateTime, BookingUser, ReviewService, ReviewEmployer],
+        entities: [
+            Post,
+            User,
+            Updoot,
+            Employer,
+            ParameterEmployers,
+            ParameterService,
+            Service,
+            BookingDateTime,
+            BookingUser,
+            ReviewService,
+            ReviewEmployer,
+            AdvantagesService,
+            AdvantagesEmployer,
+            UploadImage,
+            PortfolioEmployer,
+        ],
     });
 
     console.log(conn)
