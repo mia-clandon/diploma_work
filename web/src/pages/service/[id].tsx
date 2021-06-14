@@ -48,7 +48,7 @@ const Service = ({}) => {
                 <Grid container spacing={2} justifyContent="center" alignItems="center">
                     <Grid item xs={11}>
                         <Grid container spacing={2} justifyContent="center" alignItems="center">
-                            <Grid item xs={12}>
+                            <Grid item xs={12} style={{background: 'white'}}>
                                 <Grid container spacing={2} justifyContent="center" alignItems="center">
                                     <Grid item xs={12}>
                                         <BreadCrumbsServiceId/>
