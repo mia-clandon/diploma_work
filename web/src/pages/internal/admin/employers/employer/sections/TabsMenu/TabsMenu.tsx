@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {makeStyles} from '@material-ui/core/styles';
+import {makeStyles, Theme} from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
@@ -40,12 +40,12 @@ function a11yProps(index) {
     };
 }
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = (theme: Theme) =>({
     root: {
         flexGrow: 1,
         backgroundColor: theme.palette.background.paper,
     },
-}));
+});
 
 export default function TabsMenu({options}: { options?: any }) {
     const classes = useStyles();

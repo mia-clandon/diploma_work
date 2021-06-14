@@ -1,6 +1,6 @@
 import React from 'react';
 import Grid from "@material-ui/core/Grid";
-import Star from "../../../../../../sections/ChooseEditors/icons/Star";
+import Star from "../../../../../../sections/HorizontalScrollTopic/icons/Star";
 import Typography from "@material-ui/core/Typography";
 
 function RateBlock() {

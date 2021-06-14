@@ -1,11 +1,11 @@
 import React from 'react';
-import {createStyles, makeStyles, Theme} from '@material-ui/core/styles';
+import {createStyles, Theme} from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
 import CardEmployerOrService from "../Cards/CardEmployerOrService/CardEmployerOrService";
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = (theme: Theme) =>
     createStyles({
         root: {
             display: 'flex',
@@ -27,8 +27,7 @@ const useStyles = makeStyles((theme: Theme) =>
             // background:
             //     'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
         },
-    }),
-);
+    });
 
 
 const tileData = [

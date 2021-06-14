@@ -19,11 +19,11 @@ const Item = styled(Paper)(({theme}) => ({
 function ChooseEditors() {
     return (
         <Box sx={{flexGrow: 1}}>
-            <Grid container spacing={2} justifyContent="center">
+            <Grid container spacing={2} justifyContent="center" position="sticky">
                 <Grid item xs={11}>
                     <Grid container spacing={2}>
                         <Grid item xs={6} justifyContent="flex-start">
-                            <div style={{display: 'flex', flexDirection: 'row'}}>
+                            <Box style={{display: 'flex', flexDirection: 'row'}} position="sticky">
                                 <Tag/>
                                 <Typography
                                     style={{
@@ -36,7 +36,7 @@ function ChooseEditors() {
                                 >
                                     Выбор редакции
                                 </Typography>
-                            </div>
+                            </Box>
                         </Grid>
                         <Grid item xs={6} justifyContent="flex-end">
                             <NextLink href="/employer/1">

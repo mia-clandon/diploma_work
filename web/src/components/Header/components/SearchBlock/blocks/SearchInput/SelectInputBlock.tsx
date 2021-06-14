@@ -44,7 +44,7 @@ function SelectInputBlock(props: SelectBlockProps) {
                         paddingTop: '6px',
                         paddingBottom: '6px',
                         paddingLeft: '4px',
-                        width: '415px'
+                        width: '500px'
                     }
                 }}
                 InputProps={{

@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3d125546-be13-4a2e-8aca-dcfb6a8b6bfb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/resolvers/employer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resolvers/employer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/resolvers/internal/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resolvers/internal/user.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +48,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-    <property name="ts.external.directory.path" value="D:\lireddit-prod\web\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="D:\lireddit-prod\server\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -62,11 +60,11 @@
       <recent name="D:\lireddit-prod\server\src\utils" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\lireddit-prod\web\src\pages\service\sections\HorizontalScrollTopic" />
       <recent name="D:\lireddit-prod\server\src\resolvers\Inputs" />
       <recent name="D:\lireddit-prod\server\src\entities\internal\employer" />
       <recent name="D:\lireddit-prod\web\src\components" />
       <recent name="D:\lireddit-prod\web\src\pages\service\components\Contacts\blocks\RightBlock\blocks" />
-      <recent name="D:\lireddit-prod\web\src\pages\service\components\Contacts\blocks" />
     </key>
   </component>
   <component name="RunManager">
@@ -136,7 +134,8 @@
       <workItem from="1623362475539" duration="3805000" />
       <workItem from="1623482678433" duration="24816000" />
       <workItem from="1623654872542" duration="25000" />
-      <workItem from="1623655185629" duration="8390000" />
+      <workItem from="1623655185629" duration="10984000" />
+      <workItem from="1623673526674" duration="8271000" />
     </task>
     <servers />
   </component>

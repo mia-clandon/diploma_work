@@ -6,14 +6,13 @@ import ThumbsUp from "../../../../../../components/Cards/icons/ThumbsUp";
 import ThumbsDown from "../../../../../../components/Cards/icons/ThumbsDown";
 import IconButton from "@material-ui/core/IconButton";
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = (theme: Theme) =>
     createStyles({
         cover: {
             marginTop: '16px',
             marginLeft: '16px',
         },
-    }),
-);
+    });
 
 function LeftBlock() {
     const classes = useStyles();

@@ -1,22 +1,26 @@
 import {withUrqlClient} from "next-urql";
 import React from "react";
 import {createUrqlClient} from "../utils/createUrqlClient";
-import {makeStyles} from "@material-ui/core/styles";
 import {Layout} from "../components/Layout";
-import ChooseEditors from "./service/sections/ChooseEditors/ChooseEditors";
+import HorizontalScrollTopic from "./service/sections/HorizontalScrollTopic/HorizontalScrollTopic";
+import Tag from "./service/sections/HorizontalScrollTopic/icons/Tag";
+import HorizontalScrollImages from "./service/sections/HorizontalScrollImages/HorizontalScrollImages";
+import SearchBlock from "../components/Header/components/SearchBlock/SearchBlock";
+import Grid from "@material-ui/core/Grid";
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-        flexGrow: 1,
+const nameTopics = [
+    {
+        title: 'Подборка недвижимости',
     },
-    paper: {
-        height: 140,
-        width: 100,
+    {
+        title: 'Подборка работы',
     },
-}));
+    {
+        title: 'Подборка сервисов',
+    },
+]
 
 const Services = () => {
-    // const classes = useStyles();
     //
     // const [variables, setVariables] = useState({
     //     limit: 15,
@@ -37,7 +41,25 @@ const Services = () => {
 
     return (
         <Layout>
-            <ChooseEditors/>
+            <Grid container justifyContent="center">
+                <Grid item xs={12}>
+                    <SearchBlock/>
+                </Grid>
+                <Grid item xs={11} alignContent="center">
+                    <img src={"./img/main_img.png"} alt="" style={{width: '100%', marginTop: '36px'}}/>
+                </Grid>
+                <Grid item xs={12}>
+                    <HorizontalScrollTopic icon={Tag} title={"Выбор редакции"}/>
+                </Grid>
+                <Grid item xs={12}>
+                    <HorizontalScrollImages/>
+                </Grid>
+                {nameTopics.map((item) => (
+                    <Grid item xs={12}>
+                        <HorizontalScrollTopic title={item.title}/>
+                    </Grid>
+                ))}
+            </Grid>
             {/*{!data && fetching ? (*/}
             {/*    <div>loading...</div>*/}
             {/*) : (*/}

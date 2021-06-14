@@ -4,17 +4,16 @@ import Link from "@material-ui/core/Link";
 import Typography from "@material-ui/core/Typography";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
-import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
+import {createStyles, Theme} from "@material-ui/core/styles";
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = (theme: Theme) =>
     createStyles({
         root: {
             '& > * + *': {
-                marginTop: theme.spacing(2),
+                marginTop: '32px',
             },
         },
-    }),
-);
+    });
 
 function handleClick(event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
     event.preventDefault();

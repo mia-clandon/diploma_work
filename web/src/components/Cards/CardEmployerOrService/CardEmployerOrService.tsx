@@ -1,5 +1,5 @@
 import React from 'react';
-import {Theme, createStyles, makeStyles, useTheme} from '@material-ui/core/styles';
+import {createStyles, Theme, useTheme} from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import IconButton from '@material-ui/core/IconButton';
@@ -15,7 +15,7 @@ import Like from "../icons/Like";
 import NextLink from "next/link";
 import {Link} from "@material-ui/core";
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = () =>
     createStyles({
         root: {
             display: 'flex',
@@ -37,18 +37,18 @@ const useStyles = makeStyles((theme: Theme) =>
         controls: {
             display: 'flex',
             alignItems: 'center',
-            paddingLeft: theme.spacing(1),
-            paddingBottom: theme.spacing(1),
+            // paddingLeft: theme.spacing(1),
+            // paddingBottom: theme.spacing(1),
             width: '340px',
         },
         playIcon: {
             height: 38,
             width: 38,
         },
-    }),
-);
+    });
 
 function CardEmployerOrService() {
+    // @ts-ignore
     const classes = useStyles();
     const theme = useTheme();
 

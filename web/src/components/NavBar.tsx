@@ -122,7 +122,7 @@ export const NavBar: React.FC<NavBarProps> = ({}) => {
         //     <SearchBlock/>
         //     {/*{body}*/}
         // </>
-        <Box display='flex' zIndex={1} position="sticky" top={0} p={6}>
+        <Box display='flex' zIndex={1}  top={0} p={6}>
             <Box display='flex' zIndex={1} top={0} p={6}>
                 <Box display='flex' flex={1} m="auto">
                     <Box ml={"auto"}>{body}</Box>

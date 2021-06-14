@@ -7,7 +7,7 @@ import RateBlock from "./blocks/RateBlock/RateBlock";
 import PhoneBlock from "./blocks/PhoneBlock/PhoneBlock";
 import EmailBlock from "./blocks/EmailBlock/EmailBlock";
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = (theme: Theme) =>
     createStyles({
         details: {
             display: 'flex',
@@ -17,8 +17,7 @@ const useStyles = makeStyles((theme: Theme) =>
         content: {
             flex: '1 0 auto',
         },
-    }),
-);
+    });
 
 function RightBlock() {
     const classes = useStyles();

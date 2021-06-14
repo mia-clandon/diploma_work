@@ -1,26 +1,12 @@
 import {withUrqlClient} from "next-urql";
 import React, {useState} from "react";
-import {Box, Grid, Stack} from "@material-ui/core";
-import {makeStyles} from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
+import {Box, Grid} from "@material-ui/core";
 import {Layout} from "../../../components/Layout";
 import SideBar from "../../../components/SideBar/SideBar";
 import ServiceCard from "../../service/components/ServiceCard";
 import {useServicesQuery} from "../../../generated/graphql";
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-        flexGrow: 1,
-    },
-    paper: {
-        height: 140,
-        width: 100,
-    },
-}));
-
 const Services = () => {
-    const classes = useStyles();
-
     const [variables, setVariables] = useState({
         limit: 15,
         cursor: null as null | string,
