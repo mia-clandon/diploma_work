@@ -13,15 +13,12 @@ import { MyContext } from "../../types/types";
 import { User } from "../../entities/internal/account/User";
 import argon2 from "argon2";
 import { COOKIE_NAME, FORGET_PASSWORD_PREFIX } from "../../constants";
-// import { UsernamePasswordInput } from "../UsernamePasswordInput";
-// import { validateRegister } from "../../utils/validateRegister";
 import { sendEmail } from "../../utils/sendEmail";
 import { v4 } from "uuid";
 import {UsernamePasswordInput} from "../Inputs/UsernamePasswordInput";
 import {validateRegister} from "../../utils/validateRegister";
 import {getConnection} from "typeorm";
 import {FieldError} from "../fieldError";
-// import { getConnection } from "typeorm";
 
 
 @ObjectType()
@@ -231,7 +228,7 @@ export class UserResolver {
   @Mutation(() => Boolean)
   logout(@Ctx() { req, res }: MyContext) {
     return new Promise((resolve) =>
-      req.session.destroy((err) => {
+      req.session.userId.destroy((err: any) => {
         res.clearCookie(COOKIE_NAME);
         if (err) {
           console.log(err);

@@ -3,18 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3d125546-be13-4a2e-8aca-dcfb6a8b6bfb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/entities/BookingDateTime.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/entities/BookingDateTime.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/entities/Employer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/entities/internal/employer/Employer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/entities/EmployerService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/entities/internal/employer/EmployerService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/entities/Service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/entities/Service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/resolvers/EmployerInput.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resolvers/Inputs/EmployerInput.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/resolvers/UsernamePasswordInput.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resolvers/Inputs/UsernamePasswordInput.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/resolvers/employer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resolvers/employer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/resolvers/internal/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resolvers/internal/user.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/types/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/types/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/utils/validateRegister.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/utils/validateRegister.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/utils/validateRegisterEmployer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/utils/validateRegisterEmployer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +41,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/server/src/utils" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/src/graphql/queries" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -65,11 +55,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\lireddit-prod\server\src\utils" />
-      <recent name="D:\lireddit-prod\server\src\middleware" />
-      <recent name="D:\lireddit-prod\server\src\resolvers\Inputs" />
-      <recent name="D:\lireddit-prod\server\src\resolvers" />
+      <recent name="D:\lireddit-prod\web\src\graphql\queries" />
+      <recent name="D:\lireddit-prod\web\src\pages\internal\employer\auth" />
+      <recent name="D:\lireddit-prod\web\src\graphql\mutations" />
       <recent name="D:\lireddit-prod\web\src\graphql\fragments" />
+      <recent name="D:\lireddit-prod\server\src\utils" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\lireddit-prod\server\src\resolvers\Inputs" />
@@ -146,7 +136,7 @@
       <workItem from="1623362475539" duration="3805000" />
       <workItem from="1623482678433" duration="24816000" />
       <workItem from="1623654872542" duration="25000" />
-      <workItem from="1623655185629" duration="3819000" />
+      <workItem from="1623655185629" duration="8390000" />
     </task>
     <servers />
   </component>

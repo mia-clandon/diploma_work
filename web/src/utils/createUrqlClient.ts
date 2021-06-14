@@ -14,7 +14,7 @@ import {
     RegisterUserMutation,
     VoteMutationVariables,
     DeletePostMutationVariables,
-    DeleteServiceMutationVariables,
+    DeleteServiceMutationVariables, MeEmployerDocument, LoginEmployerMutation, MeEmployerQuery,
 } from "../generated/graphql";
 import {betterUpdateQuery} from "./betterUpdateQuery";
 import Router from "next/router";
@@ -218,6 +218,24 @@ export const createUrqlClient = (ssrExchange: any, ctx: any) => {
                                     } else {
                                         return {
                                             me: result.login.admin,
+                                        };
+                                    }
+                                }
+                            );
+                            invalidateAllPosts(cache);
+                            invalidateAllServices(cache);
+                        },
+                        loginEmployer: (_result, args, cache, info) => {
+                            betterUpdateQuery<LoginEmployerMutation, MeEmployerQuery>(
+                                cache,
+                                {query: MeEmployerDocument},
+                                _result,
+                                (result, query) => {
+                                    if (result.loginEmployer.errors) {
+                                        return query;
+                                    } else {
+                                        return {
+                                            meEmployer: result.loginEmployer.employer,
                                         };
                                     }
                                 }

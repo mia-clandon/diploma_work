@@ -17,6 +17,7 @@ export type Query = {
   hello: Scalars['String'];
   posts: PaginatedPosts;
   post?: Maybe<Post>;
+  meEmployer?: Maybe<Employer>;
   employers: PaginatedEmployers;
   employersList: Array<Employer>;
   employer?: Maybe<Employer>;
@@ -91,12 +92,6 @@ export type User = {
   updatedAt: Scalars['String'];
 };
 
-export type PaginatedEmployers = {
-  __typename?: 'PaginatedEmployers';
-  employers: Array<Employer>;
-  hasMore: Scalars['Boolean'];
-};
-
 export type Employer = {
   __typename?: 'Employer';
   id: Scalars['Float'];
@@ -113,6 +108,13 @@ export type Employer = {
   averageTime: Scalars['String'];
   createdAt: Scalars['String'];
   updatedAt: Scalars['String'];
+  emailEmployer: Scalars['String'];
+};
+
+export type PaginatedEmployers = {
+  __typename?: 'PaginatedEmployers';
+  employers: Array<Employer>;
+  hasMore: Scalars['Boolean'];
 };
 
 export type PaginatedServices = {
@@ -165,18 +167,19 @@ export type Mutation = {
   createPost: Post;
   updatePost?: Maybe<Post>;
   deletePost: Scalars['Boolean'];
+  changePassword: UserResponse;
+  forgotPassword: Scalars['Boolean'];
   createEmployer: EmployerResponse;
   loginEmployer: EmployerResponse;
   updateEmployer?: Maybe<Employer>;
   deleteEmployer: Scalars['Boolean'];
+  logoutEmployer: Scalars['Boolean'];
   searchService: ServiceResponse;
   createService: Service;
   updateService?: Maybe<Service>;
   deleteService: Scalars['Boolean'];
   createBookingDateTime: BookingDateTime;
   createBookingUser: BookingUser;
-  changePassword: UserResponse;
-  forgotPassword: Scalars['Boolean'];
   register: UserResponse;
   login: UserResponse;
   logout: Scalars['Boolean'];
@@ -204,6 +207,17 @@ export type MutationUpdatePostArgs = {
 
 export type MutationDeletePostArgs = {
   id: Scalars['Int'];
+};
+
+
+export type MutationChangePasswordArgs = {
+  newPassword: Scalars['String'];
+  token: Scalars['String'];
+};
+
+
+export type MutationForgotPasswordArgs = {
+  email: Scalars['String'];
 };
 
 
@@ -260,17 +274,6 @@ export type MutationCreateBookingUserArgs = {
 };
 
 
-export type MutationChangePasswordArgs = {
-  newPassword: Scalars['String'];
-  token: Scalars['String'];
-};
-
-
-export type MutationForgotPasswordArgs = {
-  email: Scalars['String'];
-};
-
-
 export type MutationRegisterArgs = {
   options: UsernamePasswordInput;
 };
@@ -291,16 +294,22 @@ export type PostInput = {
   text: Scalars['String'];
 };
 
-export type EmployerResponse = {
-  __typename?: 'EmployerResponse';
+export type UserResponse = {
+  __typename?: 'UserResponse';
   errors?: Maybe<Array<FieldError>>;
-  employer?: Maybe<Employer>;
+  admin?: Maybe<User>;
 };
 
 export type FieldError = {
   __typename?: 'FieldError';
   field: Scalars['String'];
   message: Scalars['String'];
+};
+
+export type EmployerResponse = {
+  __typename?: 'EmployerResponse';
+  errors?: Maybe<Array<FieldError>>;
+  employer?: Maybe<Employer>;
 };
 
 export type EmployerInput = {
@@ -343,12 +352,6 @@ export type BookingUserInput = {
   time: Scalars['String'];
   fio: Scalars['String'];
   contact: Scalars['String'];
-};
-
-export type UserResponse = {
-  __typename?: 'UserResponse';
-  errors?: Maybe<Array<FieldError>>;
-  admin?: Maybe<User>;
 };
 
 export type UsernamePasswordInput = {
@@ -555,6 +558,20 @@ export type LoginMutation = (
   ) }
 );
 
+export type LoginEmployerMutationVariables = Exact<{
+  phoneOrEmail: Scalars['String'];
+  password: Scalars['String'];
+}>;
+
+
+export type LoginEmployerMutation = (
+  { __typename?: 'Mutation' }
+  & { loginEmployer: (
+    { __typename?: 'EmployerResponse' }
+    & RegularEmployerResponseFragment
+  ) }
+);
+
 export type LogoutMutationVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -674,6 +691,17 @@ export type MeQuery = (
   & { me?: Maybe<(
     { __typename?: 'User' }
     & RegularUserFragment
+  )> }
+);
+
+export type MeEmployerQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type MeEmployerQuery = (
+  { __typename?: 'Query' }
+  & { meEmployer?: Maybe<(
+    { __typename?: 'Employer' }
+    & RegularEmployerFragment
   )> }
 );
 
@@ -997,6 +1025,17 @@ export const LoginDocument = gql`
 export function useLoginMutation() {
   return Urql.useMutation<LoginMutation, LoginMutationVariables>(LoginDocument);
 };
+export const LoginEmployerDocument = gql`
+    mutation LoginEmployer($phoneOrEmail: String!, $password: String!) {
+  loginEmployer(phoneOrEmail: $phoneOrEmail, password: $password) {
+    ...RegularEmployerResponse
+  }
+}
+    ${RegularEmployerResponseFragmentDoc}`;
+
+export function useLoginEmployerMutation() {
+  return Urql.useMutation<LoginEmployerMutation, LoginEmployerMutationVariables>(LoginEmployerDocument);
+};
 export const LogoutDocument = gql`
     mutation Logout {
   logout
@@ -1122,6 +1161,17 @@ export const MeDocument = gql`
 
 export function useMeQuery(options: Omit<Urql.UseQueryArgs<MeQueryVariables>, 'query'> = {}) {
   return Urql.useQuery<MeQuery>({ query: MeDocument, ...options });
+};
+export const MeEmployerDocument = gql`
+    query MeEmployer {
+  meEmployer {
+    ...RegularEmployer
+  }
+}
+    ${RegularEmployerFragmentDoc}`;
+
+export function useMeEmployerQuery(options: Omit<Urql.UseQueryArgs<MeEmployerQueryVariables>, 'query'> = {}) {
+  return Urql.useQuery<MeEmployerQuery>({ query: MeEmployerDocument, ...options });
 };
 export const PostDocument = gql`
     query Post($id: Int!) {

@@ -1,10 +1,9 @@
 import React from "react";
 import NextLink from "next/link";
-import {useMeQuery, useLogoutMutation} from "../generated/graphql";
+import {useLogoutMutation, useMeEmployerQuery, useMeQuery} from "../generated/graphql";
 import {isServer} from "../utils/isServer";
 import {useRouter} from "next/router";
 import {Box, Button, Link} from "@material-ui/core";
-import SearchBlock from "./Header/components/SearchBlock/SearchBlock";
 
 // import { LoadingButton } from '@material-ui/lab/';
 
@@ -14,9 +13,10 @@ interface NavBarProps {
 export const NavBar: React.FC<NavBarProps> = ({}) => {
     const router = useRouter();
     const [{fetching: logoutFetching}, logout] = useLogoutMutation();
-    const [{data, fetching}] = useMeQuery({
+    // @ts-ignore
+    const [{data, fetching}] = [useMeQuery({
         pause: isServer(),
-    });
+    }), useMeEmployerQuery()]
 
     let body = null;
 
@@ -26,6 +26,7 @@ export const NavBar: React.FC<NavBarProps> = ({}) => {
     } else if (!data?.me) {
         body = (
             <>
+                <h1>Admin</h1>
                 {/*<NavTabs/>*/}
                 {/*<NextLink href="/">*/}
                 {/*    <Button component={Link}>*/}
@@ -66,6 +67,12 @@ export const NavBar: React.FC<NavBarProps> = ({}) => {
             </>
         );
         // user is logged in
+    } else if (data?.meEmployer) {
+        body = (
+            <>
+                <h1>Employer</h1>
+            </>
+        )
     } else {
         body = (
             <Box display='flex'>
@@ -111,15 +118,16 @@ export const NavBar: React.FC<NavBarProps> = ({}) => {
     }
 
     return (
-        <>
-            <SearchBlock/>
-            {/*{body}*/}
-        </>
-        // <Box display='flex' zIndex={1} position="sticky" top={0} p={6}>
-        // <Box display='flex' zIndex={1} top={0} p={6}>
-        //     <Box display='flex' flex={1} m="auto">
-        //         <Box ml={"auto"}>{body}</Box>
-        //     </Box>
-        // </Box>
+        // <>
+        //     <SearchBlock/>
+        //     {/*{body}*/}
+        // </>
+        <Box display='flex' zIndex={1} position="sticky" top={0} p={6}>
+            <Box display='flex' zIndex={1} top={0} p={6}>
+                <Box display='flex' flex={1} m="auto">
+                    <Box ml={"auto"}>{body}</Box>
+                </Box>
+            </Box>
+        </Box>
     );
 };
