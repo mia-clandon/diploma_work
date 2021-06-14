@@ -8,21 +8,16 @@ import {validateParametersEmployer} from "../utils/validateParametersEmployer";
 
 @ObjectType()
 class ParameterEmployerResponse {
-    @Field(() => [FieldError], { nullable: true })
+    @Field(() => [FieldError], {nullable: true})
     errors?: FieldError[];
 
-    @Field(() => ParameterEmployers, { nullable: true })
+    @Field(() => ParameterEmployers, {nullable: true})
     parameterEmployer?: ParameterEmployers;
 }
 
 
 @Resolver(ParameterEmployers)
 export class ParameterEmployersResolver {
-    // @Query(() => [ParameterEmployers])
-    // async employersList(): Promise<ParameterEmployers[]> {
-    //     return Employer.find();
-    // }
-
     @Query(() => [ParameterEmployers], {nullable: true})
     async parametersEmployer(@Arg("idEmployer") idEmployer: number): Promise<ParameterEmployers[]> {
         return ParameterEmployers.find({
@@ -31,10 +26,11 @@ export class ParameterEmployersResolver {
             }
         })
     }
+
     //
     @Mutation(() => ParameterEmployerResponse)
     @UseMiddleware(isAuth)
-    async createEmployer(
+    async createParameterEmployer(
         @Arg("options") options: ParametersEmployerInput,
     ): Promise<ParameterEmployerResponse> {
         const errors = validateParametersEmployer(options);
@@ -61,33 +57,33 @@ export class ParameterEmployersResolver {
         return {parameterEmployer};
     }
 
-    // @Mutation(() => Employer, {nullable: true})
-    // @UseMiddleware(isAuth)
-    // async updateEmployer(
-    //     @Arg("id") id: number,
-    //     @Arg("input", () => String, {nullable: true}) input: EmployerInput,
-    // ): Promise<Employer | null> {
-    //     const employer = await Employer.findOne(id)
-    //     if (!employer) {
-    //         return null;
-    //     }
-    //     if (typeof input !== "undefined") {
-    //         // @ts-ignore
-    //         await Employer.update({id}, ...input)
-    //     }
-    //
-    //     return employer;
-    // }
-    //
-    // @Mutation(() => Boolean)
-    // @UseMiddleware(isAuth)
-    // async deleteEmployer(
-    //     @Arg("id")
-    //         id: number,
-    // ):
-    //     Promise<boolean> {
-    //     await Employer.delete(id);
-    //     return true;
-    // }
+    @Mutation(() => ParameterEmployers, {nullable: true})
+    @UseMiddleware(isAuth)
+    async updateParameterEmployer(
+        @Arg("id") id: number,
+        @Arg("input", () => String, {nullable: true}) input: ParametersEmployerInput,
+    ): Promise<ParameterEmployers | null> {
+        const parameterService = await ParameterEmployers.findOne(id)
+        if (!parameterService) {
+            return null;
+        }
+        if (typeof input !== "undefined") {
+            // @ts-ignore
+            await ParameterEmployers.update({id}, ...input)
+        }
+
+        return parameterService;
+    }
+
+    @Mutation(() => Boolean)
+    @UseMiddleware(isAuth)
+    async deleteParameterEmployer(
+        @Arg("id")
+            id: number,
+    ):
+        Promise<boolean> {
+        await ParameterEmployers.delete(id);
+        return true;
+    }
 }
 

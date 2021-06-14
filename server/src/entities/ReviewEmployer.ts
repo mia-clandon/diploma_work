@@ -18,6 +18,10 @@ export class ReviewEmployer extends BaseEntity {
     idEmployer: number;
 
     @Field()
+    @Column({nullable: false})
+    idClient: number;
+
+    @Field()
     @Column()
     score: number;
 

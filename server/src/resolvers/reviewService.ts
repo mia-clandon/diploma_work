@@ -5,8 +5,6 @@ import {isAuth} from "../middleware/isAuth";
 @InputType()
 class ReviewServiceInput {
     @Field()
-    idService: number;
-    @Field()
     score: number;
     @Field()
     scoreCommunicate: number;

@@ -5,8 +5,6 @@ import {ReviewEmployer} from "../entities/ReviewEmployer";
 @InputType()
 class ReviewEmployerInput {
     @Field()
-    idEmployer: number;
-    @Field()
     score: number;
     @Field()
     scoreCommunicate: number;

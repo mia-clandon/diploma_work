@@ -15,6 +15,14 @@ export class BookingUser extends BaseEntity {
 
     @Field()
     @Column({nullable: false})
+    idClient: number;
+
+    @Field()
+    @Column({nullable: false})
+    idEmployer: number;
+
+    @Field()
+    @Column({nullable: false})
     employer!: string;
 
     @Field()

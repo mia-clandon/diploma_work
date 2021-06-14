@@ -1,10 +1,5 @@
-import {ObjectType, Field} from "type-graphql";
-import {
-    BaseEntity,
-    Column,
-    Entity,
-    PrimaryGeneratedColumn,
-} from "typeorm";
+import {Field, ObjectType} from "type-graphql";
+import {BaseEntity, Column, Entity, PrimaryGeneratedColumn,} from "typeorm";
 
 @ObjectType()
 @Entity()
@@ -16,6 +11,10 @@ export class ReviewService extends BaseEntity {
     @Field()
     @Column({nullable: false})
     idService: number;
+
+    @Field()
+    @Column({nullable: false})
+    idClient: number;
 
     @Field()
     @Column()
