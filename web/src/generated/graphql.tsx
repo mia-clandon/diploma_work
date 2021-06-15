@@ -32,6 +32,7 @@ export type Query = {
   reviewEmployersList: Array<ReviewEmployer>;
   reviewEmployer?: Maybe<Array<ReviewEmployer>>;
   parametersEmployer?: Maybe<Array<ParameterEmployers>>;
+  parametersEmployerList: PaginatedParameterEmployers;
 };
 
 
@@ -80,6 +81,12 @@ export type QueryReviewEmployerArgs = {
 
 export type QueryParametersEmployerArgs = {
   idEmployer: Scalars['Float'];
+};
+
+
+export type QueryParametersEmployerListArgs = {
+  cursor?: Maybe<Scalars['String']>;
+  limit: Scalars['Int'];
 };
 
 export type PaginatedPosts = {
@@ -149,7 +156,7 @@ export type Service = {
   category: Scalars['String'];
   description: Scalars['String'];
   price: Scalars['String'];
-  image: Scalars['String'];
+  location: Scalars['String'];
   createdAt: Scalars['String'];
   updatedAt: Scalars['String'];
 };
@@ -218,6 +225,12 @@ export type ParameterEmployers = {
   description: Scalars['String'];
   createdAt: Scalars['String'];
   updatedAt: Scalars['String'];
+};
+
+export type PaginatedParameterEmployers = {
+  __typename?: 'PaginatedParameterEmployers';
+  parametersEmployer: Array<ParameterEmployers>;
+  hasMore: Scalars['Boolean'];
 };
 
 export type Mutation = {
@@ -421,7 +434,7 @@ export type ServiceInput = {
   category: Scalars['String'];
   description: Scalars['String'];
   price: Scalars['String'];
-  image: Scalars['String'];
+  location: Scalars['String'];
 };
 
 export type BookingDateTimeInput = {
@@ -529,7 +542,7 @@ export type RegularUserResponseFragment = (
 
 export type ServiceSnippetFragment = (
   { __typename?: 'Service' }
-  & Pick<Service, 'id' | 'title' | 'category' | 'description' | 'price' | 'image' | 'createdAt' | 'updatedAt'>
+  & Pick<Service, 'id' | 'title' | 'category' | 'description' | 'price' | 'location' | 'createdAt' | 'updatedAt'>
 );
 
 export type CreateBookingDateTimeMutationVariables = Exact<{
@@ -633,7 +646,7 @@ export type CreateServiceMutation = (
   { __typename?: 'Mutation' }
   & { createService: (
     { __typename?: 'Service' }
-    & Pick<Service, 'id' | 'title' | 'category' | 'description' | 'price' | 'image'>
+    & Pick<Service, 'id' | 'title' | 'category' | 'description' | 'price' | 'location'>
   ) }
 );
 
@@ -838,6 +851,24 @@ export type MeEmployerQuery = (
   )> }
 );
 
+export type ParametersEmployerListQueryVariables = Exact<{
+  limit: Scalars['Int'];
+  cursor?: Maybe<Scalars['String']>;
+}>;
+
+
+export type ParametersEmployerListQuery = (
+  { __typename?: 'Query' }
+  & { parametersEmployerList: (
+    { __typename?: 'PaginatedParameterEmployers' }
+    & Pick<PaginatedParameterEmployers, 'hasMore'>
+    & { parametersEmployer: Array<(
+      { __typename?: 'ParameterEmployers' }
+      & Pick<ParameterEmployers, 'id' | 'idEmployer' | 'title' | 'description'>
+    )> }
+  ) }
+);
+
 export type ParametersEmployerQueryVariables = Exact<{
   idEmployer: Scalars['Float'];
 }>;
@@ -1031,7 +1062,7 @@ export const ServiceSnippetFragmentDoc = gql`
   category
   description
   price
-  image
+  location
   createdAt
   updatedAt
 }
@@ -1138,7 +1169,7 @@ export const CreateServiceDocument = gql`
     category
     description
     price
-    image
+    location
   }
 }
     `;
@@ -1340,6 +1371,23 @@ export const MeEmployerDocument = gql`
 
 export function useMeEmployerQuery(options: Omit<Urql.UseQueryArgs<MeEmployerQueryVariables>, 'query'> = {}) {
   return Urql.useQuery<MeEmployerQuery>({ query: MeEmployerDocument, ...options });
+};
+export const ParametersEmployerListDocument = gql`
+    query ParametersEmployerList($limit: Int!, $cursor: String) {
+  parametersEmployerList(limit: $limit, cursor: $cursor) {
+    hasMore
+    parametersEmployer {
+      id
+      idEmployer
+      title
+      description
+    }
+  }
+}
+    `;
+
+export function useParametersEmployerListQuery(options: Omit<Urql.UseQueryArgs<ParametersEmployerListQueryVariables>, 'query'> = {}) {
+  return Urql.useQuery<ParametersEmployerListQuery>({ query: ParametersEmployerListDocument, ...options });
 };
 export const ParametersEmployerDocument = gql`
     query ParametersEmployer($idEmployer: Float!) {

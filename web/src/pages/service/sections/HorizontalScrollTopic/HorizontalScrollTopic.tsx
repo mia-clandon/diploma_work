@@ -6,14 +6,25 @@ import CardEmployerOrService from "../../../../components/Cards/CardEmployerOrSe
 import {SvgIconProps} from "@material-ui/core/SvgIcon";
 import NextLink from "next/link";
 import {Link} from "@material-ui/core";
+import {createStyles} from "@material-ui/core/styles";
 
 export type HorizontalScrollTopicBlockProps = HorizontalScrollTopicBlockProps & {
     icon?: React.ElementType<SvgIconProps>;
     title: string;
 };
 
+const useStyles = () =>
+    createStyles({
+        scrollBox: {
+            "::-webkit-scrollbar": {
+                height: 0,
+            }
+        }
+    })
+
 function HorizontalScrollTopic(props: HorizontalScrollTopicBlockProps) {
     const {icon: Icon, title: string, ...other} = props;
+    const classes = useStyles()
     return (
         <Box sx={{flexGrow: 1, marginTop: '36px'}}>
             <Grid container spacing={2} justifyContent="center">
@@ -56,7 +67,7 @@ function HorizontalScrollTopic(props: HorizontalScrollTopicBlockProps) {
                     </Grid>
                 </Grid>
                 <Grid item xs={11}>
-                    <Box display="flex" flexDirection="row" style={{overflowX: 'auto'}}>
+                    <Box display="flex" flexDirection="row" style={{overflowX: 'auto', }} className={classes.scrollBox}>
                         <Grid container spacing={2} style={{margin: '10px 0', width: '544px'}}>
                             <Grid item xs={12}>
                                 <CardEmployerOrService/>

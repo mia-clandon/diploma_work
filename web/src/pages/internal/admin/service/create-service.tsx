@@ -112,9 +112,8 @@ const CreateService: React.FC<{}> = ({}) => {
                                                         }}
                                                         style={{width: '100%'}}
                                                     >
-                                                        <MenuItem value={"Категория 1"}>Категория 1</MenuItem>
-                                                        <MenuItem value={"Категория 2"}>Категория 2</MenuItem>
-                                                        <MenuItem value={"Категория 3"}>Категория 3</MenuItem>
+                                                        <MenuItem value={"Недвижимость"}>Недвижимость</MenuItem>
+                                                        <MenuItem value={"Работа"}>Работа</MenuItem>
                                                     </Field>
                                                 </FormControl>
                                             </Grid>
@@ -123,15 +122,10 @@ const CreateService: React.FC<{}> = ({}) => {
                                                 label="Цена услуги"
                                                 defaultValue="Цена услуги"
                                             />
-                                            <Grid
-                                                item
-                                                xs={4}
-                                            >
-                                                <FormControl style={{width: 400}}>
-                                                    <Field component={SimpleFileUpload} name="image"
-                                                           label="Загрузить изображение"/>;
-                                                </FormControl>
-                                            </Grid>
+                                            <InputField
+                                                name="location"
+                                                label="Местоположение"
+                                            />
                                             <Button
                                                 type="submit"
                                                 onClick={() => {

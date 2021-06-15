@@ -15,11 +15,7 @@ export class BookingUser extends BaseEntity {
 
     @Field()
     @Column({nullable: false})
-    idClient: number;
-
-    @Field()
-    @Column({nullable: false})
-    idEmployer: number;
+    idService: number;
 
     @Field()
     @Column({nullable: false})
@@ -31,11 +27,11 @@ export class BookingUser extends BaseEntity {
 
     @Field()
     @Column({nullable: false})
-    date!: string
+    dateBegin!: string
 
     @Field()
     @Column({nullable: false})
-    time!: string
+    dateBefore!: string
 
     @Field()
     @Column({nullable: false})

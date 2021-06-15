@@ -3,10 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="3d125546-be13-4a2e-8aca-dcfb6a8b6bfb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/entities/internal/employer/ParameterEmployers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/entities/internal/employer/ParameterEmployers.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/resolvers/Inputs/ParametersEmployerInput.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resolvers/Inputs/ParametersEmployerInput.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/entities/BookingUser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/entities/BookingUser.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/entities/Service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/entities/Service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/resolvers/employer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resolvers/employer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/resolvers/parameterEmployer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resolvers/parameterEmployer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/resolvers/service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resolvers/service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +44,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/src/utils" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/src/pages/service/components" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -57,11 +58,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\lireddit-prod\web\src\utils" />
+      <recent name="D:\lireddit-prod\web\src\pages\service\components" />
+      <recent name="D:\lireddit-prod\web\src\pages\employer\sections" />
       <recent name="D:\lireddit-prod\web\src\graphql\queries" />
+      <recent name="D:\lireddit-prod\web\src\utils" />
       <recent name="D:\lireddit-prod\web\src\graphql\mutations" />
-      <recent name="D:\lireddit-prod\web\src\pages\service\components\Location\icons" />
-      <recent name="D:\lireddit-prod\web\src\pages\internal\admin\employers\employer" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\lireddit-prod\web\src\pages\internal\admin\employers\employer\blocks\Parameters\Item" />
@@ -142,7 +143,9 @@
       <workItem from="1623673526674" duration="14646000" />
       <workItem from="1623689797075" duration="375000" />
       <workItem from="1623692290641" duration="19006000" />
-      <workItem from="1623746552729" duration="4276000" />
+      <workItem from="1623746552729" duration="7212000" />
+      <workItem from="1623784655911" duration="1581000" />
+      <workItem from="1623790787546" duration="3066000" />
     </task>
     <servers />
   </component>

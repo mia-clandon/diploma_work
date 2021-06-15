@@ -1,19 +1,16 @@
-import {Arg, Mutation, Query, Resolver, UseMiddleware} from "type-graphql";
+import {Arg, Field, Int, Mutation, ObjectType, Query, Resolver, UseMiddleware} from "type-graphql";
 import {ParameterEmployers} from "../entities/internal/employer/ParameterEmployers";
 import {isAuth} from "../middleware/isAuth";
 import {ParametersEmployerInput} from "./Inputs/ParametersEmployerInput";
+import {getConnection} from "typeorm";
 
-// // @ts-ignore
-// @ObjectType()
-// class ParameterEmployerResponse {
-//     @Field(() => [FieldError], {nullable: true})
-//     errors?: FieldError[];
-//
-//     @Field(() => ParameterEmployers, {nullable: true})
-//     parameterEmployer?: ParameterEmployers[];
-// }
-
-
+@ObjectType()
+class PaginatedParameterEmployers {
+    @Field(() => [ParameterEmployers])
+    parametersEmployer: ParameterEmployers[];
+    @Field()
+    hasMore: boolean;
+}
 
 @Resolver(ParameterEmployers)
 export class ParameterEmployersResolver {
@@ -26,6 +23,38 @@ export class ParameterEmployersResolver {
         })
     }
 
+    @Query(() => PaginatedParameterEmployers)
+    async parametersEmployerList(
+        @Arg("limit", () => Int) limit: number,
+        @Arg("cursor", () => String, {nullable: true}) cursor: string | null
+    ): Promise<PaginatedParameterEmployers> {
+        const realLimit = Math.min(50, limit);
+        const realLimitPlusOne = realLimit + 1;
+
+        const replacements: any[] = [realLimitPlusOne];
+
+        if (cursor) {
+            replacements.push(new Date(parseInt(cursor)));
+        }
+
+        const parametersEmployer = await getConnection().query(
+            `
+    select e.*
+    from parameter_employers e
+    ${cursor ? `where e."createdAt" < $2` : ""}
+    order by e."createdAt" DESC
+    limit $1
+    `,
+            replacements
+        );
+
+        return {
+            parametersEmployer: parametersEmployer.slice(0, realLimit),
+            hasMore: parametersEmployer.length === realLimitPlusOne,
+        };
+    }
+
+
     @Mutation(() => ParameterEmployers)
     @UseMiddleware(isAuth)
     async createParameterEmployer(
@@ -35,35 +64,6 @@ export class ParameterEmployersResolver {
             ...options,
         }).save();
     }
-
-    // @Mutation(() => ParameterEmployerResponse)
-    // @UseMiddleware(isAuth)
-    // async createParameterEmployer(
-    //     @Arg("options") options: ParametersEmployerInput,
-    // ): Promise<ParameterEmployerResponse> {
-    //     const errors = validateParametersEmployer(options);
-    //     if (errors) {
-    //         return {errors};
-    //     }
-    //     let parameterEmployer;
-    //     try {
-    //         const result = await getConnection()
-    //             .createQueryBuilder()
-    //             .insert()
-    //             .into(ParameterEmployers)
-    //             .values({
-    //                 idEmployer: options.idEmployer,
-    //                 title: options.title,
-    //                 description: options.description,
-    //             })
-    //             .returning("*")
-    //             .execute();
-    //         parameterEmployer = result.raw[0];
-    //     } catch (err) {
-    //         console.log(errors)
-    //     }
-    //     return {parameterEmployer};
-    // }
 
     @Mutation(() => ParameterEmployers, {nullable: true})
     @UseMiddleware(isAuth)

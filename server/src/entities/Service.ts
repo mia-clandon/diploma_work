@@ -34,7 +34,7 @@ export class Service extends BaseEntity {
 
     @Field()
     @Column({nullable: false})
-    image!:string;
+    location!:string;
 
     @ManyToMany(() => Employer, employer => employer.services)
     @JoinTable()

@@ -15,7 +15,7 @@ class ServiceInput {
     @Field()
     price: string
     @Field()
-    image: string
+    location: string
 }
 
 @ObjectType()

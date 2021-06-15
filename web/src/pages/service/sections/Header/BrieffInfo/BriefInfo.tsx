@@ -9,6 +9,8 @@ import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import Like from "../../../../../components/Cards/icons/Like";
 import Box from "@material-ui/core/Box";
+import CreateReviewWindow from "../../../components/CreateReviewWindow";
+import CreateBookingWindow from "../../../components/CreateBookingWindow";
 
 function BriefInfo() {
     return (
@@ -103,20 +105,21 @@ function BriefInfo() {
                         </IconButton>
                     </Grid>
                     <Grid item xs={6}>
-                        <Button onClick={() => console.log('test')}
-                                style={{
-                                    fontFamily: 'Montserrat',
-                                    fontSize: '14px',
-                                    fontWeight: 600,
-                                    lineHeight: '17px',
-                                    textAlign: 'center',
-                                    color: '#FFFFFF',
-                                    textTransform: 'capitalize',
-                                    background: '#FF6231',
-                                    width: '100%',
-                                    height: '36px',
-                                }}
-                        >Забронировать апартаменты</Button>
+                        <CreateBookingWindow/>
+                        {/*<Button onClick={() => console.log('test')}*/}
+                        {/*        style={{*/}
+                        {/*            fontFamily: 'Montserrat',*/}
+                        {/*            fontSize: '14px',*/}
+                        {/*            fontWeight: 600,*/}
+                        {/*            lineHeight: '17px',*/}
+                        {/*            textAlign: 'center',*/}
+                        {/*            color: '#FFFFFF',*/}
+                        {/*            textTransform: 'capitalize',*/}
+                        {/*            background: '#FF6231',*/}
+                        {/*            width: '100%',*/}
+                        {/*            height: '36px',*/}
+                        {/*        }}*/}
+                        {/*>Забронировать апартаменты</Button>*/}
                     </Grid>
                 </Grid>
             </Grid>

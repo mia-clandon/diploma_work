@@ -5,6 +5,6 @@ mutation CreateService($input: ServiceInput!) {
     category
     description
     price
-    image
+    location
   }
 }

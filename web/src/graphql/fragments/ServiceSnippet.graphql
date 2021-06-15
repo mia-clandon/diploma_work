@@ -4,7 +4,7 @@ fragment ServiceSnippet on Service {
   category
   description
   price
-  image
+  location
   createdAt
   updatedAt
 }

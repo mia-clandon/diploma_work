@@ -63,7 +63,7 @@ function CardEmployerOrService() {
                 <div className={classes.cover}>
                     <Grid container>
                         <Grid item xs={12}>
-                            <img src={"./img/apartment.jpg"} alt="" style={{width: '165px', height: '165px'}}/>
+                            <img src={"./img/apartment.jpg"} alt="" style={{width: '165px', height: '165px', marginTop: '20px'}}/>
                         </Grid>
                     </Grid>
                 </div>
@@ -107,7 +107,7 @@ function CardEmployerOrService() {
                               }}>
                             <Grid item xs={12}>
                                 {/*<NextLink href="/employer/[id]" as={`/employer/${options.id}`}>*/}
-                                <NextLink href="/employer/1">
+                                <NextLink href="/service/1">
                                     <Link>
                                         <Typography
                                             style={{

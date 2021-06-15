@@ -1,6 +1,6 @@
-import React from "react";
+import React, {useState} from "react";
 import {Layout} from "../../components/Layout";
-import {Box, Container, Grid} from "@material-ui/core";
+import {Box, Grid} from "@material-ui/core";
 import {withUrqlClient} from "next-urql";
 import {createUrqlClient} from "../../utils/createUrqlClient";
 import BreadCrumbsServiceId from "../service/sections/Header/BreadCrumbs/BreadCrumbs";
@@ -14,6 +14,8 @@ import Amenties from "../service/components/Amenities/Amenties";
 import Contacts from "../service/components/Contacts/Contacts";
 import Location from "../service/components/Location/Location";
 import Reviews from "../service/components/Reviews/Reviews";
+import {useEmployersListQuery} from "../../generated/graphql";
+import ShowParameters from "../internal/admin/employers/employer/blocks/Parameters/ShowParamaters";
 
 function handleClick(event) {
     event.preventDefault();
@@ -22,27 +24,23 @@ function handleClick(event) {
 
 
 const Employer = ({}) => {
-    // const [{data, error, fetching}] = useGetServiceFromUrl();
-    //
-    // if (fetching) {
-    //     return (
-    //         <Layout>
-    //             <div>loading...</div>
-    //         </Layout>
-    //     );
-    // }
-    //
-    // if (error) {
-    //     return <div>{error.message}</div>;
-    // }
-    //
-    // if (!data?.service) {
-    //     return (
-    //         <Layout>
-    //             <Box>could not find service</Box>
-    //         </Layout>
-    //     );
-    // }
+    const [variables, setVariables] = useState({
+        limit: 4,
+        cursor: null as null | string,
+    });
+
+    const [{data, error, fetching}] = useEmployersListQuery();
+    console.log(data)
+
+    if (!fetching && !data) {
+        return (
+            <div>
+                <div>you got query failed for some reason</div>
+                <div>{error?.message}</div>
+            </div>
+        );
+    }
+
 
     return (
         <Layout>
@@ -51,7 +49,8 @@ const Employer = ({}) => {
                     <Grid item xs={11}>
                         <Grid container spacing={2} justifyContent="center" alignItems="center">
                             <Grid item xs={12}>
-                                <Grid container spacing={2} justifyContent="center" alignItems="center"  style={{marginLeft: '30px'}}>
+                                <Grid container spacing={2} justifyContent="center" alignItems="center"
+                                      style={{marginLeft: '30px'}}>
                                     <Grid item xs={12}>
                                         <BreadCrumbsServiceId/>
                                     </Grid>
@@ -75,6 +74,9 @@ const Employer = ({}) => {
                                         <Grid container spacing={2}>
                                             <Grid item xs={7}>
                                                 <Grid container spacing={2}>
+                                                    <Grid item xs={12}>
+                                                        <ShowParameters/>
+                                                    </Grid>
                                                     <Grid item xs={12}>
                                                         <Description/>
                                                     </Grid>

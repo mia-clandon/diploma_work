@@ -200,7 +200,6 @@ export class EmployerResolver {
             return {errors};
         }
         const hashedPassword = await argon2.hash(options.password);
-        // const uploadAvatar = options.avatar;
         let employer;
         try {
             const result = await getConnection()
@@ -236,8 +235,6 @@ export class EmployerResolver {
                 };
             }
         }
-
-        console.log(employer)
         return {employer};
     }
 

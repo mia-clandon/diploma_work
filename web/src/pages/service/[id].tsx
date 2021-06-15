@@ -1,6 +1,6 @@
 import React from "react";
 import {Layout} from "../../components/Layout";
-import {Box, Container, Grid} from "@material-ui/core";
+import {Box, Grid} from "@material-ui/core";
 import BreadCrumbsServiceId from "./sections/Header/BreadCrumbs/BreadCrumbs";
 import BriefInfo from "./sections/Header/BrieffInfo/BriefInfo";
 import MediaContent from "./components/MediaContent/MediaContent";
@@ -51,7 +51,8 @@ const Service = ({}) => {
                     <Grid item xs={11}>
                         <Grid container spacing={2} justifyContent="center" alignItems="center">
                             <Grid item xs={12}>
-                                <Grid container spacing={2} justifyContent="center" alignItems="center"  style={{marginLeft: '30px'}}>
+                                <Grid container spacing={2} justifyContent="center" alignItems="center"
+                                      style={{marginLeft: '30px'}}>
                                     <Grid item xs={12}>
                                         <BreadCrumbsServiceId/>
                                     </Grid>
@@ -107,7 +108,6 @@ const Service = ({}) => {
                     </Grid>
                 </Grid>
             </Box>
-            }
         </Layout>
     );
 };
