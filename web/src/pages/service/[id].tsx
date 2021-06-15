@@ -50,8 +50,8 @@ const Service = ({}) => {
                 <Grid container spacing={2} justifyContent="center" alignItems="center">
                     <Grid item xs={11}>
                         <Grid container spacing={2} justifyContent="center" alignItems="center">
-                            <Grid item xs={12} style={{background: 'white'}}>
-                                <Grid container spacing={2} justifyContent="center" alignItems="center">
+                            <Grid item xs={12}>
+                                <Grid container spacing={2} justifyContent="center" alignItems="center"  style={{marginLeft: '30px'}}>
                                     <Grid item xs={12}>
                                         <BreadCrumbsServiceId/>
                                     </Grid>
@@ -73,7 +73,7 @@ const Service = ({}) => {
                                     </Grid>
                                     <Grid item xs={11} style={{marginTop: '20px'}}>
                                         <Grid container spacing={2}>
-                                            <Grid item xs={8}>
+                                            <Grid item xs={7}>
                                                 <Grid container spacing={2}>
                                                     <Grid item xs={12}>
                                                         <Description/>
@@ -86,9 +86,9 @@ const Service = ({}) => {
                                                     </Grid>
                                                 </Grid>
                                             </Grid>
-                                            <Grid item xs={4}>
+                                            <Grid item xs={5}>
                                                 <Grid container spacing={2}>
-                                                    <Grid item xs={12}>
+                                                    <Grid item xs={12} style={{marginLeft: '15px'}}>
                                                         <Amenties/>
                                                     </Grid>
                                                     <Grid item xs={12}>

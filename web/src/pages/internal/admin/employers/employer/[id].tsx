@@ -6,9 +6,20 @@ import {Grid} from "@material-ui/core";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import Link from "@material-ui/core/Link";
 import Typography from "@material-ui/core/Typography";
-import { createUrqlClient } from "../../../../../utils/createUrqlClient";
+import {createUrqlClient} from "../../../../../utils/createUrqlClient";
 import {Layout} from "../../../../../components/Layout";
 import {useGetEmployerFromUrl} from "../../../../../utils/useGetEmployerFromUrl";
+import Card from "@material-ui/core/Card";
+import {createStyles, Theme} from "@material-ui/core/styles";
+import ContentBlock from "./blocks/ContentBlock/ContentBlock";
+
+const useStyles = (theme: Theme) =>
+    createStyles({
+        root: {
+            display: 'flex',
+            flexDirection: 'column',
+        },
+    });
 
 function handleClick(event) {
     event.preventDefault();
@@ -17,6 +28,8 @@ function handleClick(event) {
 
 
 const Employer = ({}) => {
+    const classes = useStyles();
+
     const [{data, error, fetching}] = useGetEmployerFromUrl();
 
     if (fetching) {
@@ -45,7 +58,7 @@ const Employer = ({}) => {
                 direction="column"
                 xs={12}
             >
-                <Breadcrumbs aria-label="breadcrumb"  style={{marginLeft: '22.5%'}}>
+                <Breadcrumbs aria-label="breadcrumb" style={{marginLeft: '22.5%'}}>
                     <NextLink href="/">
                         <Link color="inherit" href="/" onClick={handleClick}>
                             Главная
@@ -58,6 +71,9 @@ const Employer = ({}) => {
                     </NextLink>
                     <Typography color="textPrimary">{data.employer.firstname} {data.employer.lastname}</Typography>
                 </Breadcrumbs>
+                <Card className={classes.root} style={{paddingTop: '20px', paddingLeft: '25px',}}>
+                    <ContentBlock options={data}/>
+                </Card>
             </Grid>
         </Layout>
     );
