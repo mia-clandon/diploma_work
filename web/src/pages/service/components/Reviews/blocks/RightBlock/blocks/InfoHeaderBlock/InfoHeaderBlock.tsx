@@ -20,7 +20,7 @@ function InfoHeaderBlock() {
                                 color: '#000000',
                                 fontWeight: 600,
                                 lineHeight: '24.38px',
-                                textAlign: 'start'
+                                textAlign: 'start',
                             }}
                         >
                             Masont G.

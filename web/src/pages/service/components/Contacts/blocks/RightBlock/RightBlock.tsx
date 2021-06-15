@@ -1,5 +1,5 @@
 import React from 'react';
-import {Theme, createStyles, makeStyles, useTheme} from '@material-ui/core/styles';
+import {createStyles, Theme, useTheme} from '@material-ui/core/styles';
 import CardContent from '@material-ui/core/CardContent';
 import Box from "@material-ui/core/Box";
 import InfoHeaderBlock from "./blocks/InfoHeaderBlock/InfoHeaderBlock";

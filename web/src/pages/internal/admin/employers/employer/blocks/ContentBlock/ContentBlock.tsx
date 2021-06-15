@@ -10,6 +10,7 @@ function ContentBlock({options}: { options?: any }) {
             flexDirection="row"
             justifyContent="center"
             alignItems="center"
+            style={{ border: '1px solid #F0EEEE'}}
         >
             <LeftBlock options={options}/>
             <RightBlock options={options}/>

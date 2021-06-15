@@ -5,7 +5,7 @@ import Wifi from "../../../../components/Cards/icons/Wifi";
 import ItemAmenties from "./blocks/ItemAmenties";
 import Button from "@material-ui/core/Button";
 import HeaderBlock from "../../../../components/HeaderBlock/HeaderBlock";
-import Card from "@material-ui/core/Card";
+import {Accordion, AccordionDetails, AccordionSummary} from "@material-ui/core";
 
 const itemAmenties = [
     {
@@ -46,16 +46,28 @@ function Amenties() {
                 ))}
             </Grid>
             <Grid item xs={12}>
-                <Button
-                    variant="outlined"
-                    style={{
-                        color: '#6D6767'
-                    }}
-                >
-                    <Typography>
-                        Показать все удобства
-                    </Typography>
-                </Button>
+                    <Accordion>
+                        <AccordionSummary
+                            aria-controls="panel1a-content"
+                            id="panel1a-header"
+                        >
+                            <Typography
+                                style={{
+                                    font: 'Montserrat Regular',
+                                    fontSize: '14px',
+                                    fontWeight: 400,
+                                    lineHeight: '19.5px',
+                                    color: 'black',
+                                }}
+                            >
+                                Показать все удобства</Typography>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            {itemAmenties.map((item) => (
+                                <ItemAmenties icon={item.icon} title={item.title} description={item.description}/>
+                            ))}
+                        </AccordionDetails>
+                    </Accordion>
             </Grid>
         </Grid>
     )

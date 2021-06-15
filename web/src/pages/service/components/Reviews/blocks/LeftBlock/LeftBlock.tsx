@@ -9,7 +9,7 @@ import IconButton from "@material-ui/core/IconButton";
 const useStyles = (theme: Theme) =>
     createStyles({
         cover: {
-            marginTop: '36px',
+            marginTop: '-36px',
             marginLeft: '16px',
         },
     });
@@ -22,7 +22,7 @@ function LeftBlock() {
         <Box className={classes.cover}>
             <Grid container justifyContent="center" >
                 <Grid item xs={8} justifyContent="center" alignItems="center">
-                    <img src={"./../img/apartment.jpg"} alt="" style={{width: '71px', height: '71px', marginTop: '50px',}}/>
+                    <img src={"./../img/apartment.jpg"} alt="" style={{width: '71px', height: '71px', marginTop: '10px',}}/>
                 </Grid>
                 <Grid item xs={8} justifyContent="center" alignItems="center" style={{marginLeft: '30%'}}>
                     <IconButton onClick={() => console.log('test')}>

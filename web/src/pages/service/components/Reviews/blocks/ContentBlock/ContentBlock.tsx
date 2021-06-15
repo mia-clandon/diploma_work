@@ -10,6 +10,7 @@ function ContentBlock() {
             flexDirection="row"
             justifyContent="center"
             alignItems="center"
+            style={{border: '1px solid #F0EEEE', margin: '10px',borderRadius: '6px'}}
         >
             <LeftBlock/>
             <RightBlock/>
