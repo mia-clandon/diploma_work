@@ -11,6 +11,7 @@ import Button from "@material-ui/core/Button";
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import NextLink from "next/link";
+import {EditDeleteServiceButtons} from "../blocks/EditDeleteServiceButtons";
 
 export default function TableServices() {
     const [{data, error, fetching}] = useServicesListQuery();
@@ -55,28 +56,7 @@ export default function TableServices() {
                                 <TableCell align="right">{service.price}</TableCell>
                                 <TableCell align="right">{service.title}</TableCell>
                                 <TableCell align="right">
-                                    <NextLink href="/internal/admin/service/edit/[id]"
-                                              as={`/internal/admin/service/edit/${service.id}`}>
-                                        <Button
-                                            variant="contained"
-                                            color="primary"
-                                            startIcon={<EditIcon/>}
-                                        >
-                                            Редактировать
-                                        </Button>
-                                    </NextLink>
-                                </TableCell>
-                                <TableCell align="right">
-                                    <Button
-                                        variant="contained"
-                                        color="secondary"
-                                        onClick={() => {
-                                            deleteService({service});
-                                        }}
-                                        startIcon={<DeleteIcon/>}
-                                    >
-                                        Удалить
-                                    </Button>
+                                  <EditDeleteServiceButtons id={service.id}/>
                                 </TableCell>
                             </TableRow>
                         ))}

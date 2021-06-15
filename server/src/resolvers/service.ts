@@ -1,4 +1,4 @@
-import {Resolver, Query, Arg, Mutation, InputType, Field, UseMiddleware, ObjectType, Int} from "type-graphql";
+import {Arg, Field, InputType, Int, Mutation, ObjectType, Query, Resolver, UseMiddleware} from "type-graphql";
 import {Service} from "../entities/Service";
 import {isAuth} from "../middleware/isAuth";
 import {getConnection} from "typeorm";
@@ -139,6 +139,5 @@ export class ServiceResolver {
         await Service.delete({id});
         return true;
     }
-
 }
 

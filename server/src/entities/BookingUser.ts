@@ -19,10 +19,6 @@ export class BookingUser extends BaseEntity {
 
     @Field()
     @Column({nullable: false})
-    employer!: string;
-
-    @Field()
-    @Column({nullable: false})
     service!: string;
 
     @Field()

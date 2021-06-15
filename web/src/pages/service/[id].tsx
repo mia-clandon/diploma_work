@@ -14,6 +14,13 @@ import Location from "./components/Location/Location";
 import Reviews from "./components/Reviews/Reviews";
 import {withUrqlClient} from "next-urql";
 import {createUrqlClient} from "../../utils/createUrqlClient";
+import 'date-fns';
+import DateFnsUtils from '@date-io/date-fns';
+import {
+    MuiPickersUtilsProvider,
+    KeyboardDatePicker,
+} from '@material-ui/pickers';
+
 
 function handleClick(event) {
     event.preventDefault();

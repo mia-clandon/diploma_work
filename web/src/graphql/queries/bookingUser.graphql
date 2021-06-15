@@ -1,10 +1,10 @@
 query BookingUserList{
     bookingUserList{
         id
-        employer
+        idService
         service
-        date
-        time
+        dateBegin
+        dateBefore
         fio
         contact
     }

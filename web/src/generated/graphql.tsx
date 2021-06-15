@@ -173,12 +173,10 @@ export type BookingDateTime = {
 export type BookingUser = {
   __typename?: 'BookingUser';
   id: Scalars['Float'];
-  idClient: Scalars['Float'];
-  idEmployer: Scalars['Float'];
-  employer: Scalars['String'];
+  idService: Scalars['Float'];
   service: Scalars['String'];
-  date: Scalars['String'];
-  time: Scalars['String'];
+  dateBegin: Scalars['String'];
+  dateBefore: Scalars['String'];
   fio: Scalars['String'];
   contact: Scalars['String'];
 };
@@ -443,10 +441,10 @@ export type BookingDateTimeInput = {
 };
 
 export type BookingUserInput = {
-  employer: Scalars['String'];
+  idService: Scalars['Float'];
   service: Scalars['String'];
-  date: Scalars['String'];
-  time: Scalars['String'];
+  dateBegin: Scalars['String'];
+  dateBefore: Scalars['String'];
   fio: Scalars['String'];
   contact: Scalars['String'];
 };
@@ -581,7 +579,7 @@ export type CreateBookingUserMutation = (
   { __typename?: 'Mutation' }
   & { createBookingUser: (
     { __typename?: 'BookingUser' }
-    & Pick<BookingUser, 'id' | 'employer' | 'service' | 'date' | 'time' | 'fio' | 'contact'>
+    & Pick<BookingUser, 'id' | 'idService' | 'service' | 'dateBegin' | 'dateBefore' | 'fio' | 'contact'>
   ) }
 );
 
@@ -783,7 +781,7 @@ export type BookingUserListQuery = (
   { __typename?: 'Query' }
   & { bookingUserList: Array<(
     { __typename?: 'BookingUser' }
-    & Pick<BookingUser, 'id' | 'employer' | 'service' | 'date' | 'time' | 'fio' | 'contact'>
+    & Pick<BookingUser, 'id' | 'idService' | 'service' | 'dateBegin' | 'dateBefore' | 'fio' | 'contact'>
   )> }
 );
 
@@ -1094,10 +1092,10 @@ export const CreateBookingUserDocument = gql`
     mutation CreateBookingUser($input: BookingUserInput!) {
   createBookingUser(input: $input) {
     id
-    employer
+    idService
     service
-    date
-    time
+    dateBegin
+    dateBefore
     fio
     contact
   }
@@ -1294,10 +1292,10 @@ export const BookingUserListDocument = gql`
     query BookingUserList {
   bookingUserList {
     id
-    employer
+    idService
     service
-    date
-    time
+    dateBegin
+    dateBefore
     fio
     contact
   }

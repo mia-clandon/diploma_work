@@ -29,6 +29,12 @@ function CreateBookingWindow({info}: {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
+    const [selectedDate, setSelectedDate] = React.useState(new Date('2021-08-18T21:11:54'));
+
+    const handleDateChange = (date) => {
+        setSelectedDate(date);
+    };
+
     return (
         <>
             <Button onClick={handleOpen} style={{
@@ -46,7 +52,15 @@ function CreateBookingWindow({info}: {
             </Button>
             <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
                 <Formik
-                    initialValues={{idService: 1, employer: "", service: ""}}
+                    initialValues={{
+                        idService: 1,
+                        employer: "",
+                        service: "",
+                        dateBegin: "",
+                        dateBefore: "",
+                        fio: "",
+                        contact: ""
+                    }}
                     onSubmit={async (values) => {
                         const {error} = await createBookingService({input: values});
                         if (!error) {
@@ -59,14 +73,14 @@ function CreateBookingWindow({info}: {
                             <DialogTitle id="form-dialog-title">Забронировать аппартаменты</DialogTitle>
                             <DialogContent>
                                 <InputField
-                                    name="date_begin"
+                                    name="dateBegin"
                                     placeholder="Дата заезда"
                                     label="Дата заезда"
                                     type="text"
                                     style={{marginTop: '20px'}}
                                 />
                                 <InputField
-                                    name="date_before"
+                                    name="dateBefore"
                                     placeholder="Дата выезда"
                                     label="Дата выезда"
                                     type="text"

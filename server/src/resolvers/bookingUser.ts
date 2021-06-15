@@ -5,16 +5,16 @@ import {isAuth} from "../middleware/isAuth";
 @InputType()
 class BookingUserInput {
     @Field()
-    employer!: string;
+    idService!: number;
 
     @Field()
     service!: string;
 
     @Field()
-    date!: string
+    dateBegin!: string
 
     @Field()
-    time!: string
+    dateBefore!: string
 
     @Field()
     fio!: string

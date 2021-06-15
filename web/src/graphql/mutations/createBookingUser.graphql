@@ -1,10 +1,10 @@
 mutation CreateBookingUser($input: BookingUserInput!) {
   createBookingUser(input: $input) {
     id
-    employer
+    idService
     service
-    date
-    time
+    dateBegin
+    dateBefore
     fio
     contact
   }
