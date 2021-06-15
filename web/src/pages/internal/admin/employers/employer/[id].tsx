@@ -12,6 +12,8 @@ import {useGetEmployerFromUrl} from "../../../../../utils/useGetEmployerFromUrl"
 import Card from "@material-ui/core/Card";
 import {createStyles, Theme} from "@material-ui/core/styles";
 import ContentBlock from "./blocks/ContentBlock/ContentBlock";
+import CreateParameterEmployer from "./blocks/Parameters/AddParameters";
+import ShowParameters from "./blocks/Parameters/ShowParamaters";
 
 const useStyles = (theme: Theme) =>
     createStyles({
@@ -31,6 +33,7 @@ const Employer = ({}) => {
     const classes = useStyles();
 
     const [{data, error, fetching}] = useGetEmployerFromUrl();
+
 
     if (fetching) {
         return (
@@ -74,6 +77,14 @@ const Employer = ({}) => {
                 <Card className={classes.root} style={{paddingTop: '20px', paddingLeft: '25px',}}>
                     <ContentBlock options={data}/>
                 </Card>
+                <Grid container justifyContent="center">
+                    <Grid item xs={4}>
+                        <CreateParameterEmployer props={data.employer}/>
+                    </Grid>
+                    <Grid item xs={4}>
+                        <ShowParameters props={data.employer}/>
+                    </Grid>
+                </Grid>
             </Grid>
         </Layout>
     );

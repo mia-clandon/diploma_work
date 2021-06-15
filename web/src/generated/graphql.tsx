@@ -31,6 +31,7 @@ export type Query = {
   reviewService?: Maybe<Array<ReviewService>>;
   reviewEmployersList: Array<ReviewEmployer>;
   reviewEmployer?: Maybe<Array<ReviewEmployer>>;
+  parametersEmployer?: Maybe<Array<ParameterEmployers>>;
 };
 
 
@@ -73,6 +74,11 @@ export type QueryReviewServiceArgs = {
 
 
 export type QueryReviewEmployerArgs = {
+  idEmployer: Scalars['Float'];
+};
+
+
+export type QueryParametersEmployerArgs = {
   idEmployer: Scalars['Float'];
 };
 
@@ -204,6 +210,16 @@ export type ReviewEmployer = {
   service: Scalars['String'];
 };
 
+export type ParameterEmployers = {
+  __typename?: 'ParameterEmployers';
+  id: Scalars['Float'];
+  idEmployer: Scalars['Float'];
+  title: Scalars['String'];
+  description: Scalars['String'];
+  createdAt: Scalars['String'];
+  updatedAt: Scalars['String'];
+};
+
 export type Mutation = {
   __typename?: 'Mutation';
   vote: Scalars['Boolean'];
@@ -228,6 +244,9 @@ export type Mutation = {
   logout: Scalars['Boolean'];
   createReviewService: ReviewService;
   createReviewEmployer: ReviewEmployer;
+  createParameterEmployer: ParameterEmployers;
+  updateParameterEmployer?: Maybe<ParameterEmployers>;
+  deleteParameterEmployer: Scalars['Boolean'];
 };
 
 
@@ -338,6 +357,22 @@ export type MutationCreateReviewEmployerArgs = {
   input: ReviewEmployerInput;
 };
 
+
+export type MutationCreateParameterEmployerArgs = {
+  options: ParametersEmployerInput;
+};
+
+
+export type MutationUpdateParameterEmployerArgs = {
+  input?: Maybe<Scalars['String']>;
+  id: Scalars['Float'];
+};
+
+
+export type MutationDeleteParameterEmployerArgs = {
+  id: Scalars['Float'];
+};
+
 export type PostInput = {
   title: Scalars['String'];
   text: Scalars['String'];
@@ -433,6 +468,12 @@ export type ReviewEmployerInput = {
   title: Scalars['String'];
   description: Scalars['String'];
   service: Scalars['String'];
+};
+
+export type ParametersEmployerInput = {
+  idEmployer: Scalars['Float'];
+  title: Scalars['String'];
+  description: Scalars['String'];
 };
 
 export type EmployerSnippetFragment = (
@@ -541,6 +582,19 @@ export type CreateEmployerMutation = (
   & { createEmployer: (
     { __typename?: 'EmployerResponse' }
     & RegularEmployerResponseFragment
+  ) }
+);
+
+export type CreateParameterEmployerMutationVariables = Exact<{
+  options: ParametersEmployerInput;
+}>;
+
+
+export type CreateParameterEmployerMutation = (
+  { __typename?: 'Mutation' }
+  & { createParameterEmployer: (
+    { __typename?: 'ParameterEmployers' }
+    & Pick<ParameterEmployers, 'idEmployer' | 'title' | 'description'>
   ) }
 );
 
@@ -784,6 +838,19 @@ export type MeEmployerQuery = (
   )> }
 );
 
+export type ParametersEmployerQueryVariables = Exact<{
+  idEmployer: Scalars['Float'];
+}>;
+
+
+export type ParametersEmployerQuery = (
+  { __typename?: 'Query' }
+  & { parametersEmployer?: Maybe<Array<(
+    { __typename?: 'ParameterEmployers' }
+    & Pick<ParameterEmployers, 'id' | 'idEmployer' | 'title' | 'description'>
+  )>> }
+);
+
 export type PostQueryVariables = Exact<{
   id: Scalars['Int'];
 }>;
@@ -1019,6 +1086,19 @@ export const CreateEmployerDocument = gql`
 
 export function useCreateEmployerMutation() {
   return Urql.useMutation<CreateEmployerMutation, CreateEmployerMutationVariables>(CreateEmployerDocument);
+};
+export const CreateParameterEmployerDocument = gql`
+    mutation CreateParameterEmployer($options: ParametersEmployerInput!) {
+  createParameterEmployer(options: $options) {
+    idEmployer
+    title
+    description
+  }
+}
+    `;
+
+export function useCreateParameterEmployerMutation() {
+  return Urql.useMutation<CreateParameterEmployerMutation, CreateParameterEmployerMutationVariables>(CreateParameterEmployerDocument);
 };
 export const CreatePostDocument = gql`
     mutation CreatePost($input: PostInput!) {
@@ -1260,6 +1340,20 @@ export const MeEmployerDocument = gql`
 
 export function useMeEmployerQuery(options: Omit<Urql.UseQueryArgs<MeEmployerQueryVariables>, 'query'> = {}) {
   return Urql.useQuery<MeEmployerQuery>({ query: MeEmployerDocument, ...options });
+};
+export const ParametersEmployerDocument = gql`
+    query ParametersEmployer($idEmployer: Float!) {
+  parametersEmployer(idEmployer: $idEmployer) {
+    id
+    idEmployer
+    title
+    description
+  }
+}
+    `;
+
+export function useParametersEmployerQuery(options: Omit<Urql.UseQueryArgs<ParametersEmployerQueryVariables>, 'query'> = {}) {
+  return Urql.useQuery<ParametersEmployerQuery>({ query: ParametersEmployerDocument, ...options });
 };
 export const PostDocument = gql`
     query Post($id: Int!) {

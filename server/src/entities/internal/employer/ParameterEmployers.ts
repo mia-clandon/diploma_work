@@ -9,6 +9,7 @@ export class ParameterEmployers extends BaseEntity {
     id!: number;
 
     @Field()
+    @Column({nullable: false})
     idEmployer!: number;
 
     @Field()

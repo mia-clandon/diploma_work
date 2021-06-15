@@ -28,7 +28,7 @@ function RightBlock() {
             <CardContent className={classes.content}>
                 <InfoHeaderBlock/>
                 <RatingCore/>
-                <Grid item xs={5}>
+                <Grid item xs={12}>
                     <Typography
                         style={{
                             font: 'Montserrat Regular',
@@ -40,6 +40,18 @@ function RightBlock() {
                     >
                         Красивая, светлая, солнечная, безупречно меблированная - просторная квартира с одной спальней в
                         мечтательном месте в восточной деревне Манхэттена. Супердоступное ...</Typography>
+                </Grid>
+                <Grid item xs={12}>
+                    <Typography
+                        style={{
+                            font: 'Montserrat Regular',
+                            fontSize: '14px',
+                            fontWeight: 400,
+                            lineHeight: '19.5px',
+                            color: 'black',
+                        }}
+                    >
+                        Посмотреть всё</Typography>
                 </Grid>
             </CardContent>
         </Box>

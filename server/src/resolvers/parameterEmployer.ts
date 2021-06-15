@@ -1,19 +1,18 @@
-import {Arg, Field, Mutation, ObjectType, Query, Resolver, UseMiddleware} from "type-graphql";
+import {Arg, Mutation, Query, Resolver, UseMiddleware} from "type-graphql";
 import {ParameterEmployers} from "../entities/internal/employer/ParameterEmployers";
 import {isAuth} from "../middleware/isAuth";
-import {FieldError} from "./fieldError";
 import {ParametersEmployerInput} from "./Inputs/ParametersEmployerInput";
-import {getConnection} from "typeorm";
-import {validateParametersEmployer} from "../utils/validateParametersEmployer";
 
-@ObjectType()
-class ParameterEmployerResponse {
-    @Field(() => [FieldError], {nullable: true})
-    errors?: FieldError[];
+// // @ts-ignore
+// @ObjectType()
+// class ParameterEmployerResponse {
+//     @Field(() => [FieldError], {nullable: true})
+//     errors?: FieldError[];
+//
+//     @Field(() => ParameterEmployers, {nullable: true})
+//     parameterEmployer?: ParameterEmployers[];
+// }
 
-    @Field(() => ParameterEmployers, {nullable: true})
-    parameterEmployer?: ParameterEmployers;
-}
 
 
 @Resolver(ParameterEmployers)
@@ -27,35 +26,44 @@ export class ParameterEmployersResolver {
         })
     }
 
-    //
-    @Mutation(() => ParameterEmployerResponse)
+    @Mutation(() => ParameterEmployers)
     @UseMiddleware(isAuth)
     async createParameterEmployer(
         @Arg("options") options: ParametersEmployerInput,
-    ): Promise<ParameterEmployerResponse> {
-        const errors = validateParametersEmployer(options);
-        if (errors) {
-            return {errors};
-        }
-        let parameterEmployer;
-        try {
-            const result = await getConnection()
-                .createQueryBuilder()
-                .insert()
-                .into(ParameterEmployers)
-                .values({
-                    idEmployer: options.idEmployer,
-                    title: options.title,
-                    description: options.description,
-                })
-                .returning("*")
-                .execute();
-            parameterEmployer = result.raw[0];
-        } catch (err) {
-            console.log(errors)
-        }
-        return {parameterEmployer};
+    ): Promise<ParameterEmployers> {
+        return ParameterEmployers.create({
+            ...options,
+        }).save();
     }
+
+    // @Mutation(() => ParameterEmployerResponse)
+    // @UseMiddleware(isAuth)
+    // async createParameterEmployer(
+    //     @Arg("options") options: ParametersEmployerInput,
+    // ): Promise<ParameterEmployerResponse> {
+    //     const errors = validateParametersEmployer(options);
+    //     if (errors) {
+    //         return {errors};
+    //     }
+    //     let parameterEmployer;
+    //     try {
+    //         const result = await getConnection()
+    //             .createQueryBuilder()
+    //             .insert()
+    //             .into(ParameterEmployers)
+    //             .values({
+    //                 idEmployer: options.idEmployer,
+    //                 title: options.title,
+    //                 description: options.description,
+    //             })
+    //             .returning("*")
+    //             .execute();
+    //         parameterEmployer = result.raw[0];
+    //     } catch (err) {
+    //         console.log(errors)
+    //     }
+    //     return {parameterEmployer};
+    // }
 
     @Mutation(() => ParameterEmployers, {nullable: true})
     @UseMiddleware(isAuth)

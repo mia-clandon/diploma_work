@@ -113,7 +113,6 @@ const Employers = () => {
                                     </TableBody>
                                 </Table>
                             </TableContainer>
-
                         </Box>
                     </Stack>
                 )}

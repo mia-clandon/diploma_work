@@ -37,6 +37,7 @@ import {AdvantagesEmployer} from "./entities/AdvantagesEmployer";
 import {ParameterService} from "./entities/ParameterService";
 import {UploadImage} from "./entities/Upload";
 import {PortfolioEmployer} from "./entities/internal/employer/PortfolioEmployer";
+import {ParameterEmployersResolver} from "./resolvers/parameterEmployer";
 
 const main = async () => {
     const conn = await createConnection({
@@ -105,7 +106,18 @@ const main = async () => {
 
     const apolloServer = new ApolloServer({
         schema: await buildSchema({
-            resolvers: [HelloResolver, PostResolver, UserResolver, EmployerResolver, ServiceResolver, BookingDateTimeResolver, BookingUserResolver, ReviewServiceResolver, ReviewEmployerResolver],
+            resolvers: [
+                HelloResolver,
+                PostResolver,
+                UserResolver,
+                EmployerResolver,
+                ServiceResolver,
+                BookingDateTimeResolver,
+                BookingUserResolver,
+                ReviewServiceResolver,
+                ReviewEmployerResolver,
+                ParameterEmployersResolver,
+            ],
             validate: false,
         }),
         context: ({req, res}) => ({

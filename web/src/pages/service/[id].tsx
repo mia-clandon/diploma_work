@@ -66,7 +66,7 @@ const Service = ({}) => {
                                     </Grid>
                                 </Grid>
                             </Grid>
-                            <Grid item xs={12} style={{background: 'white', marginTop: '20px'}}>
+                            <Grid item xs={11} style={{background: 'white', marginTop: '20px'}}>
                                 <Grid container spacing={2} justifyContent="center" alignItems="center">
                                     <Grid item xs={11}>
                                         <Parametrs/>
@@ -107,43 +107,6 @@ const Service = ({}) => {
                     </Grid>
                 </Grid>
             </Box>
-            {/*<Grid*/
-            }
-            {/*    direction="column"*/
-            }
-            {/*    xs={12}*/
-            }
-            {/*>*/
-            }
-            {/*    <Breadcrumbs aria-label="breadcrumb"  style={{marginLeft: '22.5%'}}>*/
-            }
-            {/*        <NextLink href="/">*/
-            }
-            {/*            <Link color="inherit" href="/" onClick={handleClick}>*/
-            }
-            {/*                Главная*/
-            }
-            {/*            </Link>*/
-            }
-            {/*        </NextLink>*/
-            }
-            {/*        <NextLink href="/employers">*/
-            }
-            {/*            <Link color="inherit" href="/" onClick={handleClick}>*/
-            }
-            {/*                Сотрудники*/
-            }
-            {/*            </Link>*/
-            }
-            {/*        </NextLink>*/
-            }
-            {/*        <Typography color="textPrimary">{data.service.title}</Typography>*/
-            }
-            {/*    </Breadcrumbs>*/
-            }
-            {/*    <TabsMenu options={data.service}/>*/
-            }
-            {/*</Grid>*/
             }
         </Layout>
     );
