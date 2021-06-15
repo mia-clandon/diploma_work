@@ -16,12 +16,27 @@ function Reviews() {
     const classes = useStyles();
 
     return (
-        <Grid container className={classes.root} style={{paddingTop: '20px', paddingLeft: '25px',}}>
+        <Grid container className={classes.root} style={{paddingTop: '20px', border: '1px solid #F0EEEE'}}>
             <Grid item xs={12}>
                 <HeaderBlock props={"Отзывы"}/>
             </Grid>
             <Grid item xs={12}>
                 <Grid container>
+                    <Grid item xs={6}>
+                        <ContentBlock/>
+                    </Grid>
+                    <Grid item xs={6}>
+                        <ContentBlock/>
+                    </Grid>
+                    <Grid item xs={6}>
+                        <ContentBlock/>
+                    </Grid>
+                    <Grid item xs={6}>
+                        <ContentBlock/>
+                    </Grid>
+                    <Grid item xs={6}>
+                        <ContentBlock/>
+                    </Grid>
                     <Grid item xs={6}>
                         <ContentBlock/>
                     </Grid>

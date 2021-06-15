@@ -7,13 +7,12 @@ import {useCreateServiceMutation} from "../../../../generated/graphql";
 import {Layout} from "../../../../components/Layout";
 import {createUrqlClient} from "../../../../utils/createUrqlClient";
 import {FormControl, Grid, InputLabel, MenuItem} from "@material-ui/core";
-import {SimpleFileUpload} from "formik-material-ui";
+import {Select} from "formik-material-ui";
 import Button from "@material-ui/core/Button";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import NextLink from "next/link";
 import Link from "@material-ui/core/Link";
 import Typography from "@material-ui/core/Typography";
-import {Select} from 'formik-material-ui';
 import {InputField} from "../../../../components/InputField";
 import TableServices from "./sections/TableServices";
 
@@ -48,11 +47,10 @@ const CreateService: React.FC<{}> = ({}) => {
                             </Link>
                         </NextLink>
                         <NextLink href="/">
-                            <Link color="inherit" href="/" onClick={handleClick}>
+                            <Link color="textPrimary" href="/" onClick={handleClick}>
                                 Услуги
                             </Link>
                         </NextLink>
-                        <Typography color="textPrimary">Добавить услугу</Typography>
                     </Breadcrumbs>
                 </Grid>
                 <Grid
@@ -61,7 +59,7 @@ const CreateService: React.FC<{}> = ({}) => {
                     xs={12}
                 >
                     <Formik
-                        initialValues={{title: "", category: "", description: "", price: "", image: ""}}
+                        initialValues={{title: "", category: "", description: "", price: "", location: ""}}
                         onSubmit={async (values) => {
                             const {error} = await createService({input: values});
                             console.log(error)
@@ -136,12 +134,7 @@ const CreateService: React.FC<{}> = ({}) => {
                                             </Button>
                                         </Grid>
                                     </Grid>
-                                    {/*<Grid*/}
-                                    {/*    item*/}
-                                    {/*    direction="column"*/}
-                                    {/*    xs={6}>*/}
-                                        <TableServices/>
-                                    {/*</Grid>*/}
+                                    <TableServices/>
                                 </Grid>
                             </Form>
                         )}

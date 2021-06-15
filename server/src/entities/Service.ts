@@ -39,8 +39,6 @@ export class Service extends BaseEntity {
     @ManyToMany(() => Employer, employer => employer.services)
     @JoinTable()
     employers: Employer[];
-    // @Column()
-    // creatorId!: number;
 
     @Field(() => String)
     @CreateDateColumn()

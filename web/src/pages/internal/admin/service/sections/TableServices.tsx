@@ -7,15 +7,10 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import {useDeleteServiceMutation, useServicesListQuery} from "../../../../../generated/graphql";
-import Button from "@material-ui/core/Button";
-import EditIcon from '@material-ui/icons/Edit';
-import DeleteIcon from '@material-ui/icons/Delete';
-import NextLink from "next/link";
 import {EditDeleteServiceButtons} from "../blocks/EditDeleteServiceButtons";
 
 export default function TableServices() {
     const [{data, error, fetching}] = useServicesListQuery();
-    const [, deleteService] = useDeleteServiceMutation();
 
     if (!fetching && !data) {
         return (
@@ -37,8 +32,7 @@ export default function TableServices() {
                             <TableCell>Название</TableCell>
                             <TableCell align="right">Категория</TableCell>
                             <TableCell align="right">Цена</TableCell>
-                            <TableCell align="right">Редактировать</TableCell>
-                            <TableCell align="right">Удалить</TableCell>
+                            <TableCell align="right"></TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -54,7 +48,6 @@ export default function TableServices() {
                                     {service.category}
                                 </TableCell>
                                 <TableCell align="right">{service.price}</TableCell>
-                                <TableCell align="right">{service.title}</TableCell>
                                 <TableCell align="right">
                                   <EditDeleteServiceButtons id={service.id}/>
                                 </TableCell>

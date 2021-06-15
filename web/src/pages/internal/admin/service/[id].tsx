@@ -1,7 +1,6 @@
 import React from "react";
 import {withUrqlClient} from "next-urql";
 import NextLink from "next/link";
-import TabsMenu from "./sections/TabsMenu/TabsMenu";
 import {Layout} from "../../../../components/Layout";
 import {useGetServiceFromUrl} from "../../../../utils/useGetServiceFromUrl";
 import {createUrqlClient} from "../../../../utils/createUrqlClient";
